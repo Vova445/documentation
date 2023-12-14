@@ -37,7 +37,7 @@ export const App = () => {
           <li><a href="#programming-languages">Виберіть свою мову програмування</a></li>
           <li><a href="#frameworks">Фреймворки</a></li>
           <li><a href="#other-resources">Кілька інших ресурсів</a></li>
-          <li><img src="./English_language.png" className="nav-img-language" alt="Language" /></li>
+          <img src="English_language.png" className="nav-img-language" alt="Language" />
         </ul>
       </nav>
 
