@@ -479,25 +479,230 @@ header {
     background-color: #1E90FF; 
 }
 
-
 .programming-languages-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 20px;
+    gap: 20px;
   }
   
-  .programming-languages-container img {
+  .language-text {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin: 10px;
-    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
   
-  .programming-languages-container img:hover {
+  .language-text:hover {
     transform: scale(1.1);
   }
+
+
+  .section-three {
+    text-align: center;
+    margin-top: 100px;
+    background-color: #ceced2;
+    padding: 30px;
+  }
   
+
+  
+  
+  .language-text[data-language="HTML"] {
+    background-color: #E44D26;
+    color: white;
+  }
+  
+  .language-text[data-language="CSS"] {
+    background-color: #264de4;
+    color: white;
+  }
+  .language-text[data-language="Python"] {
+    background-color: #3776ab;
+    color: white;
+  }
+  
+  .language-text[data-language="JavaScript"] {
+    background-color: #f0db4f;
+    color: black;
+  }
+  
+  .language-text[data-language="Java"] {
+    background-color: #007396;
+    color: white;
+  }
+  
+  .language-text[data-language="C"] {
+    background-color: #a8b9cc;
+    color: black;
+  }
+  
+  .language-text[data-language="C++"] {
+    background-color: #00599c;
+    color: white;
+  }
+  
+  .language-text[data-language="C#"] {
+    background-color: #178600;
+    color: white;
+  }
+  
+  .language-text[data-language="Swift"] {
+    background-color: #ffac45;
+    color: black;
+  }
+  
+  .language-text[data-language="TypeScript"] {
+    background-color: #3178c6;
+    color: white;
+  }
+
+
+  .language-text[data-language="PHP"] {
+    background-color: #4F5D95;
+    color: white;
+  }
+  
+  .language-text[data-language="Ruby"] {
+    background-color: #CC342D;
+    color: white;
+  }
+  
+  .language-text[data-language="Go"] {
+    background-color: #00ADD8;
+    color: white;
+  }
+  
+  .language-text[data-language="Rust"] {
+    background-color: #000000;
+    color: white;
+  }
+  
+  .language-text[data-language="Objective-C"] {
+    background-color: #438eff;
+    color: white;
+  }
+  
+  .language-text[data-language="Kotlin"] {
+    background-color: #7F52FF;
+    color: white;
+  }
+  
+  .language-text[data-language="Dart"] {
+    background-color: #0175C2;
+    color: white;
+  }
+  
+  .language-text[data-language="Scala"] {
+    background-color: #DC322F;
+    color: white;
+  }
+  
+  .language-text[data-language="Haskell"] {
+    background-color: #5E5086;
+    color: white;
+  }
+  
+  .language-text[data-language="Perl"] {
+    background-color: #39457E;
+    color: white;
+  }
+  
+  .language-text[data-language="Lua"] {
+    background-color: #000080;
+    color: white;
+  }
+  
+  .language-text[data-language="Shell"] {
+    background-color: #89e051;
+    color: black;
+  }
+  .language-text[data-language="HTML"]:hover {
+    background-color: #FF7043;
+  }
+  .language-text[data-language="CSS"]:hover {
+    background-color: #4285F4;
+  }
+  .language-text[data-language="Python"]:hover {
+    background-color: #4B8BBE;
+  }
+  .language-text[data-language="JavaScript"]:hover {
+    background-color: #FFD600;
+  }
+  .language-text[data-language="Java"]:hover {
+    background-color: #005cbf;
+  }
+
+  .language-text[data-language="C"]:hover {
+    background-color: #90A4AE;
+  }
+
+  .language-text[data-language="C++"]:hover {
+    background-color: #1565C0;
+  }
+
+  .language-text[data-language="C#"]:hover {
+    background-color: #2E7D32;
+  }
+
+  .language-text[data-language="Swift"]:hover {
+    background-color: #FF8F00;
+  }
+
+  .language-text[data-language="TypeScript"]:hover {
+    background-color: #003366;
+  }
+
+  .language-text[data-language="PHP"]:hover {
+    background-color: #6A7BAF;
+  }
+
+  .language-text[data-language="Ruby"]:hover {
+    background-color: #992A2A;
+  }
+
+  .language-text[data-language="Go"]:hover {
+    background-color: #008CBA;
+  }
+
+  .language-text[data-language="Rust"]:hover {
+    background-color: #434343;
+  }
+
+  .language-text[data-language="Objective-C"]:hover {
+    background-color: #2979FF;
+  }
+
+  .language-text[data-language="Kotlin"]:hover {
+    background-color: #6E45E2;
+  }
+
+  .language-text[data-language="Dart"]:hover {
+    background-color: #00579C;
+  }
+
+  .language-text[data-language="Scala"]:hover {
+    background-color: #D73835;
+  }
+
+  .language-text[data-language="Haskell"]:hover {
+    background-color: #513C69;
+  }
+
+  .language-text[data-language="Perl"]:hover {
+    background-color: #314671;
+  }
+
+  .language-text[data-language="Lua"]:hover {
+    background-color: #0000B3;
+  }
+
+  .language-text[data-language="Shell"]:hover {
+    background-color: #B4CCB9;
+  }
