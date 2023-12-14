@@ -1,6 +1,11 @@
 import { useState } from "react";
 import languagesData from "./languages.json";
 import Switch from "react-switch";
+import ScrollSlider from './components/Slider/Slider';
+import Modal from './components/Modal/Modal';
+import LanguageModal from './components/ModalLanguages/Language';
+
+
 
 export const App = () => {
   const resources = [
@@ -56,6 +61,7 @@ export const App = () => {
 
   const [modalContent, setModalContent] = useState({ title: '', description: '', link: '', resourceClass: '' });
   const [isUkrainian, setIsUkrainian] = useState(true);
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
 
   const openModal = (title, description, link, resourceClass) => {
     setModalContent({ title, description, link, resourceClass });
@@ -67,6 +73,7 @@ export const App = () => {
 
   const handleLanguageClick = (languageId) => {
     console.log(`Clicked on language with ID: ${languageId}`);
+    setSelectedLanguage(languageId);
   };
 
   const toggleLanguage = () => {
@@ -140,36 +147,35 @@ export const App = () => {
                 <div
                   key={language.id}
                   data-language={language.name}
-                  onClick={() => handleLanguageClick(language.id)}
-                  className={`language-text ${language.name.toLowerCase()}-language`}>
+                  onClick={() => handleLanguageClick(language.name)}
+                  className={`language-text ${language.name.toLowerCase()}-language`}
+                >
                   {language.name}
                 </div>
               ))}
             </div>
           </section>
-
         </div>
 
         {modalContent.title && (
-          <div className={`modal-overlay`} onClick={closeModal}>
-            <div className={`modal-content ${modalContent.resourceClass}`} onClick={(e) => e.stopPropagation()}>
-              <div className="close">
-                <span className={`close-modal ${modalContent.resourceClass}`} onClick={closeModal}>&times;</span>
-              </div>
-              <div className="modal-content-container">
-                <h3 id="modalTitle">{modalContent.title}</h3>
-                <p id="modalDescription">{modalContent.description}</p>
-                {modalContent.link && (
-                  <a href={modalContent.link} target="_blank" rel="noreferrer noopener">
-                    <button className={`modal-button-details ${modalContent.resourceClass}`}>
-                      {isUkrainian ? 'Перейти на ресурс' : 'Go to resource'}
-                    </button>
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
+          <Modal
+            title={modalContent.title}
+            description={modalContent.description}
+            link={modalContent.link}
+            resourceClass={modalContent.resourceClass}
+            closeModal={closeModal}
+            isUkrainian={isUkrainian}
+          />
         )}
+
+        {selectedLanguage && (
+          <LanguageModal
+            language={selectedLanguage}
+            closeModal={() => setSelectedLanguage(null)}
+            isUkrainian={isUkrainian}
+          />
+        )}
+        <ScrollSlider />
       </main>
     </>
   );
