@@ -1,0 +1,503 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #dedede, #d5e6e8);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.section-one {
+    padding: 50px;
+    color: #333;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-list a {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(87, 107, 101);
+}
+
+.nav-list a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.nav-list a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-img-language {
+    max-width: 60px;
+    padding: 12px;
+}
+
+.nav-page {
+    background: linear-gradient(to bottom, #F7F8F8, #C1CED3);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 0 50px;
+}
+
+.container {
+    width: 1158px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    background-color: rgb(201, 200, 200);
+}
+
+.resource-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resource-list li {
+    margin-bottom: 20px;
+}
+
+.resource-list a {
+    display: block;
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.resource-list a:hover {
+    background-color: #2980b9;
+}
+
+.resource-list q {
+    font-weight: bold;
+    color: #fefefe;
+}
+
+.section-two {
+    background-color: #afb7b9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-two h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content-container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    width: 80%;
+    max-width: 100%;
+    height: 60%;
+    max-height: 100%;
+    overflow: auto;
+    word-wrap: break-word;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+}
+.close{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+
+.close-modal {
+    font-size: 32px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #e74c3c;
+}
+
+.modal-button-details {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+/* Codewars Modal */
+.codewars-modal {
+    background-color: #F1948A;
+}
+
+.codewars-modal .close-modal {
+    color: #2C3E50; 
+    transition: color 0.3s ease;
+}
+
+.codewars-modal .close-modal:hover {
+    color: #E74C3C; 
+}
+
+.codewars-modal .modal-button-details {
+    background-color: #EC7063; 
+    color: #ECF0F1; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.codewars-modal .modal-button-details:hover {
+    background-color: #D35400; 
+}
+
+/* MDN Modal */
+.mdn-modal {
+    background-color: #85C1E9; 
+}
+
+.mdn-modal .close-modal {
+    color: #2C3E50; 
+    transition: color 0.3s ease;
+}
+
+.mdn-modal .close-modal:hover {
+    color: #5DADE2; 
+}
+
+.mdn-modal .modal-button-details {
+    background-color: #5DADE2; 
+    color: #ECF0F1; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.mdn-modal .modal-button-details:hover {
+    background-color: #3498DB; 
+}
+
+/* Stack Overflow Modal */
+.stack-modal {
+    background-color: #5D8AA8; 
+}
+
+.stack-modal .close-modal {
+    color: #1F3A4E;
+    transition: color 0.3s ease;
+}
+
+.stack-modal .close-modal:hover {
+    color: #1565C0; 
+}
+
+.stack-modal .modal-button-details {
+    background-color: #2980B9; 
+    color: #ECF0F1; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.stack-modal .modal-button-details:hover {
+    background-color: #1F618D; 
+}
+
+/* LeetCode Modal */
+.leetcode-modal {
+    background-color: #C1E1D1;
+}
+
+.leetcode-modal .close-modal {
+    color: #2E6F5D; 
+    transition: color 0.3s ease;
+}
+
+.leetcode-modal .close-modal:hover {
+    color: #239B56; 
+}
+
+.leetcode-modal .modal-button-details {
+    background-color: #239B56; 
+    color: #ECF0F1; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.leetcode-modal .modal-button-details:hover {
+    background-color: #1D8348; 
+}
+
+
+
+
+/* W3Schools Modal */
+.w3-modal {
+    background-color: #FFD700; 
+}
+
+.w3-modal .close-modal {
+    color: #333; 
+    transition: color 0.3s ease;
+}
+
+.w3-modal .close-modal:hover {
+    color: #FFA500; 
+}
+
+.w3-modal .modal-button-details {
+    background-color: #FFA500; 
+    color: #fff; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.w3-modal .modal-button-details:hover {
+    background-color: #FF8C00; 
+}
+
+/* Udemy Modal */
+.udemy-modal {
+    background-color: #8A2BE2; 
+}
+
+.udemy-modal .close-modal {
+    color: #fff; 
+    transition: color 0.3s ease;
+}
+
+.udemy-modal .close-modal:hover {
+    color: #4B0082; 
+}
+
+.udemy-modal .modal-button-details {
+    background-color: #4B0082; 
+    color: #fff; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.udemy-modal .modal-button-details:hover {
+    background-color: #1E90FF; 
+}
+
+
+
+
+
+
+
+/* CodePen Modal */
+.codepen-modal {
+    background-color:wheat;
+}
+
+.codepen-modal .close-modal {
+    color: #333; 
+    transition: color 0.3s ease;
+}
+
+.codepen-modal .close-modal:hover {
+    color: #1E90FF; 
+}
+
+.codepen-modal .modal-button-details {
+    background-color: #1E90FF; 
+    color: #fff; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.codepen-modal .modal-button-details:hover {
+    background-color: #00BFFF; 
+}
+
+/* freeCodeCamp Modal */
+.fcc-modal {
+    background-color: #d3d3d3; 
+}
+
+.fcc-modal .close-modal {
+    color: #fff; 
+    transition: color 0.3s ease;
+}
+
+.fcc-modal .close-modal:hover {
+    color: #008000; 
+}
+
+.fcc-modal .modal-button-details {
+    background-color: #008000; 
+    color: #fff; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.fcc-modal .modal-button-details:hover {
+    background-color: #006400; 
+}
+
+/* GitHub Modal */
+.github-modal {
+    background-color: #181717; 
+    color: whitesmoke;
+}
+
+.github-modal .close-modal {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.github-modal .close-modal:hover {
+    color: #483D8B; 
+}
+
+.github-modal .modal-button-details {
+    background-color: #483D8B; 
+    color: #fff; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+}
+
+.github-modal .modal-button-details:hover {
+    background-color: #1E90FF; 
+}
+
+
+.programming-languages-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .programming-languages-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .programming-languages-container img:hover {
+    transform: scale(1.1);
+  }
+  

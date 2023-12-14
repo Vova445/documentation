@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "HTML", "imagePath": "" },
+  { "id": 2, "name": "CSS", "imagePath": "../CSS_language.png" },
+  { "id": 3, "name": "Python", "imagePath": "../Python_language.png" },
+  { "id": 4, "name": "JavaScript", "imagePath": "../JavaScript_language.png" },
+  { "id": 5, "name": "Java", "imagePath": "../Java_language.png" },
+  { "id": 6, "name": "C", "imagePath": "../C_language.png" },
+  { "id": 7, "name": "C++", "imagePath": "../C++_language.png" },
+  { "id": 8, "name": "C#", "imagePath": "../C#_language.png" },
+  { "id": 9, "name": "Swift", "imagePath": "../Swift_language.png" },
+  { "id": 10, "name": "TypeScript", "imagePath": "../TypeScript_language.png" }
+]
