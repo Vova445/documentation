@@ -707,3 +707,47 @@ header {
   .language-text[data-language="Shell"]:hover {
     background-color: #B4CCB9;
   }
+
+
+
+
+ /* Pagination Styles */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.pagination-controls button {
+  background-color: #2196F3; /* Змінений колір */
+  color: white;
+  border: 1px solid #2196F3; /* Змінений колір */
+  padding: 8px 16px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.pagination-controls button:hover {
+  background-color: #1565C0; /* Інший колір при hover */
+  border-color: #1565C0; /* Інший колір при hover */
+}
+
+.pagination-controls button.active {
+  background-color: #0D47A1; /* Інший колір для активної сторінки */
+  border-color: #0D47A1; /* Інший колір для активної сторінки */
+}
+
+/* Add animation effect to the buttons */
+.pagination-controls button {
+  transition: transform 0.2s ease-in-out;
+}
+
+.pagination-controls button:hover {
+  transform: scale(1.05); /* Збільшуємо розмір при hover */
+}
+
+.pagination-controls button.active {
+  transform: scale(1.1); /* Збільшуємо розмір для активної сторінки */
+}

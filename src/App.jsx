@@ -59,9 +59,14 @@ export const App = () => {
     },
   };
 
+
+
   const [modalContent, setModalContent] = useState({ title: '', description: '', link: '', resourceClass: '' });
   const [isUkrainian, setIsUkrainian] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState(null);
+
+  const itemsPerPage = 14;
+  const [currentPage, setCurrentPage] = useState(1);
 
   const openModal = (title, description, link, resourceClass) => {
     setModalContent({ title, description, link, resourceClass });
@@ -78,6 +83,31 @@ export const App = () => {
 
   const toggleLanguage = () => {
     setIsUkrainian((prev) => !prev);
+  };
+
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+
+
+  const renderLanguages = () => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const displayedLanguages = languagesData.slice(startIndex, endIndex);
+
+
+    return displayedLanguages.map((language) => (
+      <div
+        key={language.id}
+        data-language={language.name}
+        onClick={() => handleLanguageClick(language.name)}
+        className={`language-text ${language.name.toLowerCase()}-language`}
+      >
+        {language.name}
+      </div>
+    ));
   };
 
   return (
@@ -141,20 +171,18 @@ export const App = () => {
           </section>
 
           <section id="programming-languages" className="section-three">
-            <h2 className="section-title">{isUkrainian ? 'Мови програмування' : 'Programming Languages'}</h2>
-            <div className="programming-languages-container">
-              {languagesData.map(language => (
-                <div
-                  key={language.id}
-                  data-language={language.name}
-                  onClick={() => handleLanguageClick(language.name)}
-                  className={`language-text ${language.name.toLowerCase()}-language`}
-                >
-                  {language.name}
-                </div>
-              ))}
-            </div>
-          </section>
+        <h2 className="section-title">{isUkrainian ? 'Мови програмування' : 'Programming Languages'}</h2>
+        <div className="programming-languages-container">
+          {renderLanguages()}
+        </div>
+        <div className="pagination-controls">
+          {Array.from({ length: Math.ceil(languagesData.length / itemsPerPage) }, (_, index) => index + 1).map((page) => (
+            <button key={page} onClick={() => handlePageChange(page)} className={currentPage === page ? 'active' : ''}>
+              {page}
+            </button>
+          ))}
+        </div>
+      </section>
         </div>
 
         {modalContent.title && (
