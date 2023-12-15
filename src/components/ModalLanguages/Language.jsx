@@ -39,6 +39,23 @@ import SchemeModalContent from "./Languages/Scheme";
 import SmalltalkModalContent from "./Languages/Smalltalk";
 import PrologModalContent from "./Languages/Prolog";
 import RacketModalContent from "./Languages/Racket";
+import ElixirModalContent from "./Languages/Elixir";
+import JuliaModalContent from "./Languages/Julia";
+import HackModalContent from "./Languages/Hack";
+import ObjectiveJModalContent from "./Languages/ObjectiveJ";
+import ActionScriptModalContent from "./Languages/ActionScript";
+import DModalContent from "./Languages/D";
+import TCLModalContent from "./Languages/Tcl";
+import KSHModalContent from "./Languages/KSH";
+import BashModalContent from "./Languages/Bash";
+import JModalContent from "./Languages/J";
+import AwkModalContent from "./Languages/Awk";
+import ValaModalContent from "./Languages/Vala";
+import HaxeModalContent from "./Languages/Haxe";
+import VerilogModalContent from "./Languages/Verilog";
+import BasicModalContent from "./Languages/Basic";
+import ABAPModalContent from "./Languages/ABAP";
+import OpenCLModalContent from "./Languages/OpenCL";
 
 const LanguageModal = ({ language, closeModal, isUkrainian }) => {
   const handleGoOut = () => {
@@ -90,6 +107,23 @@ const LanguageModal = ({ language, closeModal, isUkrainian }) => {
       smalltalk: { backgroundColor: "#2980B9", color: "#fff", title: "Smalltalk", content: <SmalltalkModalContent isUkrainian={isUkrainian} /> },
       prolog: { backgroundColor: "#E0E0E0", color: "#000", title: "Prolog", content: <PrologModalContent isUkrainian={isUkrainian} /> },
       racket: { backgroundColor: "#1E90FF", color: "#000", title: "Racket", content: <RacketModalContent isUkrainian={isUkrainian} /> },
+      elixir: { backgroundColor: "#FAF0D1", color: "#000", title: "Elixir", content: <ElixirModalContent isUkrainian={isUkrainian} /> },
+      julia: { backgroundColor: "#008000", color: "#fff", title: "Julia", content: <JuliaModalContent isUkrainian={isUkrainian} /> },
+      hack: { backgroundColor: "#ADD8E6", color: "#000", title: "Hack", content: <HackModalContent isUkrainian={isUkrainian} /> },
+      'objective-j': { backgroundColor: "#0000CD", color: "#fff", title: "Objective-J", content: <ObjectiveJModalContent isUkrainian={isUkrainian} /> },
+      actionscript: { backgroundColor: "#8A2BE2", color: "#fff", title: "ActionScript", content: <ActionScriptModalContent isUkrainian={isUkrainian} /> },
+      d: { backgroundColor: "#000000", color: "#fff", title: "D", content: <DModalContent isUkrainian={isUkrainian} /> },
+      tcl: { backgroundColor: "#FFC125", color: "#333", title: "Tcl", content: <TCLModalContent isUkrainian={isUkrainian} /> },
+      "korn shell": { backgroundColor: "#4682B4", color: "#000", title: "Korn Shell", content: <KSHModalContent isUkrainian={isUkrainian} /> },
+      bash: { backgroundColor: "#45a049", color: "#333", title: "Bash", content: <BashModalContent isUkrainian={isUkrainian} /> },
+      j: { backgroundColor: "#e6b800", color: "#333", title: "J", content: <JModalContent isUkrainian={isUkrainian} /> },
+      awk: { backgroundColor: "#CCA300", color: "#333", title: "Awk", content: <AwkModalContent isUkrainian={isUkrainian} /> },
+      vala: { backgroundColor: "#692BCC", color: "#fff", title: "Vala", content: <ValaModalContent isUkrainian={isUkrainian} /> },
+      haxe: { backgroundColor: "#FF8C00", color: "#000", title: "Haxe", content: <HaxeModalContent isUkrainian={isUkrainian} /> },
+      verilog: { backgroundColor: "#9932CC", color: "#000", title: "Verilog", content: <VerilogModalContent isUkrainian={isUkrainian} /> },
+      basic: { backgroundColor: "#8B4513", color: "#fff", title: "Basic", content: <BasicModalContent isUkrainian={isUkrainian} /> },
+      abap: { backgroundColor: "#990000", color: "#fff", title: "ABAP", content: <ABAPModalContent isUkrainian={isUkrainian} /> },
+      opencl: { backgroundColor: "#006400", color: "#fff", title: "OpenCL", content: <OpenCLModalContent isUkrainian={isUkrainian} /> },
     };
   
     return languages[languageLower] || {};
