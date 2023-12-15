@@ -22,6 +22,15 @@ import HaskellModalContent from "./Languages/Haskell";
 import PerlModalContent from "./Languages/Perl";
 import LuaModalContent from "./Languages/Lua";
 import ShellModalContent from "./Languages/Shell";
+import MATLABModalContent from "./Languages/MATLAB";
+import RModalContent from "./Languages/R";
+import GroovyModalContent from "./Languages/Groovy";
+import SQLModalContent from "./Languages/SQL";
+import AdaModalContent from "./Languages/Ada";
+import FortranModalContent from "./Languages/Fortran";
+import COBOLModalContent from "./Languages/COBOL";
+import VBScriptModalContent from "./Languages/VBScript";
+
 
 const LanguageModal = ({ language, closeModal, isUkrainian }) => {
   const handleGoOut = () => {
@@ -56,6 +65,14 @@ const LanguageModal = ({ language, closeModal, isUkrainian }) => {
       perl: { backgroundColor: "#a7929b", color: "#fff", title: "Perl", content: <PerlModalContent isUkrainian={isUkrainian} /> },
       lua: { backgroundColor: "#2C3E50", color: "#fff", title: "Lua", content: <LuaModalContent isUkrainian={isUkrainian} /> },
       shell: { backgroundColor: "#333", color: "#fff", title: "Shell", content: <ShellModalContent isUkrainian={isUkrainian} /> },
+      matlab: { backgroundColor: "#000000", color: "#fff", title: "MATLAB", content: <MATLABModalContent isUkrainian={isUkrainian} /> },
+      r: { backgroundColor: "#276DC3", color: "#fff", title: "R", content: <RModalContent isUkrainian={isUkrainian} /> },
+      groovy: { backgroundColor: "#4298B8", color: "#fff", title: "Groovy", content: <GroovyModalContent isUkrainian={isUkrainian} /> },
+      sql: { backgroundColor: "#FFA933", color: "#000", title: "SQL", content: <SQLModalContent isUkrainian={isUkrainian} /> },
+      ada: { backgroundColor: "#02f88c", color: "#000", title: "Ada", content: <AdaModalContent isUkrainian={isUkrainian} /> },
+      fortran: { backgroundColor: "#4d41b1", color: "#fff", title: "Fortran", content: <FortranModalContent isUkrainian={isUkrainian} /> },
+      cobol: { backgroundColor: "#394b9f", color: "#fff", title: "COBOL", content: <COBOLModalContent isUkrainian={isUkrainian} /> },
+      vbscript: { backgroundColor: "#3F3F3F", color: "#fff", title: "VBScript", content: <VBScriptModalContent isUkrainian={isUkrainian} /> },
     };
   
     return languages[languageLower] || {};

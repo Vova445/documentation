@@ -711,6 +711,523 @@ header {
 
 
 
+  .language-text[data-language="MATLAB"] {
+    background-color: #0076A8;
+    color: white;
+  }
+  
+  .language-text[data-language="R"] {
+    background-color: #276DC3;
+    color: white;
+  }
+  
+  .language-text[data-language="Groovy"] {
+    background-color: #4298B8;
+    color: white;
+  }
+  
+  .language-text[data-language="SQL"] {
+    background-color: #CC2929;
+    color: white;
+  }
+  
+  .language-text[data-language="Ada"] {
+    background-color: #02f88c;
+    color: black;
+  }
+  
+  .language-text[data-language="Fortran"] {
+    background-color: #4D41B1;
+    color: white;
+  }
+  
+  .language-text[data-language="COBOL"] {
+    background-color: #41849E;
+    color: white;
+  }
+  
+  .language-text[data-language="VBScript"] {
+    background-color: #3E6D8E;
+    color: white;
+  }
+  
+  .language-text[data-language="PowerShell"] {
+    background-color: #012456;
+    color: white;
+  }
+  
+  .language-text[data-language="Clojure"] {
+    background-color: #5881d8;
+    color: white;
+  }
+  
+  .language-text[data-language="Erlang"] {
+    background-color: #B83998;
+    color: white;
+  }
+  
+  .language-text[data-language="F#"] {
+    background-color: #1E4F36;
+    color: white;
+  }
+  
+  .language-text[data-language="OCaml"] {
+    background-color: #3E5053;
+    color: white;
+  }
+  
+  .language-text[data-language="Scheme"] {
+    background-color: #1E4A81;
+    color: white;
+  }
+  
+  .language-text[data-language="Smalltalk"] {
+    background-color: #59606D;
+    color: white;
+  }
+  
+  .language-text[data-language="Prolog"] {
+    background-color: #74283C;
+    color: white;
+  }
+  
+  .language-text[data-language="Racket"] {
+    background-color: #22228F;
+    color: white;
+  }
+  
+  .language-text[data-language="Elixir"] {
+    background-color: #4B275F;
+    color: white;
+  }
+  
+  .language-text[data-language="Julia"] {
+    background-color: #9558B2;
+    color: white;
+  }
+  
+  .language-text[data-language="Hack"] {
+    background-color: #878787;
+    color: white;
+  }
+  
+  .language-text[data-language="Objective-J"] {
+    background-color: #3D3D3D;
+    color: white;
+  }
+  
+  .language-text[data-language="ActionScript"] {
+    background-color: #F27500;
+    color: white;
+  }
+  
+  .language-text[data-language="D"] {
+    background-color: #ba595e;
+    color: white;
+  }
+  
+  .language-text[data-language="MATLAB"]:hover {
+    background-color: #00A2FF;
+  }
+  
+  .language-text[data-language="R"]:hover {
+    background-color: #125AC4;
+  }
+  
+  .language-text[data-language="Groovy"]:hover {
+    background-color: #60B9CC;
+  }
+  
+  .language-text[data-language="SQL"]:hover {
+    background-color: #FF3333;
+  }
+  
+  .language-text[data-language="Ada"]:hover {
+    background-color: #15FFA3;
+  }
+  
+  .language-text[data-language="Fortran"]:hover {
+    background-color: #655DD6;
+  }
+  
+  .language-text[data-language="COBOL"]:hover {
+    background-color: #4A9DB8;
+  }
+  
+  .language-text[data-language="VBScript"]:hover {
+    background-color: #5A8BA6;
+  }
+  
+  .language-text[data-language="PowerShell"]:hover {
+    background-color: #00317C;
+  }
+  
+  .language-text[data-language="Clojure"]:hover {
+    background-color: #7B9AD1;
+  }
+  
+  .language-text[data-language="Erlang"]:hover {
+    background-color: #D95DA4;
+  }
+  
+  .language-text[data-language="F#"]:hover {
+    background-color: #3A725F;
+  }
+  
+  .language-text[data-language="OCaml"]:hover {
+    background-color: #5F7174;
+  }
+  
+  .language-text[data-language="Scheme"]:hover {
+    background-color: #215EB5;
+  }
+  
+  .language-text[data-language="Smalltalk"]:hover {
+    background-color: #7A8390;
+  }
+  
+  .language-text[data-language="Prolog"]:hover {
+    background-color: #9E4461;
+  }
+  
+  .language-text[data-language="Racket"]:hover {
+    background-color: #3334A1;
+  }
+  
+  .language-text[data-language="Elixir"]:hover {
+    background-color: #664078;
+  }
+  
+  .language-text[data-language="Julia"]:hover {
+    background-color: #AE75CA;
+  }
+  
+  .language-text[data-language="Hack"]:hover {
+    background-color: #9C9C9C;
+  }
+  
+  .language-text[data-language="Objective-J"]:hover {
+    background-color: #545454;
+  }
+  
+  .language-text[data-language="ActionScript"]:hover {
+    background-color: #FF6D00;
+  }
+  
+  .language-text[data-language="D"]:hover {
+    background-color: #CF6B70;
+  }
+  
+
+  .language-text[data-language="Tcl"] {
+    background-color: #FFD700;
+    color: black;
+}
+
+.language-text[data-language="Korn Shell"] {
+    background-color: #4EAA25;
+    color: white;
+}
+
+.language-text[data-language="Bash"] {
+    background-color: #4EAA25;
+    color: white;
+}
+
+.language-text[data-language="J"] {
+    background-color: #9EEDFF;
+    color: black;
+}
+
+.language-text[data-language="Awk"] {
+    background-color: #FFD700;
+    color: black;
+}
+
+.language-text[data-language="Vala"] {
+    background-color: #8F7E45;
+    color: white;
+}
+
+.language-text[data-language="Haxe"] {
+    background-color: #DF7900;
+    color: white;
+}
+
+.language-text[data-language="Verilog"] {
+    background-color: #2364AA;
+    color: white;
+}
+
+.language-text[data-language="VHDL"] {
+    background-color: #8E7CC3;
+    color: white;
+}
+
+.language-text[data-language="ABAP"] {
+    background-color: #E85625;
+    color: white;
+}
+
+.language-text[data-language="OpenCL"] {
+    background-color: #224192;
+    color: white;
+}
+
+.language-text[data-language="HCL"] {
+    background-color: #0082CC;
+    color: white;
+}
+
+.language-text[data-language="Apex"] {
+    background-color: #0080FF;
+    color: white;
+}
+
+.language-text[data-language="Batch"] {
+    background-color: #4D4D4D;
+    color: white;
+}
+
+.language-text[data-language="Lisp"] {
+    background-color: #C06B88;
+    color: white;
+}
+
+.language-text[data-language="Pascal"] {
+    background-color: #E3F171;
+    color: black;
+}
+
+.language-text[data-language="Forth"] {
+    background-color: #341C1C;
+    color: white;
+}
+
+.language-text[data-language="Rexx"] {
+    background-color: #007AA5;
+    color: white;
+}
+
+.language-text[data-language="IDL"] {
+    background-color: #A6A6D2;
+    color: black;
+}
+
+.language-text[data-language="PostScript"] {
+    background-color: #DA291C;
+    color: white;
+}
+
+.language-text[data-language="Eiffel"] {
+    background-color: #946D99;
+    color: white;
+}
+
+.language-text[data-language="Modula-2"] {
+    background-color: #F6007A;
+    color: white;
+}
+
+.language-text[data-language="PL/I"] {
+    background-color: #CC679D;
+    color: white;
+}
+
+.language-text[data-language="COOL"] {
+    background-color: #77B5FE;
+    color: black;
+}
+
+.language-text[data-language="MUMPS"] {
+    background-color: #405F61;
+    color: white;
+}
+
+.language-text[data-language="Logo"] {
+    background-color: #119900;
+    color: white;
+}
+
+.language-text[data-language="APL"] {
+    background-color: #5A8DFF;
+    color: white;
+}
+
+.language-text[data-language="SAS"] {
+    background-color: #B34936;
+    color: white;
+}
+
+.language-text[data-language="FoxPro"] {
+    background-color: #6781F2;
+    color: white;
+}
+
+.language-text[data-language="LabVIEW"] {
+    background-color: #FFD100;
+    color: black;
+}
+
+.language-text[data-language="Fantom"] {
+    background-color: #14253E;
+    color: white;
+}
+
+.language-text[data-language="Ladder Logic"] {
+    background-color: #AC7D10;
+    color: white;
+}
+
+.language-text[data-language="Red"] {
+    background-color: #FF0000;
+    color: white;
+}
+
+.language-text[data-language="FORTRAN II"] {
+    background-color: #333333;
+    color: white;
+}
+
+
+
+.language-text[data-language="Tcl"]:hover {
+  background-color: #FFECB3;
+}
+
+.language-text[data-language="Korn Shell"]:hover {
+  background-color: #6CAF52;
+}
+
+.language-text[data-language="Bash"]:hover {
+  background-color: #6CAF52;
+}
+
+.language-text[data-language="J"]:hover {
+  background-color: #B3F0FF;
+}
+
+.language-text[data-language="Awk"]:hover {
+  background-color: #FFECB3;
+}
+
+.language-text[data-language="Vala"]:hover {
+  background-color: #B8A77A;
+}
+
+.language-text[data-language="Haxe"]:hover {
+  background-color: #FF8C33;
+}
+
+.language-text[data-language="Verilog"]:hover {
+  background-color: #5983C1;
+}
+
+.language-text[data-language="VHDL"]:hover {
+  background-color: #B4A3D7;
+}
+
+.language-text[data-language="ABAP"]:hover {
+  background-color: #FF8166;
+}
+
+.language-text[data-language="OpenCL"]:hover {
+  background-color: #4364A5;
+}
+
+.language-text[data-language="HCL"]:hover {
+  background-color: #00A5FF;
+}
+
+.language-text[data-language="Apex"]:hover {
+  background-color: #0066CC;
+}
+
+.language-text[data-language="Batch"]:hover {
+  background-color: #666666;
+}
+
+.language-text[data-language="Lisp"]:hover {
+  background-color: #D48EAB;
+}
+
+.language-text[data-language="Pascal"]:hover {
+  background-color: #FFF191;
+}
+
+.language-text[data-language="Forth"]:hover {
+  background-color: #4C2E2E;
+}
+
+.language-text[data-language="Rexx"]:hover {
+  background-color: #0088CC;
+}
+
+.language-text[data-language="IDL"]:hover {
+  background-color: #C2C2E6;
+}
+
+.language-text[data-language="PostScript"]:hover {
+  background-color: #E04E3F;
+}
+
+.language-text[data-language="Eiffel"]:hover {
+  background-color: #B18EAF;
+}
+
+.language-text[data-language="Modula-2"]:hover {
+  background-color: #FF3385;
+}
+
+.language-text[data-language="PL/I"]:hover {
+  background-color: #D470A8;
+}
+
+.language-text[data-language="COOL"]:hover {
+  background-color: #99C2FF;
+}
+
+.language-text[data-language="MUMPS"]:hover {
+  background-color: #66747F;
+}
+
+.language-text[data-language="Logo"]:hover {
+  background-color: #00CC00;
+}
+
+.language-text[data-language="APL"]:hover {
+  background-color: #7FB3FF;
+}
+
+.language-text[data-language="SAS"]:hover {
+  background-color: #D96C59;
+}
+
+.language-text[data-language="FoxPro"]:hover {
+  background-color: #8494F4;
+}
+
+.language-text[data-language="LabVIEW"]:hover {
+  background-color: #FFDB58;
+}
+
+.language-text[data-language="Fantom"]:hover {
+  background-color: #1D364E;
+}
+
+.language-text[data-language="Ladder Logic"]:hover {
+  background-color: #D3A014;
+}
+
+.language-text[data-language="Red"]:hover {
+  background-color: #FF3333;
+}
+
+.language-text[data-language="FORTRAN II"]:hover {
+  background-color: #4D4D4D;
+}
+
+
  /* Pagination Styles */
 .pagination-controls {
   display: flex;
@@ -719,9 +1236,9 @@ header {
 }
 
 .pagination-controls button {
-  background-color: #2196F3; /* Змінений колір */
+  background-color: #2196F3; 
   color: white;
-  border: 1px solid #2196F3; /* Змінений колір */
+  border: 1px solid #2196F3; 
   padding: 8px 16px;
   margin: 0 4px;
   cursor: pointer;
@@ -730,24 +1247,23 @@ header {
 }
 
 .pagination-controls button:hover {
-  background-color: #1565C0; /* Інший колір при hover */
-  border-color: #1565C0; /* Інший колір при hover */
+  background-color: #1565C0; 
+  border-color: #1565C0; 
 }
 
 .pagination-controls button.active {
-  background-color: #0D47A1; /* Інший колір для активної сторінки */
-  border-color: #0D47A1; /* Інший колір для активної сторінки */
+  background-color: #0D47A1; 
+  border-color: #0D47A1;
 }
 
-/* Add animation effect to the buttons */
 .pagination-controls button {
   transition: transform 0.2s ease-in-out;
 }
 
 .pagination-controls button:hover {
-  transform: scale(1.05); /* Збільшуємо розмір при hover */
+  transform: scale(1.05); 
 }
 
 .pagination-controls button.active {
-  transform: scale(1.1); /* Збільшуємо розмір для активної сторінки */
+  transform: scale(1.1); 
 }
