@@ -30,7 +30,15 @@ import AdaModalContent from "./Languages/Ada";
 import FortranModalContent from "./Languages/Fortran";
 import COBOLModalContent from "./Languages/COBOL";
 import VBScriptModalContent from "./Languages/VBScript";
-
+import PowerShellModalContent from "./Languages/PowerShell";
+import ClojureModalContent from "./Languages/Clojure";
+import ErlangModalContent from "./Languages/Erlang";
+import FSharpModalContent from "./Languages/FSharp";
+import OCamlModalContent from "./Languages/OCaml";
+import SchemeModalContent from "./Languages/Scheme";
+import SmalltalkModalContent from "./Languages/Smalltalk";
+import PrologModalContent from "./Languages/Prolog";
+import RacketModalContent from "./Languages/Racket";
 
 const LanguageModal = ({ language, closeModal, isUkrainian }) => {
   const handleGoOut = () => {
@@ -73,6 +81,15 @@ const LanguageModal = ({ language, closeModal, isUkrainian }) => {
       fortran: { backgroundColor: "#4d41b1", color: "#fff", title: "Fortran", content: <FortranModalContent isUkrainian={isUkrainian} /> },
       cobol: { backgroundColor: "#394b9f", color: "#fff", title: "COBOL", content: <COBOLModalContent isUkrainian={isUkrainian} /> },
       vbscript: { backgroundColor: "#3F3F3F", color: "#fff", title: "VBScript", content: <VBScriptModalContent isUkrainian={isUkrainian} /> },
+      powershell: { backgroundColor: "#808080", color: "#fff", title: "PowerShell", content: <PowerShellModalContent isUkrainian={isUkrainian} /> },
+      clojure: { backgroundColor: "#006666", color: "#fff", title: "Clojure", content: <ClojureModalContent isUkrainian={isUkrainian} /> },
+      erlang: { backgroundColor: "#800080", color: "#fff", title: "Erlang", content: <ErlangModalContent isUkrainian={isUkrainian} /> },
+      "f#": { backgroundColor: "#666666", color: "#fff", title: "F#", content: <FSharpModalContent isUkrainian={isUkrainian} /> },
+      ocaml: { backgroundColor: "#FF8C00", color: "#000", title: "OCaml", content: <OCamlModalContent isUkrainian={isUkrainian} /> },
+      scheme: { backgroundColor: "#008000", color: "#fff", title: "Scheme", content: <SchemeModalContent isUkrainian={isUkrainian} /> },
+      smalltalk: { backgroundColor: "#2980B9", color: "#fff", title: "Smalltalk", content: <SmalltalkModalContent isUkrainian={isUkrainian} /> },
+      prolog: { backgroundColor: "#E0E0E0", color: "#000", title: "Prolog", content: <PrologModalContent isUkrainian={isUkrainian} /> },
+      racket: { backgroundColor: "#1E90FF", color: "#000", title: "Racket", content: <RacketModalContent isUkrainian={isUkrainian} /> },
     };
   
     return languages[languageLower] || {};
