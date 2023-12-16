@@ -23,7 +23,7 @@
     border: 5px solid transparent; 
     background-clip: padding-box; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    font-family: 'Roboto', sans-serif;
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 .language-modal-content-container {
@@ -31,13 +31,14 @@
     flex-direction: column;
     align-items: center;
     text-align: center; 
-    font-weight: 600; 
+    font-weight: 600;
 }
 
 #modalTitle {
     margin-bottom: 10px;
     font-size: 2.5em;
-    font-weight: 900; 
+    font-weight: 700;
+    font-family: 'Russo One', sans-serif;
 }
 
 .modal-button-go-out {

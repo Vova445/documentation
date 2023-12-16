@@ -72,14 +72,16 @@ export const App = () => {
 
   useEffect(() => {
     const handleBodyOverflow = () => {
-      document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
+      document.body.style.overflow = (isModalOpen || selectedLanguage) ? 'hidden' : 'auto';
     };
+  
     handleBodyOverflow();
-
+  
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, selectedLanguage]);
+  
 
 
   const openModal = (title, description, link, resourceClass) => {

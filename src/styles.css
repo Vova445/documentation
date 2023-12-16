@@ -1048,7 +1048,7 @@ header {
     color: white;
 }
 
-.language-text[data-language="APL"] {
+.language-text[data-language="Scratch"] {
     background-color: #5A8DFF;
     color: white;
 }
@@ -1194,7 +1194,7 @@ header {
   background-color: #00CC00;
 }
 
-.language-text[data-language="APL"]:hover {
+.language-text[data-language="Scratch"]:hover {
   background-color: #7FB3FF;
 }
 

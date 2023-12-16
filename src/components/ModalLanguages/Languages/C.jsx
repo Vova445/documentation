@@ -33,8 +33,8 @@ const CModalContent = ({ isUkrainian }) => {
         <strong>Де вчити мову C:</strong>
       </p>
       <ul>
-        <li><strong>Офіційна документація на сайті ANSI C:</strong> <a href="https://www.iso.org/standard/74528.html" target="_blank" rel="noopener noreferrer" style={{ color: 'purple', backgroundColor:'white' }}>ANSI C Standard</a></li>
-        <li><strong>Курси на платформі Udacity:</strong> <a href="https://www.udacity.com/course/c-for-programmers--ud283" target="_blank" rel="noopener noreferrer" style={{ color: 'purple', backgroundColor:'white' }}>C++ Nanodegree Program</a></li>
+        <li><strong>Офіційна документація від GNU :</strong> <a href="https://www.gnu.org/software/gnu-c-manual/" target="_blank" rel="noopener noreferrer" style={{ color: 'purple', backgroundColor:'white' }}>GNU</a></li>
+        <li><strong>Codecademy: Learn C:</strong> <a href="https://www.codecademy.com/learn/paths/c" target="_blank" rel="noopener noreferrer" style={{ color: 'purple', backgroundColor:'white' }}>codecademy</a></li>
       </ul>
     </>
   ) : (
@@ -69,8 +69,8 @@ const CModalContent = ({ isUkrainian }) => {
         <strong>Where to Learn C:</strong>
       </p>
       <ul>
-        <li><strong>Official ANSI C Documentation:</strong> <a href="https://www.iso.org/standard/74528.html" target="_blank" rel="noopener noreferrer" style={{ color: 'purple' }}>ANSI C Standard</a></li>
-        <li><strong>Udacity Courses:</strong> <a href="https://www.udacity.com/course/c-for-programmers--ud283" target="_blank" rel="noopener noreferrer" style={{ color: 'purple' }}>C++ Nanodegree Program</a></li>
+        <li><strong>Official documentation GNU:</strong> <a href="https://www.gnu.org/software/gnu-c-manual/" target="_blank" rel="noopener noreferrer" style={{ color: 'purple', backgroundColor:'white'}}>GNU</a></li>
+        <li><strong>Codecademy: Learn C:</strong> <a href="https://www.codecademy.com/learn/paths/c" target="_blank" rel="noopener noreferrer" style={{ color: 'purple', backgroundColor:'white'}}>codecademy</a></li>
       </ul>
     </>
   );

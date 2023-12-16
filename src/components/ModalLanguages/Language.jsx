@@ -63,6 +63,23 @@ import LispModalContent from "./Languages/Lisp";
 import PascalModalContent from "./Languages/Pascal";
 import ForthModalContent from "./Languages/Forth";
 import RexxModalContent from "./Languages/Rexx";
+import IdlModalContent from "./Languages/Idl";
+import PostScriptModalContent from "./Languages/PostScript";
+import EiffelModalContent from "./Languages/Eiffel";
+import Modula2ModalContent from "./Languages/Modula2";
+import PLIModalContent from "./Languages/PLI";
+import COOLModalContent from "./Languages/Cool";
+import MUMPSModalContent from "./Languages/MUMPS";
+import LogoModalContent from "./Languages/Logo";
+import ScratchModalContent from "./Languages/Scratch";
+import SASModalContent from "./Languages/SAS";
+import FoxProModalContent from "./Languages/FoxPro";
+import LabVIEWModalContent from "./Languages/LabVIEW";
+import FantomModalContent from "./Languages/Fantom";
+import LadderLogicModalContent from "./Languages/LadderLogic";
+import RedModalContent from "./Languages/Red";
+import FortranIIModalContent from "./Languages/FortranII";
+
 
 const LanguageModal = ({ language, closeModal, isUkrainian }) => {
   const handleGoOut = () => {
@@ -138,6 +155,22 @@ const LanguageModal = ({ language, closeModal, isUkrainian }) => {
       pascal: { backgroundColor: "#f5f5f5", color: "#000", title: "Pascal", content: <PascalModalContent isUkrainian={isUkrainian} /> },
       forth: { backgroundColor: "#5E7F5E", color: "#fff", title: "Forth", content: <ForthModalContent isUkrainian={isUkrainian} /> },
       rexx: { backgroundColor: "#FFD700", color: "#333", title: "Rexx", content: <RexxModalContent isUkrainian={isUkrainian} /> },
+      idl: { backgroundColor: "#e34c26", color: "#fff", title: "IDL", content: <IdlModalContent isUkrainian={isUkrainian} /> },
+      postscript: { backgroundColor: "#4d4d4d", color: "#fff", title: "PostScript", content: <PostScriptModalContent isUkrainian={isUkrainian} /> },
+      eiffel: { backgroundColor: "#1e4d2b", color: "#fff", title: "Eiffel", content: <EiffelModalContent isUkrainian={isUkrainian} /> },
+      "modula-2": { backgroundColor: "#4e79a7", color: "#fff", title: "Modula-2", content: <Modula2ModalContent isUkrainian={isUkrainian} /> },
+      "pl/i": { backgroundColor: "#9966cc", color: "#333", title: "PL/I", content: <PLIModalContent isUkrainian={isUkrainian} /> },
+      cool: { backgroundColor: "#00cc99", color: "#333", title: "COOL", content: <COOLModalContent isUkrainian={isUkrainian} /> },
+      mumps: { backgroundColor: "#ffcc00", color: "#333", title: "MUMPS", content: <MUMPSModalContent isUkrainian={isUkrainian} /> },
+      logo: { backgroundColor: "#ffcc00", color: "#333", title: "Logo", content: <LogoModalContent isUkrainian={isUkrainian} /> },
+      scratch: { backgroundColor: "#FFD100", color: "#333", title: "Scratch", content: <ScratchModalContent isUkrainian={isUkrainian} /> },
+      sas: { backgroundColor: "#336699", color: "#fff", title: "SAS", content: <SASModalContent isUkrainian={isUkrainian} /> },
+      foxpro: { backgroundColor: "#FF6600", color: "#333", title: "FoxPro", content: <FoxProModalContent isUkrainian={isUkrainian} /> },
+      labview: { backgroundColor: "#FFE100", color: "#333", title: "LabVIEW", content: <LabVIEWModalContent isUkrainian={isUkrainian} /> },
+      fantom: { backgroundColor: "#1F3B5E", color: "#fff", title: "Fantom", content: <FantomModalContent isUkrainian={isUkrainian} /> },
+      'ladder logic': { backgroundColor: "#8FB1CC", color: "#333", title: "Ladder Logic", content: <LadderLogicModalContent isUkrainian={isUkrainian} /> },
+      red: { backgroundColor: "#FF4500", color: "#333", title: "Red", content: <RedModalContent isUkrainian={isUkrainian} /> },
+      'fortran ii': { backgroundColor: "#4d41b1", color: "#fff", title: "FORTRAN II", content: <FortranIIModalContent isUkrainian={isUkrainian} /> },
     };
   
     return languages[languageLower] || {};
