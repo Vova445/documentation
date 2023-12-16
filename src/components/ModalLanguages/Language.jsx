@@ -56,6 +56,13 @@ import VerilogModalContent from "./Languages/Verilog";
 import BasicModalContent from "./Languages/Basic";
 import ABAPModalContent from "./Languages/ABAP";
 import OpenCLModalContent from "./Languages/OpenCL";
+import HCLModalContent from "./Languages/HCL";
+import ApexModalContent from "./Languages/Apex";
+import BatchModalContent from "./Languages/Batch";
+import LispModalContent from "./Languages/Lisp";
+import PascalModalContent from "./Languages/Pascal";
+import ForthModalContent from "./Languages/Forth";
+import RexxModalContent from "./Languages/Rexx";
 
 const LanguageModal = ({ language, closeModal, isUkrainian }) => {
   const handleGoOut = () => {
@@ -124,6 +131,13 @@ const LanguageModal = ({ language, closeModal, isUkrainian }) => {
       basic: { backgroundColor: "#8B4513", color: "#fff", title: "Basic", content: <BasicModalContent isUkrainian={isUkrainian} /> },
       abap: { backgroundColor: "#990000", color: "#fff", title: "ABAP", content: <ABAPModalContent isUkrainian={isUkrainian} /> },
       opencl: { backgroundColor: "#006400", color: "#fff", title: "OpenCL", content: <OpenCLModalContent isUkrainian={isUkrainian} /> },
+      hcl: { backgroundColor: "#ffccff", color: "#333", title: "HCL", content: <HCLModalContent isUkrainian={isUkrainian} /> },
+      apex: { backgroundColor: "#00A1E0", color: "#333", title: "Apex", content: <ApexModalContent isUkrainian={isUkrainian} /> },
+      batch: { backgroundColor: "#F4D03F", color: "#333", title: "Batch", content: <BatchModalContent isUkrainian={isUkrainian} /> },
+      lisp: { backgroundColor: "#2e294e", color: "#fff", title: "Lisp", content: <LispModalContent isUkrainian={isUkrainian} /> },
+      pascal: { backgroundColor: "#f5f5f5", color: "#000", title: "Pascal", content: <PascalModalContent isUkrainian={isUkrainian} /> },
+      forth: { backgroundColor: "#5E7F5E", color: "#fff", title: "Forth", content: <ForthModalContent isUkrainian={isUkrainian} /> },
+      rexx: { backgroundColor: "#FFD700", color: "#333", title: "Rexx", content: <RexxModalContent isUkrainian={isUkrainian} /> },
     };
   
     return languages[languageLower] || {};

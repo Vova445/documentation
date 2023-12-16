@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import languagesData from "./languages.json";
 import Switch from "react-switch";
 import ScrollSlider from './components/Slider/Slider';
@@ -64,16 +64,32 @@ export const App = () => {
   const [modalContent, setModalContent] = useState({ title: '', description: '', link: '', resourceClass: '' });
   const [isUkrainian, setIsUkrainian] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const itemsPerPage = 14;
   const [currentPage, setCurrentPage] = useState(1);
 
+
+  useEffect(() => {
+    const handleBodyOverflow = () => {
+      document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
+    };
+    handleBodyOverflow();
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isModalOpen]);
+
+
   const openModal = (title, description, link, resourceClass) => {
     setModalContent({ title, description, link, resourceClass });
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setModalContent({ title: '', description: '', link: '', resourceClass: '' });
+    setIsModalOpen(false);
   };
 
   const handleLanguageClick = (languageId) => {
