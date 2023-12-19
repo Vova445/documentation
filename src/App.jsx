@@ -67,9 +67,12 @@ export const App = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const itemsPerPage = 14;
+  const itemsPerPage = window.innerWidth < 520 ? 4 : window.innerWidth < 768 ? 8 : 14;
   const [currentLanguagePage, setCurrentLanguagePage] = useState(1);
   const [currentFrameworkPage, setCurrentFrameworkPage] = useState(1);
+
+
+  
 
 
   useEffect(() => {

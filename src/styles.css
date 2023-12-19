@@ -78,8 +78,85 @@ header {
     padding: 0 50px;
 }
 
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .nav-list a {
+    margin: 10px 0;
+  }
+  
+  .nav-img-language {
+    max-width: 40px;
+    padding: 8px;
+  }
+  
+  .nav-page {
+    padding: 0 20px;
+  }
+  .main-title {
+    margin-top: 100px;
+}
+  
+}
+
+@media (max-width: 520px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .nav-list a {
+    margin: 10px 0;
+  }
+  
+  .nav-img-language {
+    max-width: 30px;
+    padding: 6px;
+  }
+  
+  .nav-page {
+    padding: 0 10px;
+  }
+  
+  .main-title {
+    margin-top: 80px;
+    font-size: 28px;
+  }
+}
+
+
+@media (min-width: 520px) and (max-width: 768px) {
+  .programming-languages-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .language-text {
+    font-size: 16px;
+  }
+  
+  .pagination-controls button {
+    font-size: 16px;
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 520px){
+  .pagination-controls{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+  }
+}
+
 .container {
-    width: 1158px;
+    max-width: 1158px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
@@ -200,7 +277,45 @@ header {
 }
 
 
-
+@media (max-width: 520px) {
+  .container {
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+  
+  .resource-list a {
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  .section-two h2 {
+    font-size: 24px;
+  }
+  
+  .modal-content {
+    padding: 10px;
+    font-size: 24px;
+  }
+  
+  .close {
+    margin-right: 20px;
+    margin-top: 10px;
+  }
+  
+  .close-modal {
+    font-size: 24px;
+  }
+  
+  .modal-button-details {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .main-title {
+    margin-top: 130px;
+    font-size: 28px;
+  }
+}
 
 /* Codewars Modal */
 .codewars-modal {
