@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import languagesData from "./languages.json";
+import frameworksData from "./frameworks.json"
 import Switch from "react-switch";
 import ScrollSlider from './components/Slider/Slider';
 import Modal from './components/Modal/Modal';
@@ -67,7 +68,8 @@ export const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const itemsPerPage = 14;
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentLanguagePage, setCurrentLanguagePage] = useState(1);
+  const [currentFrameworkPage, setCurrentFrameworkPage] = useState(1);
 
 
   useEffect(() => {
@@ -104,18 +106,21 @@ export const App = () => {
   };
 
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
+  const handleLanguagePageChange = (page) => {
+    setCurrentLanguagePage(page);
+  };
+
+  const handleFrameworkPageChange = (page) => {
+    setCurrentFrameworkPage(page);
   };
 
 
 
   const renderLanguages = () => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
+    const startIndex = (currentLanguagePage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const displayedLanguages = languagesData.slice(startIndex, endIndex);
-
-
+  
     return displayedLanguages.map((language) => (
       <div
         key={language.id}
@@ -127,6 +132,25 @@ export const App = () => {
       </div>
     ));
   };
+
+
+
+  const renderFrameworks = () => {
+    const startIndex = (currentFrameworkPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const displayedFrameworks = frameworksData.slice(startIndex, endIndex);
+  
+    return displayedFrameworks.map((framework) => (
+      <div
+        key={framework.id}
+        data-framework={framework.name}
+        className={`framework-text ${framework.name.toLowerCase()}-framework`}
+      >
+        {framework.name}
+      </div>
+    ));
+  };
+  
 
   return (
     <>
@@ -188,22 +212,104 @@ export const App = () => {
             </ul>
           </section>
 
-          <section id="programming-languages" className="section-three">
-        <h2 className="section-title">{isUkrainian ? 'Мови програмування' : 'Programming Languages'}</h2>
-        <div className="programming-languages-container">
-          {renderLanguages()}
-        </div>
-        <div className="pagination-controls">
-          {Array.from({ length: Math.ceil(languagesData.length / itemsPerPage) }, (_, index) => index + 1).map((page) => (
-            <button key={page} onClick={() => handlePageChange(page)} className={currentPage === page ? 'active' : ''}>
-              {page}
-            </button>
-          ))}
-        </div>
-      </section>
+          <hr id="programming-languages"/>
 
+          <div className="additional-content">
+            <p>
+              {isUkrainian
+                ? 'Мова програмування - це формальний спосіб вираження вимог для комп\'ютера. Це набір інструкцій, які визначають, як виконувати певні завдання. Ось деякі ключові аспекти мов програмування:'
+                : 'A programming language is a formal way of expressing instructions to a computer. It is a set of instructions that define how to perform certain tasks. Here are some key aspects of programming languages:'}
+            </p>
+            <ul>
+              <li>
+                {isUkrainian
+                  ? 'Синтаксис: Спосіб написання коду, визначає його структуру та правила форматування.'
+                  : 'Syntax: The way code is written, defining its structure and formatting rules.'}
+              </li>
+              <li>
+                {isUkrainian
+                  ? 'Типи даних: Категорії для зберігання та обробки інформації, такі як числа, рядки, булеві значення тощо.'
+                  : 'Data Types: Categories for storing and processing information, such as numbers, strings, boolean values, etc.'}
+              </li>
+              <li>
+                {isUkrainian
+                  ? 'Змінні: Іменовані контейнери для зберігання значень, які можуть змінюватися під час виконання програми.'
+                  : 'Variables: Named containers for storing values that can change during program execution.'}
+              </li>
+              <li>
+                {isUkrainian
+                  ? 'Умовні конструкції: Інструкції, які дозволяють виконувати різні дії в залежності від умов.'
+                  : 'Conditional Statements: Instructions that allow performing different actions based on conditions.'}
+              </li>
+              <li>
+                {isUkrainian
+                  ? 'Цикли: Конструкції, які дозволяють повторювати виконання певного блоку коду доки або поки виконується певна умова.'
+                  : 'Loops: Constructs that allow repeating the execution of a specific code block while or until a certain condition is met.'}
+              </li>
+              <li>
+                {isUkrainian
+                  ? 'Функції: Блоки коду, які можна викликати для виконання певних завдань. Вони сприяють уникатові та організації коду.'
+                  : 'Functions: Code blocks that can be called to perform specific tasks. They contribute to code modularity and organization.'}
+              </li>
+            </ul>
+            <p>
+              {isUkrainian
+                ? 'Існує багато мов програмування, кожна з яких призначена для вирішення конкретних завдань та має свої переваги та обмеження.'
+                : 'There are many programming languages, each designed to solve specific tasks and having its own advantages and limitations.'}
+            </p>
+          </div>
+          <section className="section-three">
+            <h2 className="section-title">{isUkrainian ? 'Мови програмування' : 'Programming Languages'}</h2>
+            <div className="programming-languages-container">
+              {renderLanguages()}
+            </div>
+            <div className="pagination-controls">
+              {Array.from({ length: Math.ceil(languagesData.length / itemsPerPage) }, (_, index) => index + 1).map((page) => (
+                <button key={page} onClick={() => handleLanguagePageChange(page)} className={currentLanguagePage === page ? 'active' : ''}>
+                  {page}
+                </button>
+              ))}
+            </div>
+          </section>
+          <hr />
+          <div className="additional-content">
+          <p>
+        {isUkrainian
+          ? 'Фреймворк у розумінні програмування - це платформа або структура, яка надає загальний фундамент для розробки програмного забезпечення. Він містить багато готових компонентів, бібліотек та інструментів, які допомагають розробникам створювати програми або веб-додатки. Головною метою фреймворку є спростити розробку шляхом надання загальних правил та структур для вирішення типових задач.'
+          : 'A framework in programming is a platform or structure that provides a general foundation for developing software. It contains many ready-made components, libraries, and tools that help developers create programs or web applications. The main purpose of a framework is to simplify development by providing common rules and structures to address typical tasks.'}
+          </p>
 
-      
+          <p>Основні характеристики фреймворків включають в себе:</p>
+
+          <ul>
+            <li>Взаємодія компонентів: Фреймворк надає структуру для взаємодії компонентів, що спрощує розробку та управління великими кодовими базами.</li>
+            <li>Шаблони проектування: Визначені шаблони проектування та структури коду сприяють створенню ефективних та організованих додатків.</li>
+            <li>Бібліотеки та інструменти: Фреймворк постачається з попередньо вбудованими бібліотеками та інструментами, що допомагають вирішувати типові завдання без необхідності відтворення коду.</li>
+            <li>Стандартизація: Фреймворк встановлює стандарти та правила для розробки, що полегшує командну роботу та обмін між розробниками.</li>
+            <li>Спрощений цикл розробки: Фреймворк надає засоби для автоматизації тестування, відладки та інших етапів циклу розробки.</li>
+            <li>Підтримка розширення: Деякі фреймворки дозволяють вам легко розширювати їхні можливості шляхом додавання власних модулів чи розширень.</li>
+          </ul>
+
+          <p>
+            {isUkrainian
+              ? 'Загалом, фреймворки допомагають розробникам зосередитися на бізнес-логіці додатку, а не на вирішенні загальних завдань, які вже розв\'язані в рамках фреймворку.'
+              : 'In general, frameworks help developers focus on the business logic of the application rather than solving common tasks that are already addressed within the framework.'}
+          </p>
+        </div>
+
+          <section id="frameworks" className="section-four">
+            <h2 className="section-title">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</h2>
+            <div className="programming-frameworks-container">
+              {renderFrameworks()}
+            </div>
+            <div className="pagination-controls">
+              {Array.from({ length: Math.ceil(frameworksData.length / itemsPerPage) }, (_, index) => index + 1).map((page) => (
+                <button key={page} onClick={() => handleFrameworkPageChange(page)} className={currentFrameworkPage === page ? 'active' : ''}>
+                  {page}
+                </button>
+              ))}
+            </div>
+          </section>
         </div>
 
         {modalContent.title && (

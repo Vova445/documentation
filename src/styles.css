@@ -488,6 +488,15 @@ header {
     flex-wrap: wrap;
     gap: 20px;
   }
+
+
+  .programming-frameworks-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
   
   .language-text {
     width: 100px;
@@ -508,13 +517,53 @@ header {
 
   .section-three {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
+    background-color: #cfe3fc8a;
+    padding: 30px;
+  }
+
+
+  .section-four {
+    text-align: center;
+    margin-top: 50px;
     background-color: #cfe3fc8a;
     padding: 30px;
   }
   
 
+
+  .additional-content {
+    margin-top: 150px;
+    text-align: center;
+    padding: 30px;
+    background-color: #f8f8f859;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    font-size: 18px;
+  }
+
+  .additional-content ul{
+    list-style-type: none;
+    margin-bottom: 40px;
+  }
   
+  .additional-content:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -20px; 
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: #f8f8f859 transparent transparent;
+  }
+  
+hr {
+  margin-top: 100px; 
+  opacity: 0.7;
+}
   
   .language-text[data-language="HTML"] {
     background-color: #E44D26;
