@@ -321,7 +321,7 @@ export const App = () => {
   <p>
     {isUkrainian
       ? 'Загалом, фреймворки допомагають розробникам зосередитися на бізнес-логіці додатку, а не на вирішенні загальних завдань, які вже розв\'язані в рамках фреймворку.'
-      : 'In general, frameworks help developers focus on the business logic of the application rather than solving common tasks that are already addressed within the framework.'}
+      : 'In general, frameworks help developers focus on the business logic of the application rather than solving common tasks that are already addressed within the framework. '}
   </p>
 </div>
 
