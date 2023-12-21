@@ -92,7 +92,7 @@ export const App = () => {
 
   useEffect(() => {
     const handleBodyOverflow = () => {
-      document.body.style.overflow = (isModalOpen || selectedLanguage) ? 'hidden' : 'auto';
+      document.body.style.overflow = (isModalOpen || selectedLanguage || isMenuOpen) ? 'hidden' : 'auto';
     };
   
     handleBodyOverflow();
@@ -100,7 +100,7 @@ export const App = () => {
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isModalOpen, selectedLanguage]);
+  }, [isModalOpen, selectedLanguage, isMenuOpen]);
   
 
   useEffect(() => {
