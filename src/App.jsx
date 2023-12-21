@@ -221,8 +221,7 @@ export const App = () => {
                 <li onClick={closeMenu}><a href="#programming-languages">{isUkrainian ? 'Виберіть свою мову програмування' : 'Choose your programming language'}</a></li>
                 <li onClick={closeMenu}><a href="#frameworks">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</a></li>
                 <li onClick={closeMenu}><a href="#other-resources">{isUkrainian ? 'Кілька інших ресурсів' : 'Other resources'}</a></li>
-                <li onClick={closeMenu}><a href="#other-resources">{isUkrainian ? 'Кілька інших ресурсів' : 'Other resources'}</a></li>
-                <li>
+                <li style={{marginBottom: '20px'}}> 
                 <Switch
                   onChange={toggleLanguage}
                   checked={isUkrainian}
@@ -234,6 +233,7 @@ export const App = () => {
                   height={24}
                   width={48}
                   className="react-switch"
+                  
                 />
                 {isUkrainian ? <span style={{ marginLeft: '12px' }}>Укр</span> : <span style={{ marginLeft: '12px' }}>Eng</span>}
               </li>
