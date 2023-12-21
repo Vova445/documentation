@@ -5,6 +5,7 @@ import Switch from "react-switch";
 import ScrollSlider from './components/Slider/Slider';
 import Modal from './components/Modal/Modal';
 import LanguageModal from './components/ModalLanguages/Language';
+import {ReactComponent as MenuIcon} from './burger-menu-svgrepo-com.svg'
 
 
 
@@ -67,12 +68,21 @@ export const App = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const itemsPerPage = window.innerWidth < 520 ? 4 : window.innerWidth < 768 ? 8 : 14;
+  const itemsPerPage = 14;
   const [currentLanguagePage, setCurrentLanguagePage] = useState(1);
   const [currentFrameworkPage, setCurrentFrameworkPage] = useState(1);
 
 
-  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setIsMenuOpen((prev) => !prev);
+
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
 
   useEffect(() => {
@@ -159,7 +169,10 @@ export const App = () => {
     <>
       <header>
         <nav className="nav-page">
-          <ul className="nav-list">
+          <button className="nav-menu-button" onClick={handleMenuClick}>
+            <MenuIcon className="nav-menu-icon" width={30} height={30} />
+          </button>
+          <ul className={`nav-list ${isMenuOpen ? 'nav-list-open' : ''}`}>
             <li><a href="#home">{isUkrainian ? 'Головна' : 'Home'}</a></li>
             <li><a href="#programming-languages">{isUkrainian ? 'Виберіть свою мову програмування' : 'Choose your programming language'}</a></li>
             <li><a href="#frameworks">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</a></li>
@@ -180,8 +193,19 @@ export const App = () => {
               {isUkrainian ? <span style={{ marginLeft: '12px' }}>Укр</span> : <span style={{ marginLeft: '12px' }}>Eng</span>}
             </li>
           </ul>
+          {isMenuOpen && (
+            <div className="modal">
+              <ul className="modal-list">
+                <li onClick={closeMenu}><a href="#home">{isUkrainian ? 'Головна' : 'Home'}</a></li>
+                <li onClick={closeMenu}><a href="#programming-languages">{isUkrainian ? 'Виберіть свою мову програмування' : 'Choose your programming language'}</a></li>
+                <li onClick={closeMenu}><a href="#frameworks">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</a></li>
+                <li onClick={closeMenu}><a href="#other-resources">{isUkrainian ? 'Кілька інших ресурсів' : 'Other resources'}</a></li>
+              </ul>
+            </div>
+          )}
         </nav>
       </header>
+
 
       <main id="home">
         <div className="container">
