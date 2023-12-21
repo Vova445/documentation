@@ -5,8 +5,9 @@ import Switch from "react-switch";
 import ScrollSlider from './components/Slider/Slider';
 import Modal from './components/Modal/Modal';
 import LanguageModal from './components/ModalLanguages/Language';
-import {ReactComponent as MenuIcon} from './burger-menu-svgrepo-com.svg'
+import {ReactComponent as MenuIcon} from './burger-menu-svgrepo-com.svg';
 
+import LoaderSVG from './loading-svgrepo-com.svg';
 
 
 export const App = () => {
@@ -74,7 +75,11 @@ export const App = () => {
 
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
+
+
+  
   const handleMenuClick = () => {
     setIsMenuOpen((prev) => !prev);
 
@@ -98,6 +103,22 @@ export const App = () => {
   }, [isModalOpen, selectedLanguage]);
   
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loader-container">
+      <img className="loader" src={LoaderSVG} alt="Loader" />
+    </div>
+
+    );
+  }
 
   const openModal = (title, description, link, resourceClass) => {
     setModalContent({ title, description, link, resourceClass });
@@ -200,6 +221,22 @@ export const App = () => {
                 <li onClick={closeMenu}><a href="#programming-languages">{isUkrainian ? 'Виберіть свою мову програмування' : 'Choose your programming language'}</a></li>
                 <li onClick={closeMenu}><a href="#frameworks">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</a></li>
                 <li onClick={closeMenu}><a href="#other-resources">{isUkrainian ? 'Кілька інших ресурсів' : 'Other resources'}</a></li>
+                <li onClick={closeMenu}><a href="#other-resources">{isUkrainian ? 'Кілька інших ресурсів' : 'Other resources'}</a></li>
+                <li>
+                <Switch
+                  onChange={toggleLanguage}
+                  checked={isUkrainian}
+                  onColor="#86d3ff"
+                  onHandleColor="#2693e6"
+                  handleDiameter={24}
+                  uncheckedIcon={false}
+                  checkedIcon={false}
+                  height={24}
+                  width={48}
+                  className="react-switch"
+                />
+                {isUkrainian ? <span style={{ marginLeft: '12px' }}>Укр</span> : <span style={{ marginLeft: '12px' }}>Eng</span>}
+              </li>
               </ul>
             </div>
           )}

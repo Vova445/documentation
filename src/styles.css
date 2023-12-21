@@ -196,6 +196,9 @@ header {
   overflow: hidden;
   width: 300px;
   font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modal-list a {
@@ -1529,3 +1532,37 @@ hr {
     width: 100%;
   }
 }
+
+
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  animation: rotate 1.5s linear infinite, colorChange 3s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes colorChange {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
