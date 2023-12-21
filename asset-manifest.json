@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/documentation/static/css/main.2a227556.css",
-    "main.js": "/documentation/static/js/main.09810f2c.js",
+    "main.css": "/documentation/static/css/main.99b4e39c.css",
+    "main.js": "/documentation/static/js/main.c181a60a.js",
     "index.html": "/documentation/index.html",
-    "main.2a227556.css.map": "/documentation/static/css/main.2a227556.css.map",
-    "main.09810f2c.js.map": "/documentation/static/js/main.09810f2c.js.map"
+    "static/media/burger-menu-svgrepo-com.svg": "/documentation/static/media/burger-menu-svgrepo-com.be515b3ad8f771d85cf3a856a0779c10.svg",
+    "main.99b4e39c.css.map": "/documentation/static/css/main.99b4e39c.css.map",
+    "main.c181a60a.js.map": "/documentation/static/js/main.c181a60a.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a227556.css",
-    "static/js/main.09810f2c.js"
+    "static/css/main.99b4e39c.css",
+    "static/js/main.c181a60a.js"
   ]
 }
