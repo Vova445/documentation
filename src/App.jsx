@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import languagesData from "./languages.json";
 import frameworksData from "./frameworks.json"
-import Switch from "react-switch";
 import ScrollSlider from './components/Slider/Slider';
 import Modal from './components/Modal/Modal';
 import LanguageModal from './components/ModalLanguages/Language';
@@ -106,7 +105,7 @@ export const App = () => {
 
   useEffect(() => {
     const handleBodyOverflow = () => {
-      document.body.style.overflow = (isModalOpen || selectedLanguage || isMenuOpen) ? 'hidden' : 'auto';
+      document.body.style.overflow = (isModalOpen || selectedLanguage || isMenuOpen, selectedFramework) ? 'hidden' : 'auto';
     };
   
     handleBodyOverflow();
@@ -114,7 +113,7 @@ export const App = () => {
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isModalOpen, selectedLanguage, isMenuOpen]);
+  }, [isModalOpen, selectedLanguage, isMenuOpen, selectedFramework]);
   
 
   useEffect(() => {
@@ -218,21 +217,14 @@ export const App = () => {
             <li><a href="#programming-languages">{isUkrainian ? <> <LanguagesIcon /> Виберіть свою мову програмування </> : <> <LanguagesIcon /> Choose your programming language </>}</a></li>
             <li><a href="#frameworks">{isUkrainian ? <> <ReactIcon /> Фреймворки </> : <> <ReactIcon /> Frameworks </>}</a></li>
             <li><a href="#other-resources">{isUkrainian ? <> <ResourcesIcon /> Кілька інших ресурсів </> : <> <ResourcesIcon /> Other resources</>}</a></li>
-            <li>
-              <Switch
-                onChange={toggleLanguage}
-                checked={isUkrainian}
-                onColor="#86d3ff"
-                onHandleColor="#2693e6"
-                handleDiameter={24}
-                uncheckedIcon={false}
-                checkedIcon={false}
-                height={24}
-                width={48}
-                className="react-switch"
-              />
-              {isUkrainian ? <span style={{ marginLeft: '12px' }}><UkraineIcon /></span> : <span style={{ marginLeft: '12px' }}><UKIcon /></span>}
+            <li className="language-switch-item">
+              <label className="switch">
+                <input type="checkbox" onChange={toggleLanguage} checked={isUkrainian} />
+                <span className="slider"></span>
+              </label>
+              <span style={{ marginLeft: '12px', display: 'flex' }}>{isUkrainian ? <UkraineIcon /> : <UKIcon />}</span>
             </li>
+
           </ul>
           {isMenuOpen && (
             <div className="modal">
@@ -241,22 +233,13 @@ export const App = () => {
                 <li onClick={closeMenu}><a href="#programming-languages">{isUkrainian ? 'Виберіть свою мову програмування' : 'Choose your programming language'}</a></li>
                 <li onClick={closeMenu}><a href="#frameworks">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</a></li>
                 <li onClick={closeMenu}><a href="#other-resources">{isUkrainian ? 'Кілька інших ресурсів' : 'Other resources'}</a></li>
-                <li style={{marginBottom: '20px'}}> 
-                <Switch
-                  onChange={toggleLanguage}
-                  checked={isUkrainian}
-                  onColor="#86d3ff"
-                  onHandleColor="#2693e6"
-                  handleDiameter={24}
-                  uncheckedIcon={false}
-                  checkedIcon={false}
-                  height={24}
-                  width={48}
-                  className="react-switch"
-                  
-                />
-                {isUkrainian ? <span style={{ marginLeft: '12px' }}><UkraineIcon /></span> : <span style={{ marginLeft: '12px' }}><UKIcon /></span>}
-              </li>
+                <li style={{marginBottom: '20px'}} className="language-switch-item"> 
+                  <label className="switch">
+                    <input type="checkbox" onChange={toggleLanguage} checked={isUkrainian} />
+                    <span className="slider"></span>
+                  </label>
+                  <span style={{ marginLeft: '12px', display: 'flex' }}>{isUkrainian ? <UkraineIcon /> : <UKIcon />}</span>
+                </li>
               </ul>
             </div>
           )}

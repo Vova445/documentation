@@ -2,6 +2,7 @@ import React from "react";
 import './framework.css'
 
 import ReactModalContent from "./Frameworks/React";
+import AngularModalContent from "./Frameworks/Angular";
 
 const FrameworksModal = ({ framework, closeModal, isUkrainian }) => {
     const handleGoOut = () => {
@@ -14,8 +15,8 @@ const FrameworksModal = ({ framework, closeModal, isUkrainian }) => {
       
         const frameworks = {
           react: { backgroundColor: "#61dafb", color: "#000", title: "React", content: <ReactModalContent isUkrainian={isUkrainian} /> },
-          angular: { backgroundColor: "#dd0031", color: "#fff", title: "Angular" },
-          vue: { backgroundColor: "#42b883", color: "#fff", title: "Vue.js"},
+          angular: { backgroundColor: "#dd0031", color: "#fff", title: "Angular", content: <AngularModalContent isUkrainian={isUkrainian} /> },
+          'vue.js': { backgroundColor: "#42b883", color: "#fff", title: "Vue.js"},
         };
       
         return frameworks[frameworkLower] || {};

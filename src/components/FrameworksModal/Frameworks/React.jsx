@@ -1,11 +1,17 @@
 import React from 'react';
 
 const ReactModalContent = ({ isUkrainian }) => {
+  const linkStyles = {
+    backgroundColor: "#333",
+    color: "#fff",
+    borderRadius: "10px",
+    textDecoration: 'none',
+    padding: '3px'
+  };
   const content = isUkrainian ? (
     <>
-      <h2>Мова програмування React</h2>
       <p>
-        Мова програмування React - бібліотека JavaScript для створення користувацьких інтерфейсів, яка дозволяє розробникам будувати ефективні та масштабовані веб-додатки.
+         React - фреймворк JavaScript для створення користувацьких інтерфейсів, яка дозволяє розробникам будувати ефективні та масштабовані веб-додатки.
       </p>
       <p>
         <strong>Основні принципи React:</strong>
@@ -33,8 +39,9 @@ const ReactModalContent = ({ isUkrainian }) => {
         <strong>Де вчити React:</strong>
       </p>
       <ul>
-        <li><strong>Офіційна документація React:</strong> <a href="https://reactjs.org/docs/getting-started.html" target="_blank" rel="noopener noreferrer">React</a></li>
-        <li><strong>React Tutorial:</strong> <a href="https://react-tutorial.app/app.html" target="_blank" rel="noopener noreferrer">React Tutorial</a></li>
+        <li><strong>Офіційна документація React:</strong> <a href="https://reactjs.org/docs/getting-started.html" target="_blank" rel="noopener noreferrer" style={linkStyles}>React</a></li>
+        <br></br>
+        <li><strong>React Tutorial:</strong> <a href="https://react-tutorial.app/app.html" target="_blank" rel="noopener noreferrer" style={linkStyles}>React Tutorial</a></li>
       </ul>
     </>
   ) : (
@@ -69,8 +76,9 @@ const ReactModalContent = ({ isUkrainian }) => {
         <strong>Where to Learn React:</strong>
       </p>
       <ul>
-        <li><strong>Official React Documentation:</strong> <a href="https://reactjs.org/docs/getting-started.html" target="_blank" rel="noopener noreferrer">React</a></li>
-        <li><strong>React Tutorial:</strong> <a href="https://react-tutorial.app/app.html" target="_blank" rel="noopener noreferrer">React Tutorial</a></li>
+        <li><strong>Official React Documentation:</strong> <a href="https://reactjs.org/docs/getting-started.html" target="_blank" rel="noopener noreferrer" style={linkStyles}>React</a></li>
+        <br></br>
+        <li><strong>React Tutorial:</strong> <a href="https://react-tutorial.app/app.html" target="_blank" rel="noopener noreferrer" style={linkStyles}>React Tutorial</a></li>
       </ul>
     </>
   );
