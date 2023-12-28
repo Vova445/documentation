@@ -22,7 +22,7 @@
     { "id": 21, "name": "Hapi.js" },
     { "id": 22, "name": "Quasar" },
     { "id": 23, "name": "Sails.js" },
-    { "id": 24, "name": "Django REST framework" },
+    { "id": 24, "name": "Django REST" },
     { "id": 25, "name": "Flask-RESTful" },
     { "id": 26, "name": "Spring Boot" },
     { "id": 27, "name": "AdonisJS" },

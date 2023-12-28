@@ -5,9 +5,22 @@ import Switch from "react-switch";
 import ScrollSlider from './components/Slider/Slider';
 import Modal from './components/Modal/Modal';
 import LanguageModal from './components/ModalLanguages/Language';
-import {ReactComponent as MenuIcon} from './burger-menu-svgrepo-com.svg';
+import FrameworksModal from "./components/FrameworksModal/Frameworks";
+import LanguagesDescription from "./components/description/LanguagesDescription";
+import FrameworksDescription from "./components/description/FrameworksDescription";
+import {ReactComponent as MenuIcon} from './svg/burger-menu-svgrepo-com.svg';
+import LoaderSVG from './svg/loading-svgrepo-com.svg';
+import SectionOne from "components/Sections/SectionOne";
+import SectionTwo from "components/Sections/SectionTwo";
+import SectionThree from "components/Sections/SectionThree";
+import SectionFour from "components/Sections/SectionFour";
+import { ReactComponent as HomeIcon } from './svg/home-svgrepo-com.svg';
+import { ReactComponent as LanguagesIcon } from './svg/programming-code-svgrepo-com.svg';
+import { ReactComponent as ReactIcon } from './svg/react-svgrepo-com.svg';
+import { ReactComponent as ResourcesIcon } from './svg/education-book-learn-school-library-svgrepo-com.svg';
+import { ReactComponent as UkraineIcon } from './svg/flag-ua-svgrepo-com.svg';
+import { ReactComponent as UKIcon } from './svg/united-kingdom-uk-svgrepo-com.svg';
 
-import LoaderSVG from './loading-svgrepo-com.svg';
 
 
 export const App = () => {
@@ -67,6 +80,7 @@ export const App = () => {
   const [modalContent, setModalContent] = useState({ title: '', description: '', link: '', resourceClass: '' });
   const [isUkrainian, setIsUkrainian] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const [selectedFramework, setSelectedFramework] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const itemsPerPage = 14;
@@ -131,8 +145,13 @@ export const App = () => {
   };
 
   const handleLanguageClick = (languageId) => {
-    console.log(`Clicked on language with ID: ${languageId}`);
+    console.log(`Clicked on language: ${languageId}`);
     setSelectedLanguage(languageId);
+  };
+
+  const handleFrameworkClick = (framework) => {
+    console.log(`Clicked on framework: ${framework.name}`);
+    setSelectedFramework(framework.name);
   };
 
   const toggleLanguage = () => {
@@ -178,6 +197,7 @@ export const App = () => {
       <div
         key={framework.id}
         data-framework={framework.name}
+        onClick={() => handleFrameworkClick(framework)}
         className={`framework-text ${framework.name.toLowerCase()}-framework`}
       >
         {framework.name}
@@ -194,10 +214,10 @@ export const App = () => {
             <MenuIcon className="nav-menu-icon" width={30} height={30} />
           </button>
           <ul className={`nav-list ${isMenuOpen ? 'nav-list-open' : ''}`}>
-            <li><a href="#home">{isUkrainian ? 'Головна' : 'Home'}</a></li>
-            <li><a href="#programming-languages">{isUkrainian ? 'Виберіть свою мову програмування' : 'Choose your programming language'}</a></li>
-            <li><a href="#frameworks">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</a></li>
-            <li><a href="#other-resources">{isUkrainian ? 'Кілька інших ресурсів' : 'Other resources'}</a></li>
+          <li><a href="#home">{isUkrainian ? <><HomeIcon /> Головна</> : <><HomeIcon /> Home</>}</a></li>
+            <li><a href="#programming-languages">{isUkrainian ? <> <LanguagesIcon /> Виберіть свою мову програмування </> : <> <LanguagesIcon /> Choose your programming language </>}</a></li>
+            <li><a href="#frameworks">{isUkrainian ? <> <ReactIcon /> Фреймворки </> : <> <ReactIcon /> Frameworks </>}</a></li>
+            <li><a href="#other-resources">{isUkrainian ? <> <ResourcesIcon /> Кілька інших ресурсів </> : <> <ResourcesIcon /> Other resources</>}</a></li>
             <li>
               <Switch
                 onChange={toggleLanguage}
@@ -211,7 +231,7 @@ export const App = () => {
                 width={48}
                 className="react-switch"
               />
-              {isUkrainian ? <span style={{ marginLeft: '12px' }}>Укр</span> : <span style={{ marginLeft: '12px' }}>Eng</span>}
+              {isUkrainian ? <span style={{ marginLeft: '12px' }}><UkraineIcon /></span> : <span style={{ marginLeft: '12px' }}><UKIcon /></span>}
             </li>
           </ul>
           {isMenuOpen && (
@@ -246,162 +266,18 @@ export const App = () => {
 
       <main id="home">
         <div className="container">
-          <section className="section-one">
-            <h1 className="main-title">{isUkrainian ? 'Докладні описи мов програмування та фреймворків' : 'Detailed descriptions of programming languages and frameworks'}</h1>
-            <p>
-              {isUkrainian
-                ? 'Ласкаво просимо на мою сторінку, призначену для всіх, хто цікавиться програмуванням. Тут ви знайдете вичерпні та доступні описи різних мов програмування та фреймворків, які допоможуть вам глибше розібратися в їх функціональності та застосуванні. Вивчайте, експериментуйте та розширюйте свої знання!'
-                : 'Welcome to my page, designed for everyone interested in programming. Here you will find comprehensive and accessible descriptions of various programming languages and frameworks to help you better understand their functionality and application. Learn, experiment, and expand your knowledge!'}
-            </p>
-          </section>
+         <SectionOne isUkrainian={isUkrainian} />
+          
 
-          <section className="section-two">
-            <h2 className="section-title">{isUkrainian ? 'Корисні ресурси для програмістів' : 'Useful resources for programmers'}</h2>
-            <ul className="resource-list">
-              {resources.map(resource => (
-                <li key={resource.id}>
-                  <a
-                    href={resource.link}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      openModal(resource.name, resourceDescriptions[resource.name][isUkrainian ? 'uk' : 'en'], resource.link, resource.resourceClass);
-                    }}
-                  >
-                    {resource.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
+          <SectionTwo isUkrainian={isUkrainian} resources={resources} openModal={openModal} resourceDescriptions={resourceDescriptions} />
 
-          <hr id="programming-languages"/>
+          <LanguagesDescription isUkrainian={isUkrainian} />
+          
+          <SectionThree isUkrainian={isUkrainian} renderLanguages={renderLanguages} languagesData={languagesData} itemsPerPage={itemsPerPage} handleLanguagePageChange={handleLanguagePageChange} currentLanguagePage={currentLanguagePage} />
+         
+         <FrameworksDescription isUkrainian={isUkrainian} />
 
-          <div className="additional-content">
-            <p>
-              {isUkrainian
-                ? 'Мова програмування - це формальний спосіб вираження вимог для комп\'ютера. Це набір інструкцій, які визначають, як виконувати певні завдання. Ось деякі ключові аспекти мов програмування:'
-                : 'A programming language is a formal way of expressing instructions to a computer. It is a set of instructions that define how to perform certain tasks. Here are some key aspects of programming languages:'}
-            </p>
-            <ul>
-              <li>
-                {isUkrainian
-                  ? 'Синтаксис: Спосіб написання коду, визначає його структуру та правила форматування.'
-                  : 'Syntax: The way code is written, defining its structure and formatting rules.'}
-              </li>
-              <li>
-                {isUkrainian
-                  ? 'Типи даних: Категорії для зберігання та обробки інформації, такі як числа, рядки, булеві значення тощо.'
-                  : 'Data Types: Categories for storing and processing information, such as numbers, strings, boolean values, etc.'}
-              </li>
-              <li>
-                {isUkrainian
-                  ? 'Змінні: Іменовані контейнери для зберігання значень, які можуть змінюватися під час виконання програми.'
-                  : 'Variables: Named containers for storing values that can change during program execution.'}
-              </li>
-              <li>
-                {isUkrainian
-                  ? 'Умовні конструкції: Інструкції, які дозволяють виконувати різні дії в залежності від умов.'
-                  : 'Conditional Statements: Instructions that allow performing different actions based on conditions.'}
-              </li>
-              <li>
-                {isUkrainian
-                  ? 'Цикли: Конструкції, які дозволяють повторювати виконання певного блоку коду доки або поки виконується певна умова.'
-                  : 'Loops: Constructs that allow repeating the execution of a specific code block while or until a certain condition is met.'}
-              </li>
-              <li>
-                {isUkrainian
-                  ? 'Функції: Блоки коду, які можна викликати для виконання певних завдань. Вони сприяють уникатові та організації коду.'
-                  : 'Functions: Code blocks that can be called to perform specific tasks. They contribute to code modularity and organization.'}
-              </li>
-            </ul>
-            <p>
-              {isUkrainian
-                ? 'Існує багато мов програмування, кожна з яких призначена для вирішення конкретних завдань та має свої переваги та обмеження.'
-                : 'There are many programming languages, each designed to solve specific tasks and having its own advantages and limitations.'}
-            </p>
-          </div>
-          <section className="section-three">
-            <h2 className="section-title">{isUkrainian ? 'Мови програмування' : 'Programming Languages'}</h2>
-            <div className="programming-languages-container">
-              {renderLanguages()}
-            </div>
-            <div className="pagination-controls">
-              {Array.from({ length: Math.ceil(languagesData.length / itemsPerPage) }, (_, index) => index + 1).map((page) => (
-                <button key={page} onClick={() => handleLanguagePageChange(page)} className={currentLanguagePage === page ? 'active' : ''}>
-                  {page}
-                </button>
-              ))}
-            </div>
-          </section>
-          <hr />
-          <div className="additional-content">
-  <p>
-    {isUkrainian
-      ? 'Фреймворк у розумінні програмування - це платформа або структура, яка надає загальний фундамент для розробки програмного забезпечення. Він містить багато готових компонентів, бібліотек та інструментів, які допомагають розробникам створювати програми або веб-додатки. Головною метою фреймворку є спростити розробку шляхом надання загальних правил та структур для вирішення типових задач.'
-      : 'A framework in programming is a platform or structure that provides a general foundation for developing software. It contains many ready-made components, libraries, and tools that help developers create programs or web applications. The main purpose of a framework is to simplify development by providing common rules and structures to address typical tasks.'}
-  </p>
-
-  <p>
-    {isUkrainian
-      ? 'Основні характеристики фреймворків включають в себе:'
-      : 'Main features of frameworks include:'}
-  </p>
-
-  <ul>
-    <li>
-      {isUkrainian
-        ? 'Взаємодія компонентів: Фреймворк надає структуру для взаємодії компонентів, що спрощує розробку та управління великими кодовими базами.'
-        : 'Component Interaction: The framework provides a structure for components to interact, simplifying development and management of large code bases.'}
-    </li>
-    <li>
-      {isUkrainian
-        ? 'Шаблони проектування: Визначені шаблони проектування та структури коду сприяють створенню ефективних та організованих додатків.'
-        : 'Design Patterns: Defined design patterns and code structures aid in creating efficient and organized applications.'}
-    </li>
-    <li>
-      {isUkrainian
-        ? 'Бібліотеки та інструменти: Фреймворк постачається з попередньо вбудованими бібліотеками та інструментами, що допомагають вирішувати типові завдання без необхідності відтворення коду.'
-        : 'Libraries and Tools: The framework comes with built-in libraries and tools that help solve common tasks without the need to reinvent the code.'}
-    </li>
-    <li>
-      {isUkrainian
-        ? 'Стандартизація: Фреймворк встановлює стандарти та правила для розробки, що полегшує командну роботу та обмін між розробниками.'
-        : 'Standardization: The framework establishes standards and rules for development, facilitating teamwork and exchange among developers.'}
-    </li>
-    <li>
-      {isUkrainian
-        ? 'Спрощений цикл розробки: Фреймворк надає засоби для автоматизації тестування, відладки та інших етапів циклу розробки.'
-        : 'Simplified Development Cycle: The framework provides tools for automating testing, debugging, and other stages of the development cycle.'}
-    </li>
-    <li>
-      {isUkrainian
-        ? 'Підтримка розширення: Деякі фреймворки дозволяють вам легко розширювати їхні можливості шляхом додавання власних модулів чи розширень.'
-        : 'Extension Support: Some frameworks allow you to easily extend their capabilities by adding your own modules or extensions.'}
-    </li>
-  </ul>
-
-  <p>
-    {isUkrainian
-      ? 'Загалом, фреймворки допомагають розробникам зосередитися на бізнес-логіці додатку, а не на вирішенні загальних завдань, які вже розв\'язані в рамках фреймворку.'
-      : 'In general, frameworks help developers focus on the business logic of the application rather than solving common tasks that are already addressed within the framework. '}
-  </p>
-</div>
-
-          <section id="frameworks" className="section-four">
-            <h2 className="section-title">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</h2>
-            <div className="programming-frameworks-container">
-              {renderFrameworks()}
-            </div>
-            <div className="pagination-controls">
-              {Array.from({ length: Math.ceil(frameworksData.length / itemsPerPage) }, (_, index) => index + 1).map((page) => (
-                <button key={page} onClick={() => handleFrameworkPageChange(page)} className={currentFrameworkPage === page ? 'active' : ''}>
-                  {page}
-                </button>
-              ))}
-            </div>
-          </section>
+          <SectionFour isUkrainian={isUkrainian} renderFrameworks={renderFrameworks} frameworksData={frameworksData} itemsPerPage={itemsPerPage} handleFrameworkPageChange={handleFrameworkPageChange} currentFrameworkPage={currentFrameworkPage} />
         </div>
 
         {modalContent.title && (
@@ -422,6 +298,16 @@ export const App = () => {
             isUkrainian={isUkrainian}
           />
         )}
+
+
+        {selectedFramework && (
+        <FrameworksModal
+          framework={selectedFramework}
+          closeModal={() => setSelectedFramework(null)}
+          isUkrainian={isUkrainian}
+        />
+      )}
+
         <ScrollSlider />
       </main>
     </>

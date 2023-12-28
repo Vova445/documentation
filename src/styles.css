@@ -31,11 +31,23 @@ header {
     color: #333;
 }
 
+@media screen and (max-width: 520px) {
+  .section-one {
+    padding: 0;
+}
+}
+
 .nav-list {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
     padding: 0;
+    align-items: center;
+}
+
+.nav-list > li {
+  display: flex;
+  align-items: center;
 }
 
 .nav-list a {
@@ -83,7 +95,7 @@ header {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 930px) {
   .nav-list {
     flex-direction: column;
     align-items: center;
@@ -102,9 +114,6 @@ header {
   .nav-page {
     padding: 0 20px;
   }
-  .main-title {
-    margin-top: 100px;
-}
   
 }
 
@@ -152,13 +161,20 @@ header {
 }
 
 
-@media (min-width: 320px) and (max-width: 520px){
-  .pagination-controls{
-    display: flex;
-    flex-wrap: wrap;
-    gap:15px;
+
+
+@media (min-width: 320px) and (max-width: 520px) {
+  .pagination-controls {
+      flex-wrap: wrap;
+      gap: 15px;
+      max-width: 100%;
+      margin: 10px auto;
+  }
+  .pagination-controls > * {
+      flex-basis: calc(50% - 15px);
   }
 }
+
 
 
 @media only screen and (max-width: 520px) {
@@ -1470,6 +1486,460 @@ hr {
 }
 
 
+.framework-text {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .framework-text:hover {
+    transform: scale(1.1);
+  }
+  
+  .framework-text[data-framework="React"] {
+    background-color: #61dafb;
+    color: black;
+  }
+  
+  .framework-text[data-framework="React"]:hover {
+    background-color: #0547a0;
+  }
+  
+  .framework-text[data-framework="Angular"] {
+    background-color: #dd0031;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Angular"]:hover {
+    background-color: #9a001d;
+  }
+  
+  .framework-text[data-framework="Vue.js"] {
+    background-color: #42b883;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Vue.js"]:hover {
+    background-color: #2e7a5e;
+  }
+  
+  .framework-text[data-framework="Django"] {
+    background-color: #092e20;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Django"]:hover {
+    background-color: #031a12;
+  }
+  
+  .framework-text[data-framework="Flask"] {
+    background-color: #000000;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Flask"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="Spring"] {
+    background-color: #6db33f;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Spring"]:hover {
+    background-color: #4d8c2a;
+  }
+  
+  .framework-text[data-framework="Express.js"] {
+    background-color: #454545;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Express.js"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="Ruby on Rails"] {
+    background-color: #cc0000;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Ruby on Rails"]:hover {
+    background-color: #a70000;
+  }
+  
+  .framework-text[data-framework="Laravel"] {
+    background-color: #ff2d20;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Laravel"]:hover {
+    background-color: #cc2300;
+  }
+  
+  .framework-text[data-framework="ASP.NET"] {
+    background-color: #512bd4;
+    color: white;
+  }
+  
+  .framework-text[data-framework="ASP.NET"]:hover {
+    background-color: #361f74;
+  }
+  
+  .framework-text[data-framework="Symfony"] {
+    background-color: #212121;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Symfony"]:hover {
+    background-color: #000000;
+  }
+  
+  .framework-text[data-framework="Meteor"] {
+    background-color: #de4f4f;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Meteor"]:hover {
+    background-color: #a13a3a;
+  }
+  
+  .framework-text[data-framework="Play Framework"] {
+    background-color: #5f3196;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Play Framework"]:hover {
+    background-color: #3f256b;
+  }
+  
+  .framework-text[data-framework="ASP.NET Core"] {
+    background-color: #512bd4;
+    color: white;
+  }
+  
+  .framework-text[data-framework="ASP.NET Core"]:hover {
+    background-color: #361f74;
+  }
+  
+  .framework-text[data-framework="CakePHP"] {
+    background-color: #d33c45;
+    color: white;
+  }
+  
+  .framework-text[data-framework="CakePHP"]:hover {
+    background-color: #a71e29;
+  }
+  
+  .framework-text[data-framework="Phoenix"] {
+    background-color: #4e2758;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Phoenix"]:hover {
+    background-color: #361c3f;
+  }
+  
+  .framework-text[data-framework="Nest.js"] {
+    background-color: #e0234e;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Nest.js"]:hover {
+    background-color: #ae1b39;
+  }
+  
+  .framework-text[data-framework="FastAPI"] {
+    background-color: #009688;
+    color: white;
+  }
+  
+  .framework-text[data-framework="FastAPI"]:hover {
+    background-color: #00766c;
+  }
+  
+  .framework-text[data-framework="Gin"] {
+    background-color: #00acd7;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Gin"]:hover {
+    background-color: #007599;
+  }
+  
+  .framework-text[data-framework="Rails"] {
+    background-color: #cc0000;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Rails"]:hover {
+    background-color: #a70000;
+  }
+  
+  .framework-text[data-framework="Hapi.js"] {
+    background-color: #4f4f4f;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Hapi.js"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="Quasar"] {
+    background-color: #1976d2;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Quasar"]:hover {
+    background-color: #125493;
+  }
+  
+  .framework-text[data-framework="Sails.js"] {
+    background-color: #3997d8;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Sails.js"]:hover {
+    background-color: #2b77a3;
+  }
+  
+  .framework-text[data-framework="Django REST"] {
+    background-color: #092e20;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Django REST"]:hover {
+    background-color: #075019;
+  }
+  
+  .framework-text[data-framework="Flask-RESTful"] {
+    background-color: #454545;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Flask-RESTful"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="Spring Boot"] {
+    background-color: #6db33f;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Spring Boot"]:hover {
+    background-color: #4d8c2a;
+  }
+  
+  .framework-text[data-framework="AdonisJS"] {
+    background-color: #4f4466;
+    color: white;
+  }
+  
+  .framework-text[data-framework="AdonisJS"]:hover {
+    background-color: #3c3950;
+  }
+  
+  .framework-text[data-framework="Koa.js"] {
+    background-color: #363636;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Koa.js"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="Slim"] {
+    background-color: #363636;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Slim"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="Strapi"] {
+    background-color: #2e7ee0;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Strapi"]:hover {
+    background-color: #1c5aa0;
+  }
+  
+  .framework-text[data-framework="Nuxt.js"] {
+    background-color: #00c58e;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Nuxt.js"]:hover {
+    background-color: #008c69;
+  }
+  
+  .framework-text[data-framework="Aurelia"] {
+    background-color: #ed2b88;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Aurelia"]:hover {
+    background-color: #b71958;
+  }
+  
+  .framework-text[data-framework="Ember.js"] {
+    background-color: #f23819;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Ember.js"]:hover {
+    background-color: #c41d09;
+  }
+  
+  .framework-text[data-framework="Next.js"] {
+    background-color: #e23e57;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Next.js"]:hover {
+    background-color: #ae1b39;
+  }
+  
+  .framework-text[data-framework="Quarkus"] {
+    background-color: #005e7a;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Quarkus"]:hover {
+    background-color: #00425a;
+  }
+  
+  .framework-text[data-framework="Micronaut"] {
+    background-color: #454545;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Micronaut"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="Django Channels"] {
+    background-color: #092e20;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Django Channels"]:hover {
+    background-color: #075019;
+  }
+  
+  .framework-text[data-framework="Actix"] {
+    background-color: #363636;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Actix"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="Nancy"] {
+    background-color: #363636;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Nancy"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="Rocket"] {
+    background-color: #d62828;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Rocket"]:hover {
+    background-color: #a81d1d;
+  }
+  
+  .framework-text[data-framework="LoopBack"] {
+    background-color: #454545;
+    color: white;
+  }
+  
+  .framework-text[data-framework="LoopBack"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="Sprint Boot"] {
+    background-color: #6db33f;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Sprint Boot"]:hover {
+    background-color: #4d8c2a;
+  }
+  
+  .framework-text[data-framework="Struts"] {
+    background-color: #8c2b2b;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Struts"]:hover {
+    background-color: #662020;
+  }
+  
+  .framework-text[data-framework="Flask-RESTPlus"] {
+    background-color: #454545;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Flask-RESTPlus"]:hover {
+    background-color: #333333;
+  }
+  
+  .framework-text[data-framework="CherryPy"] {
+    background-color: #c13232;
+    color: white;
+  }
+  
+  .framework-text[data-framework="CherryPy"]:hover {
+    background-color: #951c1c;
+  }
+  
+  .framework-text[data-framework="Feathers"] {
+    background-color: #2f2f2f;
+    color: white;
+  }
+  
+  .framework-text[data-framework="Feathers"]:hover {
+    background-color: #1f1f1f;
+  }
+  
+  .framework-text[data-framework="NestJS"] {
+    background-color: #e0234e;
+    color: white;
+  }
+  
+  .framework-text[data-framework="NestJS"]:hover {
+    background-color: #ae1b39;
+  }
+  
+  .framework-text[data-framework="SvelteKit"] {
+    background-color: #f93e2c;
+    color: white;
+  }
+  
+  .framework-text[data-framework="SvelteKit"]:hover {
+    background-color: #b73224;
+  }
+  
+  
+
+
+
  /* Pagination Styles */
 .pagination-controls {
   display: flex;
@@ -1527,11 +1997,6 @@ hr {
 
 
 @media only screen and (max-width: 540px) {
-  .pagination-controls {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .pagination-controls button {
     margin: 4px 0;
     width: 100%;
