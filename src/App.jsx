@@ -255,7 +255,7 @@ export const App = () => {
                   className="react-switch"
                   
                 />
-                {isUkrainian ? <span style={{ marginLeft: '12px' }}>Укр</span> : <span style={{ marginLeft: '12px' }}>Eng</span>}
+                {isUkrainian ? <span style={{ marginLeft: '12px' }}><UkraineIcon /></span> : <span style={{ marginLeft: '12px' }}><UKIcon /></span>}
               </li>
               </ul>
             </div>
