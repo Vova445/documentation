@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/documentation/static/css/main.5dadbeed.css",
+    "main.css": "/documentation/static/css/main.b8f09b74.css",
     "main.js": "/documentation/static/js/main.b8e2ebe1.js",
     "static/media/loading-svgrepo-com.svg": "/documentation/static/media/loading-svgrepo-com.5c63aaf5be4f9d5b909ef0b23455a2de.svg",
     "static/media/programming-code-svgrepo-com.svg": "/documentation/static/media/programming-code-svgrepo-com.b7b28657a9e487f49b2ca474024992fb.svg",
@@ -11,11 +11,11 @@
     "static/media/flag-ua-svgrepo-com.svg": "/documentation/static/media/flag-ua-svgrepo-com.8a5d51aacc91622469def5b42adb7a22.svg",
     "static/media/education-book-learn-school-library-svgrepo-com.svg": "/documentation/static/media/education-book-learn-school-library-svgrepo-com.98aa48345a9111ba16656f5d03ddcc6d.svg",
     "static/media/burger-menu-svgrepo-com.svg": "/documentation/static/media/burger-menu-svgrepo-com.be515b3ad8f771d85cf3a856a0779c10.svg",
-    "main.5dadbeed.css.map": "/documentation/static/css/main.5dadbeed.css.map",
+    "main.b8f09b74.css.map": "/documentation/static/css/main.b8f09b74.css.map",
     "main.b8e2ebe1.js.map": "/documentation/static/js/main.b8e2ebe1.js.map"
   },
   "entrypoints": [
-    "static/css/main.5dadbeed.css",
+    "static/css/main.b8f09b74.css",
     "static/js/main.b8e2ebe1.js"
   ]
 }
