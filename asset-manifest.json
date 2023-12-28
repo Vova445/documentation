@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/documentation/static/css/main.a715a809.css",
-    "main.js": "/documentation/static/js/main.32b27866.js",
+    "main.css": "/documentation/static/css/main.abd85ff2.css",
+    "main.js": "/documentation/static/js/main.8e23fe6d.js",
     "static/media/loading-svgrepo-com.svg": "/documentation/static/media/loading-svgrepo-com.5c63aaf5be4f9d5b909ef0b23455a2de.svg",
     "static/media/programming-code-svgrepo-com.svg": "/documentation/static/media/programming-code-svgrepo-com.b7b28657a9e487f49b2ca474024992fb.svg",
     "static/media/react-svgrepo-com.svg": "/documentation/static/media/react-svgrepo-com.13c2be5d790c6c5bd1899ecffa972373.svg",
@@ -11,11 +11,11 @@
     "static/media/flag-ua-svgrepo-com.svg": "/documentation/static/media/flag-ua-svgrepo-com.8dda2ec1ebecbcf34284e7a2b16dc19f.svg",
     "static/media/education-book-learn-school-library-svgrepo-com.svg": "/documentation/static/media/education-book-learn-school-library-svgrepo-com.98aa48345a9111ba16656f5d03ddcc6d.svg",
     "static/media/burger-menu-svgrepo-com.svg": "/documentation/static/media/burger-menu-svgrepo-com.be515b3ad8f771d85cf3a856a0779c10.svg",
-    "main.a715a809.css.map": "/documentation/static/css/main.a715a809.css.map",
-    "main.32b27866.js.map": "/documentation/static/js/main.32b27866.js.map"
+    "main.abd85ff2.css.map": "/documentation/static/css/main.abd85ff2.css.map",
+    "main.8e23fe6d.js.map": "/documentation/static/js/main.8e23fe6d.js.map"
   },
   "entrypoints": [
-    "static/css/main.a715a809.css",
-    "static/js/main.32b27866.js"
+    "static/css/main.abd85ff2.css",
+    "static/js/main.8e23fe6d.js"
   ]
 }
