@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/documentation/static/css/main.ef88a539.css",
-    "main.js": "/documentation/static/js/main.6a5e9e44.js",
+    "main.css": "/documentation/static/css/main.5dadbeed.css",
+    "main.js": "/documentation/static/js/main.b8e2ebe1.js",
     "static/media/loading-svgrepo-com.svg": "/documentation/static/media/loading-svgrepo-com.5c63aaf5be4f9d5b909ef0b23455a2de.svg",
+    "static/media/programming-code-svgrepo-com.svg": "/documentation/static/media/programming-code-svgrepo-com.b7b28657a9e487f49b2ca474024992fb.svg",
+    "static/media/react-svgrepo-com.svg": "/documentation/static/media/react-svgrepo-com.13c2be5d790c6c5bd1899ecffa972373.svg",
+    "static/media/united-kingdom-uk-svgrepo-com.svg": "/documentation/static/media/united-kingdom-uk-svgrepo-com.bb93311f9d8b4c8f02f8b74e6bd6632b.svg",
     "index.html": "/documentation/index.html",
+    "static/media/home-svgrepo-com.svg": "/documentation/static/media/home-svgrepo-com.4bff81081b36429ca9f5f539f7ede1a8.svg",
+    "static/media/flag-ua-svgrepo-com.svg": "/documentation/static/media/flag-ua-svgrepo-com.8a5d51aacc91622469def5b42adb7a22.svg",
+    "static/media/education-book-learn-school-library-svgrepo-com.svg": "/documentation/static/media/education-book-learn-school-library-svgrepo-com.98aa48345a9111ba16656f5d03ddcc6d.svg",
     "static/media/burger-menu-svgrepo-com.svg": "/documentation/static/media/burger-menu-svgrepo-com.be515b3ad8f771d85cf3a856a0779c10.svg",
-    "main.ef88a539.css.map": "/documentation/static/css/main.ef88a539.css.map",
-    "main.6a5e9e44.js.map": "/documentation/static/js/main.6a5e9e44.js.map"
+    "main.5dadbeed.css.map": "/documentation/static/css/main.5dadbeed.css.map",
+    "main.b8e2ebe1.js.map": "/documentation/static/js/main.b8e2ebe1.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef88a539.css",
-    "static/js/main.6a5e9e44.js"
+    "static/css/main.5dadbeed.css",
+    "static/js/main.b8e2ebe1.js"
   ]
 }
