@@ -105,7 +105,7 @@ export const App = () => {
 
   useEffect(() => {
     const handleBodyOverflow = () => {
-      document.body.style.overflow = (isModalOpen || selectedLanguage || isMenuOpen, selectedFramework) ? 'hidden' : 'auto';
+      document.body.style.overflow = (isModalOpen || selectedLanguage || isMenuOpen || selectedFramework) ? 'hidden' : 'auto';
     };
   
     handleBodyOverflow();
