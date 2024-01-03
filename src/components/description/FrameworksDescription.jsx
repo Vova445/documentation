@@ -3,7 +3,7 @@ import React from "react";
 const FrameworksDescription = ({ isUkrainian }) => {
     return(
         <>
-        <hr />
+        <hr id="frameworks" />
           <div className="additional-content">
   <p>
     {isUkrainian

@@ -13,6 +13,7 @@ import SectionOne from "components/Sections/SectionOne";
 import SectionTwo from "components/Sections/SectionTwo";
 import SectionThree from "components/Sections/SectionThree";
 import SectionFour from "components/Sections/SectionFour";
+import SectionFive from "components/Sections/SectionFive";
 import { ReactComponent as HomeIcon } from './svg/home-svgrepo-com.svg';
 import { ReactComponent as LanguagesIcon } from './svg/programming-code-svgrepo-com.svg';
 import { ReactComponent as ReactIcon } from './svg/react-svgrepo-com.svg';
@@ -216,7 +217,7 @@ export const App = () => {
           <li><a href="#home">{isUkrainian ? <><HomeIcon /> Головна</> : <><HomeIcon /> Home</>}</a></li>
             <li><a href="#programming-languages">{isUkrainian ? <> <LanguagesIcon /> Виберіть свою мову програмування </> : <> <LanguagesIcon /> Choose your programming language </>}</a></li>
             <li><a href="#frameworks">{isUkrainian ? <> <ReactIcon /> Фреймворки </> : <> <ReactIcon /> Frameworks </>}</a></li>
-            <li><a href="#other-resources">{isUkrainian ? <> <ResourcesIcon /> Кілька інших ресурсів </> : <> <ResourcesIcon /> Other resources</>}</a></li>
+            <li><a href="#programming-news">{isUkrainian ? <> <ResourcesIcon /> Кілька інших ресурсів </> : <> <ResourcesIcon /> Other resources</>}</a></li>
             <li className="language-switch-item">
               <label className="switch">
                 <input type="checkbox" onChange={toggleLanguage} checked={isUkrainian} />
@@ -232,7 +233,7 @@ export const App = () => {
                 <li onClick={closeMenu}><a href="#home">{isUkrainian ? 'Головна' : 'Home'}</a></li>
                 <li onClick={closeMenu}><a href="#programming-languages">{isUkrainian ? 'Виберіть свою мову програмування' : 'Choose your programming language'}</a></li>
                 <li onClick={closeMenu}><a href="#frameworks">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</a></li>
-                <li onClick={closeMenu}><a href="#other-resources">{isUkrainian ? 'Кілька інших ресурсів' : 'Other resources'}</a></li>
+                <li onClick={closeMenu}><a href="#programming-news">{isUkrainian ? 'Кілька інших ресурсів' : 'Other resources'}</a></li>
                 <li style={{marginBottom: '20px'}} className="language-switch-item"> 
                   <label className="switch">
                     <input type="checkbox" onChange={toggleLanguage} checked={isUkrainian} />
@@ -261,6 +262,9 @@ export const App = () => {
          <FrameworksDescription isUkrainian={isUkrainian} />
 
           <SectionFour isUkrainian={isUkrainian} renderFrameworks={renderFrameworks} frameworksData={frameworksData} itemsPerPage={itemsPerPage} handleFrameworkPageChange={handleFrameworkPageChange} currentFrameworkPage={currentFrameworkPage} />
+
+
+          <SectionFive isUkrainian={isUkrainian} />
         </div>
 
         {modalContent.title && (

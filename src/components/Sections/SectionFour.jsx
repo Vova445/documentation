@@ -9,7 +9,7 @@ const SectionFour = ({
   currentFrameworkPage,
 }) => {
   return (
-    <section id="frameworks" className="section-four">
+    <section className="section-four">
       <h2 className="section-title">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</h2>
       <div className="programming-frameworks-container">{renderFrameworks()}</div>
       <div className="pagination-controls">
