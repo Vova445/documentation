@@ -9,7 +9,6 @@ const SectionFive = ({ isUkrainian }) => {
   const [itemsPerPage, setItemsPerPage] = useState(8);
 
   const handleResize = useCallback(() => {
-    // Змініть тут критерії для визначення розміру екрану, при якому змінювати кількість елементів на сторінці
     if (window.innerWidth < 592) {
       setItemsPerPage(4);
     } else if (window.innerWidth < 1132) {
@@ -32,11 +31,7 @@ const SectionFive = ({ isUkrainian }) => {
     };
 
     fetchNews();
-
-    // Додайте обробник подій для зміни розміру вікна
     window.addEventListener('resize', handleResize);
-
-    // При видаленні компонента видаліть обробник подій
     return () => {
       window.removeEventListener('resize', handleResize);
     };
