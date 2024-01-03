@@ -20,6 +20,15 @@ export const fetchProgrammingNews = async () => {
     return programmingNews;
   } catch (error) {
     console.error('Error fetching programming news:', error);
+    if (error.response) {
+      console.error('Response data:', error.response.data);
+      console.error('Response status:', error.response.status);
+      console.error('Response headers:', error.response.headers);
+    } else if (error.request) {
+      console.error('No response received. Request:', error.request);
+    } else {
+      console.error('Error setting up the request:', error.message);
+    }
     return [];
   }
 };
