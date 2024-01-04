@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const wikipediaApiUrl = 'https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php';
+const wikipediaApiUrl = 'https://thingproxy.freeboard.io/fetch/https://en.wikipedia.org/w/api.php';
 
 export const fetchProgrammingNews = async (searchQuery) => {
   try {
