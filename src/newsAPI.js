@@ -11,9 +11,6 @@ export const fetchProgrammingNews = async (searchQuery) => {
         list: 'search',
         srsearch: searchQuery,
       },
-      headers: {
-        'X-Requested-With': 'XMLHttpRequest',
-      },
     });
 
     const searchResults = response.data.query.search;
