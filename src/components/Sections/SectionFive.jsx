@@ -58,6 +58,7 @@ const SectionFive = ({ isUkrainian }) => {
         <p className="news-description">
           {truncateDescription(news.description, 100)} 
         </p>
+        <p className="news-date">Published on: {news.published_at.toLocaleDateString()}</p>
         <a href={news.url} target="_blank" rel="noopener noreferrer" className="read-more-link">
           {isUkrainian ? 'Читати більше' : 'Read More'}
         </a>
