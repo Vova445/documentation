@@ -1,22 +1,20 @@
 import axios from 'axios';
 
-const wikipediaApiUrl = 'https://thingproxy.freeboard.io/fetch/https://en.wikipedia.org/w/api.php';
+const DEV_TO_API_URL = 'https://dev.to/api/articles';
 
-export const fetchProgrammingNews = async (searchQuery) => {
+export const fetchProgrammingNews = async () => {
   try {
-    const response = await axios.get(wikipediaApiUrl, {
+    const response = await axios.get(DEV_TO_API_URL, {
       params: {
-        action: 'query',
-        format: 'json',
-        list: 'search',
-        srsearch: searchQuery,
+        tag: 'programming',
+        per_page: 100, 
       },
     });
 
-    const searchResults = response.data.query.search;
-    return searchResults;
+    const articles = response.data;
+    return articles;
   } catch (error) {
-    console.error('Error fetching Wikipedia data:', error);
+    console.error('Error fetching programming articles from Dev.to:', error);
     return [];
   }
 };
