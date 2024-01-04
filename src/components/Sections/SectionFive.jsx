@@ -44,10 +44,14 @@ const SectionFive = ({ isUkrainian }) => {
   };
 
   const renderNewsItems = () => {
+    if (!programmingNews || programmingNews.length === 0) {
+      return <p>No news available</p>;
+    }
+  
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentNews = programmingNews.slice(startIndex, endIndex);
-
+  
     return currentNews.map((news) => (
       <div key={news.title} className="programming-news-item">
         <h3 className="news-title">{truncateTitle(news.title, 30)}</h3>
@@ -62,17 +66,17 @@ const SectionFive = ({ isUkrainian }) => {
   };
 
   const truncateTitle = (title, maxLength) => {
-    return title.length > maxLength
+    return title && title.length > maxLength
       ? title.substring(0, maxLength) + '...'
-      : title;
+      : title || ''; 
   };
-
+  
   const truncateDescription = (description, maxLength) => {
-    return description.length > maxLength
+    return description && description.length > maxLength
       ? description.substring(0, maxLength) + '...'
-      : description;
+      : description || ''; 
   };
-
+  
   return (
     <>
     <hr />
