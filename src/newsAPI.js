@@ -1,34 +1,22 @@
 import axios from 'axios';
 
-const API_KEY = '47be95dde8bc440ab4c16802154c1952';
-const API_URL = 'https://newsapi.org/v2/everything';
+export const wikipediaApiUrl = 'https://en.wikipedia.org/w/api.php';
 
-export const fetchProgrammingNews = async () => {
+export const fetchProgrammingNews = async (searchQuery) => {
   try {
-    const oneWeekAgo = new Date();
-    oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-
-    const response = await axios.get(API_URL, {
+    const response = await axios.get(wikipediaApiUrl, {
       params: {
-        q: 'programming',
-        apiKey: API_KEY,
-        from: oneWeekAgo.toISOString().split('T')[0], 
+        action: 'query',
+        format: 'json',
+        list: 'search',
+        srsearch: searchQuery,
       },
     });
 
-    const programmingNews = response.data.articles;
-    return programmingNews;
+    const searchResults = response.data.query.search;
+    return searchResults;
   } catch (error) {
-    console.error('Error fetching programming news:', error);
-    if (error.response) {
-      console.error('Response data:', error.response.data);
-      console.error('Response status:', error.response.status);
-      console.error('Response headers:', error.response.headers);
-    } else if (error.request) {
-      console.error('No response received. Request:', error.request);
-    } else {
-      console.error('Error setting up the request:', error.message);
-    }
+    console.error('Error fetching Wikipedia data:', error);
     return [];
   }
 };
