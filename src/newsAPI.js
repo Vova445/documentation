@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const wikipediaApiUrl = 'https://en.wikipedia.org/w/api.php';
+const wikipediaApiUrl = 'https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php';
 
 export const fetchProgrammingNews = async (searchQuery) => {
   try {
@@ -10,6 +10,9 @@ export const fetchProgrammingNews = async (searchQuery) => {
         format: 'json',
         list: 'search',
         srsearch: searchQuery,
+      },
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
       },
     });
 
