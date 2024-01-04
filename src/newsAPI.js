@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_KEY = '47be95dde8bc440ab4c16802154c1952';
-const API_URL = 'https://newsapi.org/v2/everything';
+const API_URL = 'https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything';
 
 export const fetchProgrammingNews = async () => {
   try {
