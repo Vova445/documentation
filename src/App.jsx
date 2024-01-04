@@ -174,18 +174,26 @@ export const App = () => {
     const endIndex = startIndex + itemsPerPage;
     const displayedLanguages = languagesData.slice(startIndex, endIndex);
   
-    return displayedLanguages.map((language) => (
-      <div
-        key={language.id}
-        data-language={language.name}
-        onClick={() => handleLanguageClick(language.name)}
-        className={`language-text ${language.name.toLowerCase()}-language`}
-      >
-        {language.name}
+    return (
+      <div className="programming-languages-container">
+        {displayedLanguages.map((language) => (
+          <div key={language.id}>
+            <div
+              data-language={language.name}
+              onClick={() => handleLanguageClick(language.name)}
+              className={`language-text ${language.name.toLowerCase()}-language`}
+            >
+            </div>
+            <div className="language-name">
+              {language.name}
+            </div>
+          </div>
+        ))}
       </div>
-    ));
+    );
   };
-
+  
+  
 
 
   const renderFrameworks = () => {

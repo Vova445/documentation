@@ -15,6 +15,10 @@ import SymfonyModalContent from "./Frameworks/Symfony";
 import MeteorModalContent from "./Frameworks/Meteor";
 import PlayFrameworkModalContent from "./Frameworks/Play";
 import CakePHPModalContent from "./Frameworks/CakePHP";
+import PhoenixModalContent from "./Frameworks/Phoenix";
+import NestModalContent from "./Frameworks/NestJS";
+import FastAPIModalContent from "./Frameworks/FastAPI";
+import GinModalContent from "./Frameworks/Gin";
 
 const FrameworksModal = ({ framework, closeModal, isUkrainian }) => {
     const handleGoOut = () => {
@@ -40,6 +44,10 @@ const FrameworksModal = ({ framework, closeModal, isUkrainian }) => {
           meteor: {backgroundColor: "#a13a3a", color: "#333", title: "Meteor", content: <MeteorModalContent isUkrainian={isUkrainian} />},
           'play framework': {backgroundColor: '#5f3196', color: "#fff", title: "Play Framework", content: <PlayFrameworkModalContent isUkrainian={isUkrainian} />},
           cakephp: {backgroundColor: '#a71e29', color: '#fff', title: 'CakePHP', content: <CakePHPModalContent isUkrainian={isUkrainian} />},
+          phoenix: {backgroundColor: "#4e2758", color: '#fff', title: 'Phoenix', content: <PhoenixModalContent isUkrainian={isUkrainian} />},
+          'nest.js': {backgroundColor: '#e0234e', color: '#000', title: "Nest.JS", content: <NestModalContent isUkrainian={isUkrainian} />},
+          fastapi: {backgroundColor: "#009688", color: '#333', title: "FastAPI",content: <FastAPIModalContent isUkrainian={isUkrainian} />},
+          gin: {backgroundColor: '#00acd7', color: '#000', title: 'Gin', content: <GinModalContent isUkrainian={isUkrainian} />},
         };
       
         return frameworks[frameworkLower] || {};

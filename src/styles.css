@@ -699,13 +699,17 @@ display: none;
     background-color: #1E90FF; 
 }
 
-.programming-languages-container {
+  .programming-languages-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
   }
+
+
+
+
 
 
   .programming-frameworks-container {
@@ -732,6 +736,17 @@ display: none;
     transform: scale(1.1);
   }
 
+
+
+  .language-name {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+  }
+  
 
   .section-three {
     text-align: center;
@@ -784,115 +799,162 @@ hr {
 }
   
   .language-text[data-language="HTML"] {
-    background-color: #E44D26;
+    /* background-color: #E44D26; */
+    background-image: url(./images/html.svg);
+    background-size: cover;
     color: white;
   }
   
   .language-text[data-language="CSS"] {
-    background-color: #264de4;
+    /* background-color: #264de4; */
+    background-image: url(./images/css.svg);
+    background-size: cover;
     color: white;
   }
   .language-text[data-language="Python"] {
-    background-color: #3776ab;
+    /* background-color: #3776ab;
+     */
+    background-image: url(./images/python.svg);
+    background-size: cover;
     color: white;
   }
   
   .language-text[data-language="JavaScript"] {
-    background-color: #f0db4f;
+    /* background-color: #f0db4f; */
+    background-image: url(./images/javascript.svg);
+    background-size: cover;
     color: black;
   }
   
   .language-text[data-language="Java"] {
-    background-color: #007396;
+    /* background-color: #007396; */
+    background-image: url(./images/java.svg);
+    background-size: cover;
     color: white;
   }
   
   .language-text[data-language="C"] {
-    background-color: #a8b9cc;
+    /* background-color: #a8b9cc; */
+
+    background-image: url(./images/C.svg);
+    background-size: cover;
     color: black;
   }
   
   .language-text[data-language="C++"] {
-    background-color: #00599c;
+    /* background-color: #00599c; */
+    background-image: url(./images/cPP.svg);
+    background-size:cover;
     color: white;
+    
   }
   
   .language-text[data-language="C#"] {
-    background-color: #178600;
+    /* background-color: #178600; */
+    background-image: url(./images/cS.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Swift"] {
-    background-color: #ffac45;
+    /* background-color: #ffac45; */
+    background-image: url(./images/swift.svg);
+    background-size:cover;
     color: black;
   }
   
   .language-text[data-language="TypeScript"] {
-    background-color: #3178c6;
+    /* background-color: #3178c6; */
+    background-image: url(./images/typeScript.svg);
+    background-size:cover;
     color: white;
   }
 
 
   .language-text[data-language="PHP"] {
-    background-color: #4F5D95;
+    /* background-color: #4F5D95; */
+    background-image: url(./images/php.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Ruby"] {
-    background-color: #CC342D;
+    /* background-color: #CC342D; */
+    background-image: url(./images/ruby.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Go"] {
-    background-color: #00ADD8;
+    /* background-color: #00ADD8; */
+    background-image: url(./images/go.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Rust"] {
-    background-color: #000000;
+    /* background-color: #000000; */
+    background-image: url(./images/rust.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Objective-C"] {
-    background-color: #438eff;
+    /* background-color: #438eff; */
+    background-image: url(./images/objC.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Kotlin"] {
-    background-color: #7F52FF;
+    /* background-color: #7F52FF; */
+    background-image: url(./images/kotlin.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Dart"] {
-    background-color: #0175C2;
+    /* background-color: #0175C2; */
+    background-image: url(./images/dart.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Scala"] {
-    background-color: #DC322F;
+    /* background-color: #DC322F; */
+    background-image: url(./images/scala.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Haskell"] {
-    background-color: #5E5086;
+    /* background-color: #5E5086; */
+    background-image: url(./images/haskell.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Perl"] {
-    background-color: #39457E;
+    /* background-color: #39457E; */
+    background-image: url(./images/perl.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Lua"] {
-    background-color: #000080;
+    /* background-color: #000080; */
+    background-image: url(./images/lua.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Shell"] {
-    background-color: #89e051;
+    /* background-color: #89e051; */
+    background-image: url(./images/shell.svg);
+    background-size:cover;
     color: black;
   }
-  .language-text[data-language="HTML"]:hover {
+  /* .language-text[data-language="HTML"]:hover {
     background-color: #FF7043;
   }
   .language-text[data-language="CSS"]:hover {
@@ -906,29 +968,29 @@ hr {
   }
   .language-text[data-language="Java"]:hover {
     background-color: #005cbf;
-  }
+  } */
 
-  .language-text[data-language="C"]:hover {
+  /* .language-text[data-language="C"]:hover {
     background-color: #90A4AE;
-  }
+  } */
 
-  .language-text[data-language="C++"]:hover {
+  /* .language-text[data-language="C++"]:hover {
     background-color: #1565C0;
-  }
-
+  } */
+/* 
   .language-text[data-language="C#"]:hover {
     background-color: #2E7D32;
-  }
+  } */
 
-  .language-text[data-language="Swift"]:hover {
+  /* .language-text[data-language="Swift"]:hover {
     background-color: #FF8F00;
   }
 
   .language-text[data-language="TypeScript"]:hover {
     background-color: #003366;
-  }
+  } */
 
-  .language-text[data-language="PHP"]:hover {
+  /* .language-text[data-language="PHP"]:hover {
     background-color: #6A7BAF;
   }
 
@@ -974,127 +1036,172 @@ hr {
 
   .language-text[data-language="Shell"]:hover {
     background-color: #B4CCB9;
-  }
+  } */
 
 
 
 
   .language-text[data-language="MATLAB"] {
-    background-color: #0076A8;
+    /* background-color: #0076A8; */
+    background-image: url(./images/matlab.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="R"] {
-    background-color: #276DC3;
+    /* background-color: #276DC3; */
+    background-image: url(./images/r.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Groovy"] {
-    background-color: #4298B8;
+    /* background-color: #4298B8; */
+    background-image: url(./images/groovy.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="SQL"] {
-    background-color: #CC2929;
+    /* background-color: #CC2929; */
+    background-image: url(./images/sql.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Ada"] {
-    background-color: #02f88c;
+    /* background-color: #02f88c; */
+    background-image: url(./images/ada.svg);
+    background-size:cover;
     color: black;
   }
   
   .language-text[data-language="Fortran"] {
-    background-color: #4D41B1;
+    /* background-color: #4D41B1; */
+    background-image: url(./images/fortran.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="COBOL"] {
-    background-color: #41849E;
+    /* background-color: #41849E; */
+    background-image: url(./images/cobol.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="VBScript"] {
-    background-color: #3E6D8E;
+    /* background-color: #3E6D8E; */
+    background-image: url(./images/vb.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="PowerShell"] {
-    background-color: #012456;
+    /* background-color: #012456; */
+    background-image: url(./images/powershell.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Clojure"] {
-    background-color: #5881d8;
+    /* background-color: #5881d8; */
+    background-image: url(./images/clojure.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Erlang"] {
-    background-color: #B83998;
+    /* background-color: #B83998; */
+    background-image: url(./images/erlang.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="F#"] {
-    background-color: #1E4F36;
+    /* background-color: #1E4F36; */
+    background-image: url(./images/fsharp.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="OCaml"] {
-    background-color: #3E5053;
+    /* background-color: #3E5053; */
+    background-image: url(./images/ocaml.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Scheme"] {
-    background-color: #1E4A81;
+    /* background-color: #1E4A81; */
+    background-image: url(./images/scheme.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Smalltalk"] {
-    background-color: #59606D;
+    /* background-color: #59606D; */
+    background-image: url(./images/file.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Prolog"] {
-    background-color: #74283C;
+    /* background-color: #74283C; */
+    background-image: url(./images/prolog.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Racket"] {
-    background-color: #22228F;
+    background-image: url(./images/scheme.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Elixir"] {
-    background-color: #4B275F;
+    /* background-color: #4B275F; */
+    background-image: url(./images/elixir.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Julia"] {
-    background-color: #9558B2;
+    /* background-color: #9558B2; */
+    background-image: url(./images/julia.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Hack"] {
-    background-color: #878787;
+    /* background-color: #878787; */
+    background-image: url(./images/hack.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="Objective-J"] {
-    background-color: #3D3D3D;
+    /* background-color: #3D3D3D; */
+    background-image: url(./images/objectiveJ.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="ActionScript"] {
-    background-color: #F27500;
+    /* background-color: #F27500; */
+    background-image: url(./images/actionScript.svg);
+    background-size:cover;
     color: white;
   }
   
   .language-text[data-language="D"] {
-    background-color: #ba595e;
+    /* background-color: #ba595e; */
+    background-image: url(./images/dlang.svg);
+    background-size:cover;
     color: white;
   }
   
-  .language-text[data-language="MATLAB"]:hover {
+  /* .language-text[data-language="MATLAB"]:hover {
     background-color: #00A2FF;
   }
   
@@ -1184,181 +1291,249 @@ hr {
   
   .language-text[data-language="D"]:hover {
     background-color: #CF6B70;
-  }
+  } */
   
 
   .language-text[data-language="Tcl"] {
-    background-color: #FFD700;
+    /* background-color: #FFD700; */
+    background-image: url(./images/tcl.svg);
+    background-size:cover;
     color: black;
 }
 
 .language-text[data-language="Korn Shell"] {
-    background-color: #4EAA25;
+    /* background-color: #4EAA25; */
+    background-image: url(./images/ksh.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Bash"] {
-    background-color: #4EAA25;
+    /* background-color: #4EAA25; */
+    background-image: url(./images/ksh.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="J"] {
-    background-color: #9EEDFF;
+    /* background-color: #9EEDFF; */
+    background-image: url(./images/j.svg);
+    background-size:cover;
     color: black;
 }
 
 .language-text[data-language="Awk"] {
-    background-color: #FFD700;
+    /* background-color: #FFD700; */
+    background-image: url(./images/Awk.svg);
+    background-size:cover;
     color: black;
 }
 
 .language-text[data-language="Vala"] {
-    background-color: #8F7E45;
+    /* background-color: #8F7E45; */
+    background-image: url(./images/Vala.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Haxe"] {
-    background-color: #DF7900;
+    /* background-color: #DF7900; */
+    background-image: url(./images/Haxe.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Verilog"] {
-    background-color: #2364AA;
+    /* background-color: #2364AA; */
+    background-image: url(./images/verilog.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Basic"] {
-    background-color: #8E7CC3;
+    /* background-color: #8E7CC3; */
+    background-image: url(./images/basic.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="ABAP"] {
-    background-color: #E85625;
+    /* background-color: #E85625; */
+    background-image: url(./images/abap.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="OpenCL"] {
-    background-color: #224192;
+    /* background-color: #224192; */
+    background-image: url(./images/OpenCL.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="HCL"] {
-    background-color: #0082CC;
+    /* background-color: #0082CC; */
+    background-image: url(./images/hcl.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Apex"] {
-    background-color: #0080FF;
+    /* background-color: #0080FF; */
+    background-image: url(./images/apex.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Batch"] {
-    background-color: #4D4D4D;
+    /* background-color: #4D4D4D; */
+    background-image: url(./images/bat.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Lisp"] {
-    background-color: #C06B88;
+    /* background-color: #C06B88; */
+    background-image: url(./images/lisp.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Pascal"] {
-    background-color: #E3F171;
+    /* background-color: #E3F171; */
+    background-image: url(./images/pascal.svg);
+    background-size:cover;
     color: black;
 }
 
 .language-text[data-language="Forth"] {
-    background-color: #341C1C;
+    /* background-color: #341C1C; */
+    background-image: url(./images/file.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Rexx"] {
-    background-color: #007AA5;
+    /* background-color: #007AA5; */
+    background-image: url(./images/rexx.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="IDL"] {
-    background-color: #A6A6D2;
+    /* background-color: #A6A6D2; */
+    background-image: url(./images/idl.svg);
+    background-size:cover;
     color: black;
 }
 
 .language-text[data-language="PostScript"] {
-    background-color: #DA291C;
+    /* background-color: #DA291C; */
+    background-image: url(./images/postscript.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Eiffel"] {
-    background-color: #946D99;
+    /* background-color: #946D99; */
+    background-image: url(./images/eiffel.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Modula-2"] {
-    background-color: #F6007A;
+    /* background-color: #F6007A; */
+    background-image: url(./images/modula.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="PL/I"] {
-    background-color: #CC679D;
+    /* background-color: #CC679D; */
+    background-image: url(./images/file.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="COOL"] {
-    background-color: #77B5FE;
+    /* background-color: #77B5FE; */
+    background-image: url(./images/cool.svg);
+    background-size:cover;
     color: black;
 }
 
 .language-text[data-language="MUMPS"] {
-    background-color: #405F61;
+    /* background-color: #405F61; */
+    background-image: url(./images/file.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Logo"] {
-    background-color: #119900;
+    /* background-color: #119900; */
+    background-image: url(./images/logo.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Scratch"] {
-    background-color: #5A8DFF;
+    /* background-color: #5A8DFF; */
+    background-image: url(./images/scratch.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="SAS"] {
-    background-color: #B34936;
+    /* background-color: #B34936; */
+    background-image: url(./images/sas.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="FoxPro"] {
-    background-color: #6781F2;
+    /* background-color: #6781F2; */
+    background-image: url(./images/foxpro.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="LabVIEW"] {
-    background-color: #FFD100;
+    /* background-color: #FFD100; */
+    background-image: url(./images/LabVIEW.svg);
+    background-size:cover;
     color: black;
 }
 
 .language-text[data-language="Fantom"] {
-    background-color: #14253E;
+    /* background-color: #14253E; */
+    background-image: url(./images/fantom.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Ladder Logic"] {
-    background-color: #AC7D10;
+    /* background-color: #AC7D10; */
+    background-image: url(./images/file.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="Red"] {
-    background-color: #FF0000;
+    /* background-color: #FF0000; */
+    background-image: url(./images/red.svg);
+    background-size:cover;
     color: white;
 }
 
 .language-text[data-language="FORTRAN II"] {
-    background-color: #333333;
+    /* background-color: #333333; */
+    background-image: url(./images/fortran.svg);
+    background-size:cover;
     color: white;
 }
 
 
-
+/* 
 .language-text[data-language="Tcl"]:hover {
   background-color: #FFECB3;
 }
@@ -1493,7 +1668,7 @@ hr {
 
 .language-text[data-language="FORTRAN II"]:hover {
   background-color: #4D4D4D;
-}
+} */
 
 
 .framework-text {
