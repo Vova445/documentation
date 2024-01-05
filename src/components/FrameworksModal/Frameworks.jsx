@@ -19,6 +19,28 @@ import PhoenixModalContent from "./Frameworks/Phoenix";
 import NestModalContent from "./Frameworks/NestJS";
 import FastAPIModalContent from "./Frameworks/FastAPI";
 import GinModalContent from "./Frameworks/Gin";
+import HapiJSModalContent from "./Frameworks/HapiJS";
+import QuasarModalContent from "./Frameworks/Quasar";
+import SailsJSModalContent from "./Frameworks/SailsJS";
+import DjangoRestModalContent from "./Frameworks/DjangoREST";
+import AdonisJsModalContent from "./Frameworks/AdonisJS";
+import KoaJsModalContent from "./Frameworks/KoaJS";
+import SlimModalContent from "./Frameworks/Slim";
+import StrapiModalContent from "./Frameworks/Strapi";
+import NuxtModalContent from "./Frameworks/NuxtJS";
+import AureliaModalContent from "./Frameworks/Aurelia";
+import EmberModalContent from "./Frameworks/EmberJS";
+import NextJSModalContent from "./Frameworks/NextJs";
+import QuarkusModalContent from "./Frameworks/Quarkus";
+import MicronautModalContent from "./Frameworks/Micronaut";
+import ActixModalContent from "./Frameworks/Actix";
+import NancyModalContent from "./Frameworks/Nancy";
+import RocketModalContent from "./Frameworks/Rocket";
+import LoopBackModalContent from "./Frameworks/LoopBack";
+import StrutsModalContent from "./Frameworks/Struts";
+import CherryPyModalContent from "./Frameworks/CherryPy";
+import FeathersModalContent from "./Frameworks/Feathers";
+import SvelteKitModalContent from "./Frameworks/SvelteKit";
 
 const FrameworksModal = ({ framework, closeModal, isUkrainian }) => {
     const handleGoOut = () => {
@@ -48,6 +70,28 @@ const FrameworksModal = ({ framework, closeModal, isUkrainian }) => {
           'nest.js': {backgroundColor: '#e0234e', color: '#000', title: "Nest.JS", content: <NestModalContent isUkrainian={isUkrainian} />},
           fastapi: {backgroundColor: "#009688", color: '#333', title: "FastAPI",content: <FastAPIModalContent isUkrainian={isUkrainian} />},
           gin: {backgroundColor: '#00acd7', color: '#000', title: 'Gin', content: <GinModalContent isUkrainian={isUkrainian} />},
+          'hapi.js': {backgroundColor: "#4f4f4f", color: '#fff', title: 'HapiJS', content: <HapiJSModalContent isUkrainian={isUkrainian} /> },
+          quasar: {backgroundColor: '#1976d2', color:"#fff", title: 'Quasar', content: <QuasarModalContent isUkrainian={isUkrainian} />},
+          'sails.js': {backgroundColor: "#3997d8", color: "#333", title: "SailsJS", content: <SailsJSModalContent isUkrainian={isUkrainian}/>},
+          'django rest': {backgroundColor: "#092e20", color: "#fff", title: "Django REST", content: <DjangoRestModalContent isUkrainian={isUkrainian}/>},
+          adonisjs: {backgroundColor: "#4f4466", color: "#000", title: 'AdonisJS', content: <AdonisJsModalContent isUkrainian={isUkrainian}/>},
+          'koa.js': {backgroundColor: "#363636", color: "#fff", title: "Koa.JS", content: <KoaJsModalContent isUkrainian={isUkrainian}/>},
+          slim: {backgroundColor: "#6db33f", color: "#333", title: "Slim", content: <SlimModalContent isUkrainian={isUkrainian}/> },
+          strapi: {backgroundColor: "#2e7ee0", color: "#fff", title: "Strapi", content: <StrapiModalContent isUkrainian={isUkrainian}/> },
+          'nuxt.js': {backgroundColor: "#00c58e", color: "#fff", title: "Nuxt.JS", content: <NuxtModalContent isUkrainian={isUkrainian}/> },
+          aurelia: {backgroundColor: "#ed2b88", color: "#fff", title: "Aurelia", content: <AureliaModalContent isUkrainian={isUkrainian}/> },
+          'ember.js': {backgroundColor: "#f23819", color: "#000", title: "Ember.JS", content: <EmberModalContent isUkrainian={isUkrainian}/> },
+          'next.js': {backgroundColor: "#333", color: "#fff", title: "Next.JS", content: <NextJSModalContent isUkrainian={isUkrainian}/> },
+          quarkus: {backgroundColor: "#005e7a", color: "#fff", title: "Quarkus", content: <QuarkusModalContent isUkrainian={isUkrainian}/> },
+          micronaut: {backgroundColor: "#454545", color: "#fff", title: "Micronaut", content: <MicronautModalContent isUkrainian={isUkrainian}/> },
+          actix: {backgroundColor: "#363636", color: "#fff", title: "Actix", content: <ActixModalContent isUkrainian={isUkrainian}/> },
+          nancy: {backgroundColor: "#000", color: "#fff", title: "Nancy", content: <NancyModalContent isUkrainian={isUkrainian}/> },
+          rocket: {backgroundColor: "#d62828", color: "#000", title: "Rocket", content: <RocketModalContent isUkrainian={isUkrainian}/> },
+          loopback: {backgroundColor: "blue", color: "#fff", title: "LoopBack", content: <LoopBackModalContent isUkrainian={isUkrainian}/> },
+          struts: {backgroundColor: "#8c2b2b", color: "#fff", title: "Struts", content: <StrutsModalContent isUkrainian={isUkrainian}/> },
+          cherrypy: {backgroundColor: "#c13232", color: "#fff", title: "CherryPy", content: <CherryPyModalContent isUkrainian={isUkrainian}/> },
+          feathers: {backgroundColor: "#2f2f2f", color: "#fff", title: "Feathers", content: <FeathersModalContent isUkrainian={isUkrainian}/> },
+          sveltekit: {backgroundColor: "#f93e2c", color: "#000", title: "SvelteKit", content: <SvelteKitModalContent isUkrainian={isUkrainian}/> },
         };
       
         return frameworks[frameworkLower] || {};
