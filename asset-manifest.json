@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/documentation/static/css/main.35049f58.css",
-    "main.js": "/documentation/static/js/main.ae6d0d42.js",
+    "main.js": "/documentation/static/js/main.b8225e6b.js",
     "static/media/hapi.svg": "/documentation/static/media/hapi.cb49b068110e0442c77b.svg",
     "static/media/micronaut.svg": "/documentation/static/media/micronaut.6818deb0c93dcc8d72a1.svg",
     "static/media/Gin-Framework.svg": "/documentation/static/media/Gin-Framework.36b271250a28dfb2c9da.svg",
@@ -124,10 +124,10 @@
     "static/media/modula.svg": "/documentation/static/media/modula.9823de26a400f1d33828.svg",
     "static/media/koajs.svg": "/documentation/static/media/koajs.099a6d27c8c86d602c82.svg",
     "main.35049f58.css.map": "/documentation/static/css/main.35049f58.css.map",
-    "main.ae6d0d42.js.map": "/documentation/static/js/main.ae6d0d42.js.map"
+    "main.b8225e6b.js.map": "/documentation/static/js/main.b8225e6b.js.map"
   },
   "entrypoints": [
     "static/css/main.35049f58.css",
-    "static/js/main.ae6d0d42.js"
+    "static/js/main.b8225e6b.js"
   ]
 }
