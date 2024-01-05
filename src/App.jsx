@@ -201,17 +201,25 @@ export const App = () => {
     const endIndex = startIndex + itemsPerPage;
     const displayedFrameworks = frameworksData.slice(startIndex, endIndex);
   
-    return displayedFrameworks.map((framework) => (
-      <div
-        key={framework.id}
-        data-framework={framework.name}
-        onClick={() => handleFrameworkClick(framework)}
-        className={`framework-text ${framework.name.toLowerCase()}-framework`}
-      >
-        {framework.name}
+    return (
+      <div className="programming-languages-container">
+        {displayedFrameworks.map((framework) => (
+          <div key={framework.id} className="framework-container">
+            <div
+              data-framework={framework.name}
+              onClick={() => handleFrameworkClick(framework)}
+              className={`framework-text ${framework.name.toLowerCase()}-framework`}
+            >
+              </div>
+              <div className="language-name">
+              {framework.name}
+            </div>
+            </div>
+        ))}
       </div>
-    ));
+    );
   };
+  
   
 
   return (
