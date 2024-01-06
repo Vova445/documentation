@@ -10,7 +10,7 @@ import LibrariesModal from "components/LibrariesModal/Libraries";
 import LanguagesDescription from "./components/description/LanguagesDescription";
 import FrameworksDescription from "./components/description/FrameworksDescription";
 import LibrariesDescription from "components/description/LibrariesDescription";
-import ResourcesDescription from "components/description/OthersResourcesDescription";
+// import ResourcesDescription from "components/description/OthersResourcesDescription";
 import {ReactComponent as MenuIcon} from './svg/burger-menu-svgrepo-com.svg';
 import LoaderSVG from './svg/loading-svgrepo-com.svg';
 import SectionOne from "components/Sections/SectionOne";
