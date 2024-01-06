@@ -41,6 +41,8 @@ import StrutsModalContent from "./Frameworks/Struts";
 import CherryPyModalContent from "./Frameworks/CherryPy";
 import FeathersModalContent from "./Frameworks/Feathers";
 import SvelteKitModalContent from "./Frameworks/SvelteKit";
+import ElectronModalContent from "./Frameworks/Electron";
+import PhalconModalContent from "./Frameworks/Phalcon";
 
 const FrameworksModal = ({ framework, closeModal, isUkrainian }) => {
     const handleGoOut = () => {
@@ -92,6 +94,8 @@ const FrameworksModal = ({ framework, closeModal, isUkrainian }) => {
           cherrypy: {backgroundColor: "#c13232", color: "#fff", title: "CherryPy", content: <CherryPyModalContent isUkrainian={isUkrainian}/> },
           feathers: {backgroundColor: "#2f2f2f", color: "#fff", title: "Feathers", content: <FeathersModalContent isUkrainian={isUkrainian}/> },
           sveltekit: {backgroundColor: "#f93e2c", color: "#000", title: "SvelteKit", content: <SvelteKitModalContent isUkrainian={isUkrainian}/> },
+          electron: {backgroundColor: "rgb(59 132 142)", color: "#000", title: "Electron", content: <ElectronModalContent isUkrainian={isUkrainian}/> },
+          phalcon: {backgroundColor: "purple", color: "#fff", title: "Phalcon", content: <PhalconModalContent isUkrainian={isUkrainian}/> },
         };
       
         return frameworks[frameworkLower] || {};

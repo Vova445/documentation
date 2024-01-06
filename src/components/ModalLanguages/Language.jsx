@@ -79,7 +79,10 @@ import FantomModalContent from "./Languages/Fantom";
 import LadderLogicModalContent from "./Languages/LadderLogic";
 import RedModalContent from "./Languages/Red";
 import FortranIIModalContent from "./Languages/FortranII";
-
+import APLModalContent from "./Languages/APL";
+import CeylonModalContent from "./Languages/EclipseCeylon";
+import CoffeeScriptModalContent from "./Languages/CoffeeScript";
+import XmlModalContent from "./Languages/XML";
 
 const LanguageModal = ({ language, closeModal, isUkrainian }) => {
   const handleGoOut = () => {
@@ -171,6 +174,10 @@ const LanguageModal = ({ language, closeModal, isUkrainian }) => {
       'ladder logic': { backgroundColor: "#8FB1CC", color: "#333", title: "Ladder Logic", content: <LadderLogicModalContent isUkrainian={isUkrainian} /> },
       red: { backgroundColor: "#FF4500", color: "#333", title: "Red", content: <RedModalContent isUkrainian={isUkrainian} /> },
       'fortran ii': { backgroundColor: "#4d41b1", color: "#fff", title: "FORTRAN II", content: <FortranIIModalContent isUkrainian={isUkrainian} /> },
+      apl: { backgroundColor: "green", color: "#fff", title: "APL", content: <APLModalContent isUkrainian={isUkrainian} /> },
+      'eclipse ceylon': { backgroundColor: "gold", color: "#333", title: "Eclipse Ceylon", content: <CeylonModalContent isUkrainian={isUkrainian} /> },
+      coffeescript: { backgroundColor: "brown", color: "#fff", title: "CoffeeScript", content: <CoffeeScriptModalContent isUkrainian={isUkrainian} /> },
+      xml: { backgroundColor: "grey", color: "#000", title: "XML", content: <XmlModalContent isUkrainian={isUkrainian} /> },
     };
   
     return languages[languageLower] || {};

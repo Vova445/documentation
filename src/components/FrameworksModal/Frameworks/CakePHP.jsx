@@ -76,7 +76,7 @@ const CakePHPModalContent = ({ isUkrainian }) => {
       </p>
       <ul>
         <li><strong>Official CakePHP Documentation:</strong> <a href="https://cakephp.org/docs/" target="_blank" rel="noopener noreferrer" style={linkStyles}>CakePHP</a></li>
-        <br>    </br>
+        <br></br>
         <li><strong>Courses and Resources:</strong> <a href="https://book.cakephp.org/4/en/index.html" target="_blank" rel="noopener noreferrer" style={linkStyles}>CakePHP Basics</a></li>
       </ul>
     </>

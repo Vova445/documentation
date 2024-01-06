@@ -77,7 +77,7 @@ const AngularModalContent = ({ isUkrainian }) => {
       </p>
       <ul>
         <li><strong>Official Angular Documentation:</strong> <a href="https://angular.io/docs" target="_blank" rel="noopener noreferrer" style={linkStyles}>Angular</a></li>
-        <br>    </br>
+        <br></br>
         <li><strong>Angular Tutorial:</strong> <a href="https://angular.io/start" target="_blank" rel="noopener noreferrer" style={linkStyles}>Angular Tutorial</a></li>
       </ul>
     </>

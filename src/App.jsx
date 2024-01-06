@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import languagesData from "./languages.json";
 import frameworksData from "./frameworks.json"
+import librariesData from "./libraries.json";
 import ScrollSlider from './components/Slider/Slider';
 import Modal from './components/Modal/Modal';
 import LanguageModal from './components/ModalLanguages/Language';
 import FrameworksModal from "./components/FrameworksModal/Frameworks";
+import LibrariesModal from "components/LibrariesModal/Libraries";
 import LanguagesDescription from "./components/description/LanguagesDescription";
 import FrameworksDescription from "./components/description/FrameworksDescription";
+import LibrariesDescription from "components/description/LibrariesDescription";
+import ResourcesDescription from "components/description/OthersResourcesDescription";
 import {ReactComponent as MenuIcon} from './svg/burger-menu-svgrepo-com.svg';
 import LoaderSVG from './svg/loading-svgrepo-com.svg';
 import SectionOne from "components/Sections/SectionOne";
@@ -14,12 +18,14 @@ import SectionTwo from "components/Sections/SectionTwo";
 import SectionThree from "components/Sections/SectionThree";
 import SectionFour from "components/Sections/SectionFour";
 import SectionFive from "components/Sections/SectionFive";
+import SectionSix from "components/Sections/SectionSix";
 import { ReactComponent as HomeIcon } from './svg/home-svgrepo-com.svg';
 import { ReactComponent as LanguagesIcon } from './svg/programming-code-svgrepo-com.svg';
 import { ReactComponent as ReactIcon } from './svg/react-svgrepo-com.svg';
 import { ReactComponent as ResourcesIcon } from './svg/education-book-learn-school-library-svgrepo-com.svg';
 import { ReactComponent as UkraineIcon } from './svg/flag-ua-svgrepo-com.svg';
 import { ReactComponent as UKIcon } from './svg/united-kingdom-uk-svgrepo-com.svg';
+
 
 
 
@@ -81,11 +87,13 @@ export const App = () => {
   const [isUkrainian, setIsUkrainian] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState(null);
   const [selectedFramework, setSelectedFramework] = useState(null);
+  const [selectedLibrary, setSelectedLibrary] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const itemsPerPage = 14;
   const [currentLanguagePage, setCurrentLanguagePage] = useState(1);
   const [currentFrameworkPage, setCurrentFrameworkPage] = useState(1);
+  const [currentLibraryPage, setCurrentLibraryPage] = useState(1);
 
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -153,6 +161,12 @@ export const App = () => {
     console.log(`Clicked on framework: ${framework.name}`);
     setSelectedFramework(framework.name);
   };
+  const handleLibraryClick = (library) => {
+    console.log(`Clicked on library: ${library.name}`);
+    setSelectedLibrary(library.name); 
+  };
+  
+  
 
   const toggleLanguage = () => {
     setIsUkrainian((prev) => !prev);
@@ -167,6 +181,9 @@ export const App = () => {
     setCurrentFrameworkPage(page);
   };
 
+  const handleLibraryPageChange = (page) => {
+    setCurrentLibraryPage(page);
+  };
 
 
   const renderLanguages = () => {
@@ -215,6 +232,29 @@ export const App = () => {
               {framework.name}
             </div>
             </div>
+        ))}
+      </div>
+    );
+  };
+
+
+
+  const renderLibraries = () => {
+    const startIndex = (currentLibraryPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const displayedLibraries = librariesData.slice(startIndex, endIndex);
+  
+    return (
+      <div className="programming-languages-container">
+        {displayedLibraries.map((library) => (
+          <div key={library.id} className="library-container">
+            <div
+              data-library={library.name}
+              onClick={() => handleLibraryClick(library)}
+              className={`library-text ${library.name.toLowerCase().replace(' ', '-')}-library`}
+            ></div>
+            <div className="language-name">{library.name}</div>
+          </div>
         ))}
       </div>
     );
@@ -280,7 +320,14 @@ export const App = () => {
           <SectionFour isUkrainian={isUkrainian} renderFrameworks={renderFrameworks} frameworksData={frameworksData} itemsPerPage={itemsPerPage} handleFrameworkPageChange={handleFrameworkPageChange} currentFrameworkPage={currentFrameworkPage} />
 
 
-          <SectionFive isUkrainian={isUkrainian} />
+          <LibrariesDescription isUkrainian={isUkrainian} />
+
+
+          <SectionFive isUkrainian={isUkrainian} renderLibraries={renderLibraries} librariesData={librariesData} itemsPerPage={itemsPerPage} handleLibraryPageChange={handleLibraryPageChange} currentLibraryPage={currentLibraryPage}
+/>
+          {/* <ResourcesDescription isUkrainian={isUkrainian} /> */}
+
+          <SectionSix isUkrainian={isUkrainian} />
         </div>
 
         {modalContent.title && (
@@ -310,6 +357,17 @@ export const App = () => {
           isUkrainian={isUkrainian}
         />
       )}
+
+
+    {selectedLibrary && (
+      <LibrariesModal
+        library={selectedLibrary}
+        closeModal={() => setSelectedLibrary(null)}
+        isUkrainian={isUkrainian}
+      />
+    )}
+
+
 
         <ScrollSlider />
       </main>

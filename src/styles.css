@@ -719,6 +719,15 @@ display: none;
     flex-wrap: wrap;
     gap: 20px;
   }
+
+
+  .programming-libraries-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
   
   .language-text {
     width: 100px;
@@ -764,6 +773,12 @@ display: none;
   }
   
 
+  .section-six{
+    text-align: center;
+    margin-top: 50px;
+    background-color: #cfe3fc8a;
+    padding: 30px;
+  }
 
   .additional-content {
     margin-top: 150px;
@@ -1532,6 +1547,35 @@ hr {
     color: white;
 }
 
+.language-text[data-language="APL"] {
+  /* background-color: #333333; */
+  background-image: url(./images/APL.svg);
+  background-size:cover;
+  color: white;
+}
+
+.language-text[data-language="Eclipse Ceylon"] {
+  /* background-color: #333333; */
+  background-image: url(./images/Eclipse\ Ceylon.svg);
+  background-size:cover;
+  color: white;
+}
+
+
+.language-text[data-language="CoffeeScript"] {
+  /* background-color: #333333; */
+  background-image: url(./images/CoffeeScript.svg);
+  background-size:cover;
+  color: white;
+}
+
+
+.language-text[data-language="XML"] {
+  /* background-color: #333333; */
+  background-image: url(./images/XML.svg);
+  background-size:cover;
+  color: white;
+}
 
 /* 
 .language-text[data-language="Tcl"]:hover {
@@ -2143,6 +2187,198 @@ hr {
   } */
   
   
+
+  .framework-text[data-framework="Electron"] {
+    /* background-color: #f93e2c; */
+    background-image: url(./FrameworksIcons/Electron.svg);
+    background-size: cover;
+    color: white;
+  }
+
+
+  .framework-text[data-framework="Phalcon"] {
+    /* background-color: #f93e2c; */
+    background-image: url(./FrameworksIcons/Phalcon.svg);
+    background-size: cover;
+    color: white;
+  }
+
+  .library-text {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+    
+    .library-text:hover {
+      transform: scale(1.1);
+    }
+
+
+  
+
+
+
+    .library-text[data-library="NumPy"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/NumPy.svg);
+    }
+
+    .library-text[data-library="SciPy"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/scipy.svg);
+    }
+    .library-text[data-library="Matplotlib"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Matplotlib.svg);
+    }
+
+    .library-text[data-library="Pandas"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Pandas.svg);
+    }
+    .library-text[data-library="TensorFlow"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/TensorFlow.svg);
+    }
+    .library-text[data-library="PyTorch"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/PyTorch.svg);
+    }
+    .library-text[data-library="scikit-learn"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/scikit-learn.svg);
+    }
+    .library-text[data-library="Axios"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Axios.svg);
+    }
+    .library-text[data-library="Lodash"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/lodash.svg);
+    }
+    .library-text[data-library="jQuery"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/jQuery.svg);
+    }
+    .library-text[data-library="Moment.js"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/momentjs.svg);
+    }
+    .library-text[data-library="Redux"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Redux.svg);
+    }
+    .library-text[data-library="RxJS"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/rxjs.svg);
+    }
+    .library-text[data-library="Ramda"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/ramda.svg);
+    }
+    .library-text[data-library="Three.js"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Three.js.svg);
+    }
+    .library-text[data-library="Socket.IO"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Socket.io.svg);
+    }
+    .library-text[data-library="SQLAlchemy"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/SQLAlchemy.svg);
+    }
+    .library-text[data-library="Selenium"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Selenium.svg);
+    }
+    .library-text[data-library="OpenCV"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/OpenCV.svg);
+    }
+    .library-text[data-library="React Router"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/react-router.svg);
+    }
+    .library-text[data-library="Redux Saga"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/redux-saga.svg);
+    }
+    .library-text[data-library="Jest"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Jest.svg);
+    }
+    .library-text[data-library="Tailwind CSS"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Tailwind\ CSS.svg);
+    }
+    .library-text[data-library="Bootstrap"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Bootstrap.svg);
+    }
+    .library-text[data-library="SAAS"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Sass.svg);
+    }
+    .library-text[data-library="Firebase"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Firebase.svg);
+    }
+    .library-text[data-library="Twilio"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/twilio.svg);
+    }
+    .library-text[data-library="GraphQL"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/GraphQL.svg);
+    }
+    .library-text[data-library="Mongoose"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Mongoose.js.svg);
+    }
+    .library-text[data-library="Passport.js"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/passport.svg);
+    }
+    .library-text[data-library="Mocha"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Mocha.svg);
+    }
+    .library-text[data-library="Jasmine"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Jasmine.svg);
+    }
+    
+    .library-text[data-library="Cypress"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/Cypress.svg);
+    }
+    .library-text[data-library="JUnit"]{
+      background-size: cover;
+      background-image: url(./LibrariesIcons/JUnit.svg);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
