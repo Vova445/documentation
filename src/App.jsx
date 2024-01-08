@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import languagesData from "./languages.json";
-import frameworksData from "./frameworks.json"
+import frameworksData from "./frameworks.json";
 import librariesData from "./libraries.json";
+import resourcesData from './resources.json';
 import ScrollSlider from './components/Slider/Slider';
 import Modal from './components/Modal/Modal';
 import LanguageModal from './components/ModalLanguages/Language';
 import FrameworksModal from "./components/FrameworksModal/Frameworks";
 import LibrariesModal from "components/LibrariesModal/Libraries";
+import OtherResourcesModal from "components/OtherResourcesModal/OtherResources";
 import LanguagesDescription from "./components/description/LanguagesDescription";
 import FrameworksDescription from "./components/description/FrameworksDescription";
 import LibrariesDescription from "components/description/LibrariesDescription";
-// import ResourcesDescription from "components/description/OthersResourcesDescription";
+import ResourcesDescription from "components/description/OthersResourcesDescription";
 import {ReactComponent as MenuIcon} from './svg/burger-menu-svgrepo-com.svg';
 import LoaderSVG from './svg/loading-svgrepo-com.svg';
 import SectionOne from "components/Sections/SectionOne";
@@ -19,6 +21,8 @@ import SectionThree from "components/Sections/SectionThree";
 import SectionFour from "components/Sections/SectionFour";
 import SectionFive from "components/Sections/SectionFive";
 import SectionSix from "components/Sections/SectionSix";
+import SectionSeven from "components/Sections/SectionSeven";
+import Footer from "components/Footer/Footer";
 import { ReactComponent as HomeIcon } from './svg/home-svgrepo-com.svg';
 import { ReactComponent as LanguagesIcon } from './svg/programming-code-svgrepo-com.svg';
 import { ReactComponent as ReactIcon } from './svg/react-svgrepo-com.svg';
@@ -88,12 +92,17 @@ export const App = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(null);
   const [selectedFramework, setSelectedFramework] = useState(null);
   const [selectedLibrary, setSelectedLibrary] = useState(null);
+  const [selectedResource, setSelectedResource] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isScrollSliderVisible, setIsScrollSliderVisible] = useState(true);
 
   const itemsPerPage = 14;
   const [currentLanguagePage, setCurrentLanguagePage] = useState(1);
   const [currentFrameworkPage, setCurrentFrameworkPage] = useState(1);
   const [currentLibraryPage, setCurrentLibraryPage] = useState(1);
+  const [currentResourcePage, setCurrentResourcePage] = useState(1);
+  
+
 
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -114,7 +123,7 @@ export const App = () => {
 
   useEffect(() => {
     const handleBodyOverflow = () => {
-      document.body.style.overflow = (isModalOpen || selectedLanguage || isMenuOpen || selectedFramework) ? 'hidden' : 'auto';
+      document.body.style.overflow = (isModalOpen || selectedLanguage || isMenuOpen || selectedFramework || selectedLibrary || selectedResource) ? 'hidden' : 'auto';
     };
   
     handleBodyOverflow();
@@ -122,7 +131,7 @@ export const App = () => {
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isModalOpen, selectedLanguage, isMenuOpen, selectedFramework]);
+  }, [isModalOpen, selectedLanguage, isMenuOpen, selectedFramework, selectedLibrary, selectedResource]);
   
 
   useEffect(() => {
@@ -132,6 +141,10 @@ export const App = () => {
 
     return () => clearTimeout(timeout);
   }, []);
+  
+  useEffect(() => {
+    setIsScrollSliderVisible(!isMenuOpen);
+  }, [isMenuOpen]);
 
   if (isLoading) {
     return (
@@ -165,6 +178,13 @@ export const App = () => {
     console.log(`Clicked on library: ${library.name}`);
     setSelectedLibrary(library.name); 
   };
+
+
+  const handleResourceClick = (resource) => {
+    console.log(`Clicked on resource: ${resource.name}`);
+    setSelectedResource(resource);
+    openModal(resource.name, resourceDescriptions[resource.name][isUkrainian ? 'uk' : 'en'], resource.link, resource.resourceClass);
+  };
   
   
 
@@ -185,6 +205,9 @@ export const App = () => {
     setCurrentLibraryPage(page);
   };
 
+  const handleResourcePageChange = (page) => {
+    setCurrentResourcePage(page);
+  };
 
   const renderLanguages = () => {
     const startIndex = (currentLanguagePage - 1) * itemsPerPage;
@@ -260,6 +283,27 @@ export const App = () => {
     );
   };
   
+
+  const renderResources = () => {
+    const startIndex = (currentResourcePage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const displayedResources = resourcesData.slice(startIndex, endIndex);
+
+    return (
+      <div className="programming-languages-container">
+        {displayedResources.map((resource) => (
+          <div key={resource.id} className="resource-container">
+            <div
+              data-resource={resource.name}
+              onClick={() => handleResourceClick(resource)}
+              className={`resource-text ${resource.name.toLowerCase().replace(' ', '-')}-resource`}
+            ></div>
+            <div className="language-name">{resource.name}</div>
+          </div>
+        ))}
+      </div>
+    );
+  };
   
 
   return (
@@ -323,11 +367,13 @@ export const App = () => {
           <LibrariesDescription isUkrainian={isUkrainian} />
 
 
-          <SectionFive isUkrainian={isUkrainian} renderLibraries={renderLibraries} librariesData={librariesData} itemsPerPage={itemsPerPage} handleLibraryPageChange={handleLibraryPageChange} currentLibraryPage={currentLibraryPage}
-/>
-          {/* <ResourcesDescription isUkrainian={isUkrainian} /> */}
+          <SectionFive isUkrainian={isUkrainian} renderLibraries={renderLibraries} librariesData={librariesData} itemsPerPage={itemsPerPage} handleLibraryPageChange={handleLibraryPageChange} currentLibraryPage={currentLibraryPage} />
+          <ResourcesDescription isUkrainian={isUkrainian} />
 
-          <SectionSix isUkrainian={isUkrainian} />
+          <SectionSix isUkrainian={isUkrainian} renderResources={renderResources} resourcesData={resourcesData} itemsPerPage={itemsPerPage} handleResourcePageChange={handleResourcePageChange} currentResourcePage={currentResourcePage} />
+
+
+          <SectionSeven isUkrainian={isUkrainian} />
         </div>
 
         {modalContent.title && (
@@ -367,10 +413,25 @@ export const App = () => {
       />
     )}
 
+    {selectedResource && (
+      <OtherResourcesModal
+        resource={selectedResource.name}
+        closeModal={() => setSelectedResource(null)}
+        isUkrainian={isUkrainian}
+      />
+    )}
 
 
-        <ScrollSlider />
+    {isScrollSliderVisible && <ScrollSlider />}
       </main>
+
+
+      <footer>
+      <div className="container">
+        <hr></hr>
+        <Footer isUkrainian={isUkrainian}/>
+       </div>
+      </footer>
     </>
   );
 };

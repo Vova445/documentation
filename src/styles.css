@@ -20,16 +20,34 @@ header {
 }
 
 .main-title {
-    text-align: center;
-    font-size: 36px;
-    color: #000000;
-    margin-bottom: 30px;
+  text-align: center;
+  font-size: 36px;
+  color: #3498db;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.main-title:hover::after {
+  width: 80%;
 }
 
 .section-one {
-    padding: 50px;
-    color: #333;
+  padding: 50px;
+  color: #555;
 }
+
+.section-one p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #777;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.section-one p:hover {
+  color: #3498db; 
+}
+
 
 @media screen and (max-width: 520px) {
   .section-one {
@@ -44,6 +62,18 @@ header {
 }
 }
 
+.nav-page {
+  background: linear-gradient(to bottom, #F7F8F8, #C1CED3); 
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 0 50px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease;
+}
+
 .nav-list {
   display: flex;
   justify-content: space-between;
@@ -56,8 +86,9 @@ header {
   position: relative;
   cursor: pointer;
   text-decoration: none;
-  color: rgb(87, 107, 101);
+  color: #000000;
   padding: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-list a::before {
@@ -65,12 +96,17 @@ header {
   position: absolute;
   width: 100%;
   height: 3px;
-  background-color: #000000;
+  background-color: #3498db; 
   bottom: 0;
   left: 0;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: #3498db; 
+  transform: translateY(-3px); 
 }
 
 .nav-list a:hover::before {
@@ -81,22 +117,24 @@ header {
 .nav-img-language {
   max-width: 60px;
   padding: 12px;
+  transition: transform 0.3s ease;
 }
 
-.nav-page {
-  background: linear-gradient(to bottom, #F7F8F8, #C1CED3);
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  padding: 0 50px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+.nav-img-language:hover {
+  transform: scale(1.1);
+}
+
+.nav-list a:hover,
+.nav-img-language:hover {
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 0px 10px rgba(52, 152, 219, 0.7);
 }
 
 .nav-menu-button {
-display: none;
+  display: none;
 }
+
+
 
 @media screen and (min-width: 1050px) {
   .nav-list a {
@@ -241,16 +279,16 @@ display: none;
 
 
 .container {
-    max-width: 1158px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 40px;
-    padding-bottom: 100px;
-    background-color: #89beff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.6);
+  max-width: 1158px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 40px;
+  /* padding-bottom: 100px; */
+  background-color: #89beff;
+  /* border-radius: 10px; */
+  box-shadow: 0px 50px 40px rgba(0, 0, 0, 0.6);
 }
 
 .resource-list {
@@ -738,11 +776,11 @@ display: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out, background-color 0.3s ease-in-out;
   }
   
   .language-text:hover {
-    transform: scale(1.1);
+    transform: scale(1.3);
   }
 
 
@@ -1726,11 +1764,11 @@ hr {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out, background-color 0.3s ease-in-out;
   }
   
   .framework-text:hover {
-    transform: scale(1.1);
+    transform: scale(1.3);
   }
   
   .framework-text[data-framework="React"] {
@@ -2214,11 +2252,11 @@ hr {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out, background-color 0.3s ease-in-out;
     }
     
     .library-text:hover {
-      transform: scale(1.1);
+      transform: scale(1.3);
     }
 
 
@@ -2369,8 +2407,384 @@ hr {
 
 
 
+    .resource-text {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease-in-out, background-color 0.3s ease-in-out;
+      }
+      
+      .resource-text:hover {
+        transform: scale(1.3);
+      }
+  
 
 
+    .resource-text[data-resource="Akka"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Akka.svg);
+    }
+
+
+    .resource-text[data-resource="Anaconda"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Anaconda.svg);
+    }
+    .resource-text[data-resource="Android Studio"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Android\ Studio.svg);
+    }
+    .resource-text[data-resource="Ansible"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Ansible.svg);
+    }
+    .resource-text[data-resource="Apache"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Apache.svg);
+    }
+    .resource-text[data-resource="Arch Linux"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Arch\ Linux.svg);
+    }
+    .resource-text[data-resource="Arduino"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Arduino.svg);
+    }
+    .resource-text[data-resource="Atom"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Atom.svg);
+    }
+    .resource-text[data-resource="Babel"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Babel.svg);
+    }
+    .resource-text[data-resource="Behance"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Behance.svg);
+    }
+    .resource-text[data-resource="BitBucket"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/BitBucket.svg);
+    }
+    .resource-text[data-resource="Blender"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Blender.svg);
+    }
+    .resource-text[data-resource="BrowserStack"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/BrowserStack.svg);
+    }
+    .resource-text[data-resource="Bulma"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Bulma.svg);
+    }
+    .resource-text[data-resource="Bun"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Bun.svg);
+    }
+    .resource-text[data-resource="Cairo Graphics"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Cairo\ Graphics.svg);
+    }
+    .resource-text[data-resource="Canva"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Canva.svg);
+    }
+    .resource-text[data-resource="CircleCI"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/CircleCI.svg);
+    }
+    .resource-text[data-resource="CLion"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/CLion.svg);
+    }
+    .resource-text[data-resource="CMake"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/CMake.svg);
+    }
+    .resource-text[data-resource="CodeIgniter"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/CodeIgniter.svg);
+    }
+    .resource-text[data-resource="Code Pen"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/CodePen.svg);
+    }
+    .resource-text[data-resource="Composer"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Composer.svg);
+    }
+    .resource-text[data-resource="Confluence"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Confluence.svg);
+    }
+    .resource-text[data-resource="CouchDB"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/CouchDB.svg);
+    }
+    .resource-text[data-resource="DataGrip"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/DataGrip.svg);
+    }
+    .resource-text[data-resource="DataSpell"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/DataSpell.svg);
+    }
+    .resource-text[data-resource="DBeaver"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/DBeaver.svg);
+    }
+    .resource-text[data-resource="Deno"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Deno.svg);
+    }
+    .resource-text[data-resource="Docker"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Docker.svg);
+    }
+    .resource-text[data-resource="Doctrine"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Doctrine.svg);
+    }
+    .resource-text[data-resource="Drupal"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Drupal.svg);
+    }
+    .resource-text[data-resource="Eclipse IDE"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Eclipse\ IDE.svg);
+    }
+    .resource-text[data-resource="Elastic Search"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Elastic\ Search.svg);
+    }
+    .resource-text[data-resource="ESLint"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/ESLint.svg);
+    }
+    .resource-text[data-resource="Figma"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Figma.svg);
+    }
+    .resource-text[data-resource="FileZilla"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/FileZilla.svg);
+    }
+    .resource-text[data-resource="Flutter"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Flutter.svg);
+    }
+    .resource-text[data-resource="Gatsby"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Gatsby.svg);
+    }
+    .resource-text[data-resource="GCC"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/GCC.svg);
+    }
+    .resource-text[data-resource="Gentoo"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Gentoo.svg);
+    }
+    .resource-text[data-resource="GIMP"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/GIMP.svg);
+    }
+    .resource-text[data-resource="Git"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Git.svg);
+    }
+    .resource-text[data-resource="GitBook"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/GitBook.svg);
+    }
+    .resource-text[data-resource="Git Hub"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/GitHub.svg);
+    }
+    .resource-text[data-resource="GitLab"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/GitLab.svg);
+    }
+    .resource-text[data-resource="Gitter"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Gitter.svg);
+    }
+    .resource-text[data-resource="Godot Engine"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Godot\ Engine.svg);
+    }
+    .resource-text[data-resource="GoLand"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/GoLand.svg);
+    }
+    .resource-text[data-resource="Gradle"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Gradle.svg);
+    }
+    .resource-text[data-resource="Grafana"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Grafana.svg);
+    }
+    .resource-text[data-resource="Grails"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Grails.svg);
+    }
+    .resource-text[data-resource="Handlebars"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Handlebars.svg);
+    }
+    .resource-text[data-resource="Hardhat"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Hardhat.svg);
+    }
+    .resource-text[data-resource="Homebrew"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Homebrew.svg);
+    }
+    .resource-text[data-resource="IFTTT"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/IFTTT.svg);
+    }
+    .resource-text[data-resource="InfluxDB"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/InfluxDB.svg);
+    }
+    .resource-text[data-resource="Inkscape"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Inkscape.svg);
+    }
+    .resource-text[data-resource="IntelliJ IDEA"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/IntelliJ\ IDEA.svg);
+    }
+    .resource-text[data-resource="Ionic"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Ionic.svg);
+    }
+    .resource-text[data-resource="Jekyll"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Jekyll.svg);
+    }
+    .resource-text[data-resource="Jenkins"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Jenkins.svg);
+    }
+    .resource-text[data-resource="JetBrains"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/JetBrains.svg);
+    }
+    .resource-text[data-resource="Jira"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Jira.svg);
+    }
+    .resource-text[data-resource="JSON"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/JSON.svg);
+    }
+    .resource-text[data-resource="Jupyter"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Jupyter.svg);
+    }
+    .resource-text[data-resource="Kaggle"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Kaggle.svg);
+    }
+    .resource-text[data-resource="Keras"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Keras.svg);
+    }
+    .resource-text[data-resource="Kubernetes"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Kubernetes.svg);
+    }
+    .resource-text[data-resource="LinkedIn"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/LinkedIn.svg);
+    }
+    .resource-text[data-resource="LLVM"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/LLVM.svg);
+    }
+    .resource-text[data-resource="Autodesk Maya"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Autodesk\ Maya.svg);
+    }
+    .resource-text[data-resource="MongoDB"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/MongoDB.svg);
+    }
+    .resource-text[data-resource="Moodle"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Moodle.svg);
+    }
+    .resource-text[data-resource="MySQL"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/MySQL.svg);
+    }
+    .resource-text[data-resource="Nano"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Nano.svg);
+    }
+    .resource-text[data-resource="Node.js"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Node.js.svg);
+    }
+    .resource-text[data-resource="PhpStorm"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/PhpStorm.svg);
+    }
+    .resource-text[data-resource="Postman"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Postman.svg);
+    }
+    .resource-text[data-resource="Rancher"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Rancher.svg);
+    }
+    .resource-text[data-resource="Trello"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Trello.svg);
+    }
+    .resource-text[data-resource="Unity"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Unity.svg);
+    }
+    .resource-text[data-resource="Unreal Engine"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Unreal\ Engine.svg);
+    }
+    .resource-text[data-resource="Visual Studio"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Visual\ Studio.svg);
+    }
+    .resource-text[data-resource="Visual Studio Code"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Visual\ Studio\ Code\ \(VS\ Code\).svg);
+    }
+    .resource-text[data-resource="Vite.js"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Vite.js.svg);
+    }
+    .resource-text[data-resource="Webpack"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/Webpack.svg);
+    }
+    .resource-text[data-resource="WebStorm"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/WebStorm.svg);
+    }
+    .resource-text[data-resource="WordPress"]{
+      background-size: cover;
+      background-image: url(./OtherIcons/WordPress.svg);
+    }
 
 
 
