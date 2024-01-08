@@ -81,7 +81,7 @@ const SectionSeven = ({ isUkrainian }) => {
   return (
     <>
     <hr />
-    <section id="programming-news" className={`section-five programming-news ${isUkrainian ? 'ukrainian' : 'english'}`}>
+    <section className={`section-five programming-news ${isUkrainian ? 'ukrainian' : 'english'}`}>
       <h2 className="section-five-title">{isUkrainian ? 'Новини з програмування' : 'Programming News'}</h2>
       {isLoading ? (
         <div className="loader-container">

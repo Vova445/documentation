@@ -4,6 +4,7 @@ const ResourcesDescription = ({ isUkrainian }) => {
   return (
     <>
       <hr id="resources" />
+      <section id="programming-resources">
       <div className="additional-content">
         <p>
           {isUkrainian
@@ -41,7 +42,9 @@ const ResourcesDescription = ({ isUkrainian }) => {
             : 'In general, other resources aim to streamline routine tasks and optimize the workflow of developers.'}
         </p>
       </div>
+      </section>
     </>
+
   );
 };
 

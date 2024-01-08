@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import languagesData from "./languages.json";
 import frameworksData from "./frameworks.json";
 import librariesData from "./libraries.json";
@@ -209,6 +210,16 @@ export const App = () => {
     setCurrentResourcePage(page);
   };
 
+
+
+
+  const handleNavLinkClick = (event, target) => {
+    event.preventDefault();
+    const targetElement = document.getElementById(target);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   const renderLanguages = () => {
     const startIndex = (currentLanguagePage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -314,10 +325,10 @@ export const App = () => {
             <MenuIcon className="nav-menu-icon" width={30} height={30} />
           </button>
           <ul className={`nav-list ${isMenuOpen ? 'nav-list-open' : ''}`}>
-          <li><a href="#home">{isUkrainian ? <><HomeIcon /> Головна</> : <><HomeIcon /> Home</>}</a></li>
-            <li><a href="#programming-languages">{isUkrainian ? <> <LanguagesIcon /> Виберіть свою мову програмування </> : <> <LanguagesIcon /> Choose your programming language </>}</a></li>
-            <li><a href="#frameworks">{isUkrainian ? <> <ReactIcon /> Фреймворки </> : <> <ReactIcon /> Frameworks </>}</a></li>
-            <li><a href="#programming-news">{isUkrainian ? <> <ResourcesIcon /> Кілька інших ресурсів </> : <> <ResourcesIcon /> Other resources</>}</a></li>
+          <li><Link to="/" onClick={(e) => handleNavLinkClick(e, 'home')}> {isUkrainian ? <><HomeIcon /> Головна</> : <><HomeIcon /> Home</>} </Link></li>
+            <li> <Link to="/" onClick={(e) => handleNavLinkClick(e, 'programming-languages')}> {isUkrainian ? <> <LanguagesIcon /> Виберіть свою мову програмування </> : <> <LanguagesIcon /> Choose your programming language </>} </Link></li>
+            <li><Link to="/" onClick={(e) => handleNavLinkClick(e, 'frameworks')}> {isUkrainian ? <> <ReactIcon /> Фреймворки </> : <> <ReactIcon /> Frameworks </>} </Link></li>
+            <li><Link to="/" onClick={(e) => handleNavLinkClick(e, 'programming-resources')}> {isUkrainian ? <> <ResourcesIcon /> Кілька інших ресурсів </> : <> <ResourcesIcon /> Other resources</>}</Link></li>
             <li className="language-switch-item">
               <label className="switch">
                 <input type="checkbox" onChange={toggleLanguage} checked={isUkrainian} />
@@ -330,18 +341,20 @@ export const App = () => {
           {isMenuOpen && (
             <div className="modal">
               <ul className="modal-list">
-                <li onClick={closeMenu}><a href="#home">{isUkrainian ? 'Головна' : 'Home'}</a></li>
-                <li onClick={closeMenu}><a href="#programming-languages">{isUkrainian ? 'Виберіть свою мову програмування' : 'Choose your programming language'}</a></li>
-                <li onClick={closeMenu}><a href="#frameworks">{isUkrainian ? 'Фреймворки' : 'Frameworks'}</a></li>
-                <li onClick={closeMenu}><a href="#programming-news">{isUkrainian ? 'Кілька інших ресурсів' : 'Other resources'}</a></li>
-                <li style={{marginBottom: '20px'}} className="language-switch-item"> 
-                  <label className="switch">
-                    <input type="checkbox" onChange={toggleLanguage} checked={isUkrainian} />
-                    <span className="slider"></span>
-                  </label>
-                  <span style={{ marginLeft: '12px', display: 'flex' }}>{isUkrainian ? <UkraineIcon /> : <UKIcon />}</span>
-                </li>
-              </ul>
+  <li onClick={closeMenu}>
+    <Link to="/" onClick={(e) => handleNavLinkClick(e, 'home')}>{isUkrainian ? <><HomeIcon /> Головна</> : <><HomeIcon /> Home</>}</Link></li>
+  <li onClick={closeMenu}>
+    <Link to="/" onClick={(e) => handleNavLinkClick(e, 'programming-languages')}> {isUkrainian ? <> <LanguagesIcon /> Виберіть свою мову програмування </> : <> <LanguagesIcon /> Choose your programming language </>}</Link></li>
+  <li onClick={closeMenu}><Link to="/" onClick={(e) => handleNavLinkClick(e, 'frameworks')}>{isUkrainian ? <> <ReactIcon /> Фреймворки </> : <> <ReactIcon /> Frameworks </>}</Link></li>
+  <li onClick={closeMenu}><Link to="/" onClick={(e) => handleNavLinkClick(e, 'programming-resources')}>{isUkrainian ? <> <ResourcesIcon /> Кілька інших ресурсів </> : <> <ResourcesIcon /> Other resources</>}</Link></li>
+  <li style={{ marginBottom: '20px' }} className="language-switch-item">
+    <label className="switch">
+      <input type="checkbox" onChange={toggleLanguage} checked={isUkrainian} />
+      <span className="slider"></span>
+    </label>
+    <span style={{ marginLeft: '12px', display: 'flex' }}>{isUkrainian ? <UkraineIcon /> : <UKIcon />}</span>
+  </li>
+</ul>
             </div>
           )}
         </nav>
