@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/documentation/static/css/main.007fc9b3.css",
-    "main.js": "/documentation/static/js/main.e159ad39.js",
+    "main.css": "/documentation/static/css/main.6846bc2f.css",
+    "main.js": "/documentation/static/js/main.3284b183.js",
     "static/media/LLVM.svg": "/documentation/static/media/LLVM.c1ffca672f7a827ea88c.svg",
     "static/media/hapi.svg": "/documentation/static/media/hapi.cb49b068110e0442c77b.svg",
     "static/media/Nano.svg": "/documentation/static/media/Nano.e119526af2f8024dad78.svg",
@@ -252,11 +252,11 @@
     "static/media/koajs.svg": "/documentation/static/media/koajs.099a6d27c8c86d602c82.svg",
     "static/media/Gitter.svg": "/documentation/static/media/Gitter.c757a9e9c73ced525c6f.svg",
     "static/media/Bulma.svg": "/documentation/static/media/Bulma.9e3d07b328bc7a1704c8.svg",
-    "main.007fc9b3.css.map": "/documentation/static/css/main.007fc9b3.css.map",
-    "main.e159ad39.js.map": "/documentation/static/js/main.e159ad39.js.map"
+    "main.6846bc2f.css.map": "/documentation/static/css/main.6846bc2f.css.map",
+    "main.3284b183.js.map": "/documentation/static/js/main.3284b183.js.map"
   },
   "entrypoints": [
-    "static/css/main.007fc9b3.css",
-    "static/js/main.e159ad39.js"
+    "static/css/main.6846bc2f.css",
+    "static/js/main.3284b183.js"
   ]
 }
