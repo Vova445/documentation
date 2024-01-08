@@ -1,6 +1,7 @@
 .footer {
     color: #282c36;
     background-color: #cfe3fc8a;
+    margin-top: 100px;
   }
   
   .back {
@@ -49,7 +50,6 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-  
   .pFooter {
     font-size: 16px;
     line-height: 1.6;
@@ -59,6 +59,14 @@
     background-color: rgba(52, 152, 219, 0.2);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .pFooter:hover {
+    box-shadow: 0 8px 12px rgba(52, 152, 219, 0.3);
+    transform: translateY(-2px);
   }
   
   label {
@@ -76,7 +84,24 @@
     font-size: 16px;
     background-color: #cfe3fc8a;
     color: #282c36;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
+  
+  input:hover,
+  textarea:hover {
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+    transform: scale(1.02);
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+    transform: scale(1.05);
+  }
+  
   
   textarea {
     resize: none;
