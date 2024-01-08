@@ -1,7 +1,11 @@
 import React from 'react';
 import './OtherResources.css';
 
-
+import AkkaModalContent from './Resources/Akka';
+import AnacondaModalContent from './Resources/Anaconda';
+import AndroidStudioModalContent from './Resources/AndroidStudio';
+import AnsibleModalContent from './Resources/Ansible';
+import ApacheModalContent from './Resources/Apache';
 
 const OtherResourcesModal = ({ resource, closeModal, isUkrainian }) => {
   const handleGoOut = () => {
@@ -13,7 +17,11 @@ const OtherResourcesModal = ({ resource, closeModal, isUkrainian }) => {
     const resourceLower = typeof resource === 'string' ? resource.toLowerCase() : '';
 
     const resources = {
-     
+      akka: { backgroundColor: "#228B22", color: "#000", title: "Akka", content: <AkkaModalContent isUkrainian={isUkrainian} /> },
+      anaconda: { backgroundColor: "#8FBC8F", color: "#000", title: "Anaconda", content: <AnacondaModalContent isUkrainian={isUkrainian} /> },
+      'android studio': { backgroundColor: "#20B2AA", color: "#000", title: "Android Studio", content: <AndroidStudioModalContent isUkrainian={isUkrainian} /> },
+      ansible: { backgroundColor: "#171414", color: "#fff", title: "Ansible", content: <AnsibleModalContent isUkrainian={isUkrainian} /> },
+      apache: { backgroundColor: "#6853d4", color: "#fff", title: "Apache", content: <ApacheModalContent isUkrainian={isUkrainian} /> },
     };
    
     return resources[resourceLower] || {};

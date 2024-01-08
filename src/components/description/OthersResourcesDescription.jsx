@@ -3,8 +3,8 @@ import React from "react";
 const ResourcesDescription = ({ isUkrainian }) => {
   return (
     <>
-      <hr id="resources" />
-      <section id="programming-resources">
+      <hr id="programming-resources" />
+      <section>
       <div className="additional-content">
         <p>
           {isUkrainian
