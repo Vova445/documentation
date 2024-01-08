@@ -36,7 +36,7 @@ const Footer = ({ isUkrainian }) => {
       );
 
       console.log("Email sent successfully!");
-      setErrorMessage(""); // Clear error message on success
+      setErrorMessage("");
     } catch (error) {
       console.error("Failed to send email:", error);
       setErrorMessage("Failed to send email. Please try again later.");
@@ -72,7 +72,7 @@ const Footer = ({ isUkrainian }) => {
           {errorMessage && <p className="error-message">{errorMessage}</p>}
         </div>
         <div className="footer-section social-section">
-          <h3 className="h3Footer">{isUkrainian ? "Підписуйтеся на нас" : "Follow Us"}</h3>
+          <h3 className="h3Footer">{isUkrainian ? "Підписуйся на мене" : "Follow me"}</h3>
           <p className="pFooter">
             {isUkrainian
               ? "Ви можете слідкувати за мною:"

@@ -26,7 +26,7 @@ const ScrollSlider = () => {
   return (
     <div className={`scroll-slider ${isVisible ? 'show' : ''}`}>
       <div className="slider-button top" onClick={scrollToTop}>
-        <span>&#9650;</span>
+        <div className="custom-arrow"></div>
       </div>
     </div>
   );
