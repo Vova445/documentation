@@ -92,9 +92,7 @@ const Footer = ({ isUkrainian }) => {
             )}
           </div>
           <div className="footer-section social-section">
-            <h3 className="h3Footer">
-              {isUkrainian ? "Підписуйся на мене" : "Follow me"}
-            </h3>
+            
             <p className="pFooter">
               {isUkrainian
                 ? "Ви можете слідкувати за мною:"
