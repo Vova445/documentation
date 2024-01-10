@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PayPalDonate from "./PayPal";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 const SupportModal = ({ closeSupportModal, isUkrainian }) => {
   const [donationAmount, setDonationAmount] = useState(0);
@@ -49,11 +50,13 @@ const SupportModal = ({ closeSupportModal, isUkrainian }) => {
         </button>
       </div>
       {donationAmount > 0 && (
-        <div className="paypal-donate-container">
-          <PayPalDonate amount={donationAmount} onSuccess={handleSuccess} onError={handleError} />
-          {successMessage && <p className="success-message">{successMessage}</p>}
-          {errorMessage && <p className="error-message">{errorMessage}</p>}
-        </div>
+        <PayPalScriptProvider options={{ "client-id": "AUnaSqE4MHRybTEg_BaTy852k6SMj8xK3BsQTxtzoOsx5Ll5n-Dfj4THFlVPRBqWApTXu9Lx-EvA6U8c" }}>
+          <div className="paypal-donate-container">
+            <PayPalDonate amount={donationAmount} onSuccess={handleSuccess} onError={handleError} />
+            {successMessage && <p className="success-message">{successMessage}</p>}
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+          </div>
+        </PayPalScriptProvider>
       )}
       <button onClick={handleClose} className="close-support">
         {isUkrainian ? "Закрити" : "Close"}
