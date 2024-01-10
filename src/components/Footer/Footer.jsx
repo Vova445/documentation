@@ -1,13 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import "./Footer.css";
+import { SupportModal } from "./Support";
+
 
 const Footer = ({ isUkrainian }) => {
-  const [name, setName] = useState(""); // Додано стан для імені користувача
+  const [name, setName] = useState(""); 
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
+  useEffect(() => {
+    const handleBodyOverflow = () => {
+      document.body.style.overflow = (isSupportModalOpen) ? 'hidden' : 'auto';
+    };
+  
+    handleBodyOverflow();
+  
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isSupportModalOpen]);
+  
 
+
+  const openSupportModal = () => {
+    setIsSupportModalOpen(true);
+  };
+  
+  const closeSupportModal = () => {
+    setIsSupportModalOpen(false);
+  };
+  
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
@@ -27,7 +51,7 @@ const Footer = ({ isUkrainian }) => {
     }
 
     const templateParams = {
-      from_name: name, // Включено ім'я користувача
+      from_name: name,
       from_email: email,
       to_email: "vvvmikhnov@gmail.com",
       message_html: comment,
@@ -48,7 +72,7 @@ const Footer = ({ isUkrainian }) => {
       setErrorMessage("Failed to send email. Please try again later.");
     }
 
-    setName(""); // Очищення імені користувача
+    setName(""); 
     setEmail("");
     setComment("");
   };
@@ -124,6 +148,11 @@ const Footer = ({ isUkrainian }) => {
                 Instagram
               </a>
             </div>
+            <button className="nav-support-button" onClick={openSupportModal}>Підтримати розробника</button>
+            {isSupportModalOpen && (
+          <SupportModal closeSupportModal={closeSupportModal} />
+        )}
+
           </div>
         </div>
         <div className="footer-bottom">
@@ -131,6 +160,7 @@ const Footer = ({ isUkrainian }) => {
         </div>
       </div>
     </footer>
+    
   );
 };
 
