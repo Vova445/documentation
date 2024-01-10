@@ -5,7 +5,7 @@ const paypalApi = axios.create({
   baseURL: 'https://sandbox.paypal.com',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer ARM7mTk6F86izZ_MrpakuZdXOZLcxszrm_8oCBVEDPdeZ_0oC6UR78NB7XVInO-dZCHTUPtmnHh-Wxya', 
+    'Authorization': 'Bearer AUnaSqE4MHRybTEg_BaTy852k6SMj8xK3BsQTxtzoOsx5Ll5n-Dfj4THFlVPRBqWApTXu9Lx-EvA6U8c', 
   },
 });
 
