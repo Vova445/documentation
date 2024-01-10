@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const paypalApi = axios.create({
-  baseURL: 'https://api.paypal.com',
+  baseURL: 'https://api.sandbox.paypal.com',
   headers: {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer AbrDMpz7iyp_esJs-r26kqlXhlVkLgw6BKlhYld3fWZyjeVYE-3h0jdRg_-YeJ-gMg-oECvblO_p0Fc-', 
