@@ -1,33 +1,34 @@
-// paypalApi.js
-import axios from 'axios';
+import { loadStripe } from '@stripe/stripe-js';
 
-const paypalApi = axios.create({
-  baseURL: 'https://api.paypal.com',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer AbrDMpz7iyp_esJs-r26kqlXhlVkLgw6BKlhYld3fWZyjeVYE-3h0jdRg_-YeJ-gMg-oECvblO_p0Fc-', 
-  },
-});
+const stripePromise = loadStripe('pk_test_51OWrjAB1riNc82tBHQaX8NIuOWXqj34QkUw2xn72m69Plp7fffJr9LtG6rrZ5qxZl3l4JlLzXzJJUz473wyXV3R600fmZ47RZw'); 
 
 export const createPayment = async (amount) => {
+  const stripe = await stripePromise;
+
   try {
-    const response = await paypalApi.post('/v1/payments/payment', {
-      intent: 'sale',
-      payer: {
-        payment_method: 'paypal',
-      },
-      transactions: [
-        {
-          amount: {
-            total: amount.toString(), 
-            currency: 'USD',
-          },
-        },
-      ],
+    const cardElement = stripe.elements().getElement('card');
+    const { paymentMethod, error } = await stripe.createPaymentMethod({
+      type: 'card',
+      card: cardElement,
     });
 
-    return response.data;
+    if (error) {
+      throw new Error(error.message);
+    }
+    const paymentIntent = await fetch('/api/create-payment-intent', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        payment_method: paymentMethod.id,
+        amount: amount,
+      }),
+    }).then((res) => res.json());
+
+    return paymentIntent.client_secret;
   } catch (error) {
-    throw error.response.data;
+    console.error('Error creating payment:', error);
+    throw error;
   }
 };
