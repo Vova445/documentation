@@ -439,12 +439,12 @@ export const App = () => {
       </main>
 
 
-      <footer>
+    
       <div className="container">
         <hr></hr>
         <Footer isUkrainian={isUkrainian}/>
        </div>
-      </footer>
+     
     </>
   );
 };

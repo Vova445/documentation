@@ -332,20 +332,26 @@
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  max-width: 400px;
+  max-width: 1200px;
   text-align: center;
   opacity: 1;
   animation: fadeIn 0.5s forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 400px;
+  overflow-y: auto;
 }
 
 @media only screen and (max-width: 520px) {
-  .support-buttons {
+  .support-buttons{
+    display: flex;
    flex-direction: column;
    justify-content: center;
    gap: 10px;
   }
 
-  .support-buttons button {
+  .support-btn {
     padding: 10px 20px;
     font-size: 14px;
   }
@@ -367,13 +373,9 @@
   margin-bottom: 20px;
 }
 
-.support-buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
 
-.support-buttons button {
+
+.support-btn {
   background-color: #3498db;
   color: white;
   padding: 15px 30px;
@@ -385,7 +387,7 @@
   font-size: 16px;
 }
 
-.support-buttons button:hover,
+.support-btn:hover,
 .close-support:hover {
   background-color: #2980b9;
   transform: scale(1.05);
@@ -417,4 +419,26 @@
 .close-support:hover {
   background-color: #2980b9;
   transform: scale(1.05);
+}
+
+
+.paypal-donate-container {
+  margin-top: 20px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paypal-donate-container .paypal-button-container {
+  margin-top: 10px; 
+}
+
+.paypal-donate-container .success-message {
+  color: green;
+  margin-top: 10px;
+}
+
+.paypal-donate-container .error-message {
+  color: red;
+  margin-top: 10px;
 }

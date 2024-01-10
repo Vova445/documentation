@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import "./Footer.css";
-import { SupportModal } from "./Support";
+import  SupportModal  from "./Support";
 
 
 const Footer = ({ isUkrainian }) => {
@@ -150,7 +150,7 @@ const Footer = ({ isUkrainian }) => {
             </div>
             <button className="nav-support-button" onClick={openSupportModal}>Підтримати розробника</button>
             {isSupportModalOpen && (
-          <SupportModal closeSupportModal={closeSupportModal} />
+          <SupportModal closeSupportModal={closeSupportModal}  />
         )}
 
           </div>

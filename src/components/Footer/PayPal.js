@@ -1,56 +1,41 @@
-import axios from 'axios';
+import React from "react";
+import { PayPalButton } from "react-paypal-button-v2";
 
-const getAccessToken = async () => {
-  try {
-    const response = await axios.post(
-      'https://api.paypal.com/v1/oauth2/token',
-      null,
-      {
-        auth: {
-          username: 'AUnaSqE4MHRybTEg_BaTy852k6SMj8xK3BsQTxtzoOsx5Ll5n-Dfj4THFlVPRBqWApTXu9Lx-EvA6U8c',
-          password: 'EEaMIJTIz-tvsC5tCS8FqkBXXOI6ZymFPxWtja1mhh4URf33dutk4dZCRkePhPOgV28A5QBqdnr2PX-W',
-        },
-        params: {
-          grant_type: 'client_credentials',
-        },
-      }
-    );
+const PayPalDonate = ({ amount, onSuccess, onError }) => {
+  const CLIENT_ID = 'AUnaSqE4MHRybTEg_BaTy852k6SMj8xK3BsQTxtzoOsx5Ll5n-Dfj4THFlVPRBqWApTXu9Lx-EvA6U8c';
 
-    return response.data.access_token;
-  } catch (error) {
-    throw error.response.data;
-  }
-};
-
-export const createPayment = async (amount) => {
-  try {
-    const accessToken = await getAccessToken();
-
-    const paypalApi = axios.create({
-      baseURL: 'https://api.paypal.com',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${accessToken}`,
-      },
-    });
-
-    const response = await paypalApi.post('/v1/payments/payment', {
-      intent: 'sale',
-      payer: {
-        payment_method: 'paypal',
-      },
-      transactions: [
+  const createOrder = (data, actions) => {
+    return actions.order.create({
+      purchase_units: [
         {
           amount: {
-            total: amount.toString(),
-            currency: 'USD',
+            value: amount,
+            currency_code: "USD",
           },
         },
       ],
     });
+  };
 
-    return response.data;
-  } catch (error) {
-    throw error.response.data;
-  }
+  const onApprove = (data, actions) => {
+    return actions.order.capture().then(function (details) {
+      onSuccess(details);
+    });
+  };
+
+  return (
+    <PayPalButton
+      amount={amount}
+      onSuccess={onSuccess}
+      createOrder={createOrder}
+      onApprove={onApprove}
+      catchError={onError}
+      onError={onError}
+      options={{
+        clientId: CLIENT_ID,
+      }}
+    />
+  );
 };
+
+export default PayPalDonate;
