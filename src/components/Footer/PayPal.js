@@ -1,5 +1,5 @@
 import React from "react";
-import { PayPalButton } from "react-paypal-button-v2";
+import { PayPalButtons } from "@paypal/react-paypal-js";
 
 const PayPalDonate = ({ amount, onSuccess, onError }) => {
   const CLIENT_ID = 'AUnaSqE4MHRybTEg_BaTy852k6SMj8xK3BsQTxtzoOsx5Ll5n-Dfj4THFlVPRBqWApTXu9Lx-EvA6U8c';
@@ -24,7 +24,7 @@ const PayPalDonate = ({ amount, onSuccess, onError }) => {
   };
 
   return (
-    <PayPalButton
+    <PayPalButtons
       amount={amount}
       onSuccess={onSuccess}
       createOrder={createOrder}
