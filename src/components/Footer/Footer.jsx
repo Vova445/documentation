@@ -150,7 +150,7 @@ const Footer = ({ isUkrainian }) => {
             </div>
             <button className="nav-support-button" onClick={openSupportModal}>Підтримати розробника</button>
             {isSupportModalOpen && (
-          <SupportModal closeSupportModal={closeSupportModal}  />
+          <SupportModal closeSupportModal={closeSupportModal}  isUkrainian={isUkrainian}/>
         )}
 
           </div>
