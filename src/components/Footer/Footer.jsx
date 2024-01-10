@@ -148,7 +148,8 @@ const Footer = ({ isUkrainian }) => {
                 Instagram
               </a>
             </div>
-            <button className="nav-support-button" onClick={openSupportModal}>Підтримати розробника</button>
+            <button className="nav-support-button" onClick={openSupportModal}>{isUkrainian ? "Підтримати розробника" : "Support the Developer"}</button>
+
             {isSupportModalOpen && (
           <SupportModal closeSupportModal={closeSupportModal}  isUkrainian={isUkrainian}/>
         )}

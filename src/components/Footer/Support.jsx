@@ -48,6 +48,12 @@ const SupportModal = ({ closeSupportModal, isUkrainian }) => {
         <button className="support-btn" onClick={() => handleSupport(25)}>
           25$
         </button>
+        <button className="support-btn" onClick={() => handleSupport(60)}>
+          60$
+        </button>
+        <button className="support-btn" onClick={() => handleSupport(150)}>
+          150$
+        </button>
       </div>
       {donationAmount > 0 && (
         <PayPalScriptProvider options={{ "client-id": "AUnaSqE4MHRybTEg_BaTy852k6SMj8xK3BsQTxtzoOsx5Ll5n-Dfj4THFlVPRBqWApTXu9Lx-EvA6U8c" }}>
